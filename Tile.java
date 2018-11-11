@@ -10,6 +10,7 @@ public class Tile extends Actor {
     public boolean isSolid = false;
     private static int id;
     public int _id;
+    public int blockID;
 
     /**
      * Contructor of the tile. Creates a tile based on image, width and height
@@ -32,7 +33,12 @@ public class Tile extends Actor {
     @Override
     public String toString() {
         return "id: " + _id + "\n"
+                + "Block ID: " + blockID
                 + "X: " + getX() + "\n"
                 + "Y: " + getY();
+    }
+
+    public int getID() {
+        return blockID;
     }
 }
