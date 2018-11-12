@@ -75,6 +75,8 @@ public class TileFactory {
                 tile.isSolid = true;
                 break;
         }
+
+        tile.blockID = mapIcon;
         return tile;
     }
 }
