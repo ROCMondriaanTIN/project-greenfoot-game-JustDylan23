@@ -33,4 +33,24 @@ public class Tile extends Actor {
         setImage("Tiles\\" + texture + ".png");
         getImage().scale(TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
     }
+
+    public void setTileImage(String texture, int width, int height) {
+        type = texture;
+        setImage("Tiles\\" + texture + ".png");
+        getImage().scale(width, height);
+    }
+
+    public void setTileImage(String texture, boolean flip) {
+        type = texture;
+        setImage("Tiles\\" + texture + ".png");
+        if (flip) {
+            getImage().mirrorVertically();
+        } else getImage().mirrorHorizontally();
+
+    }
+
+    public void delete() {
+        type = "air";
+        getImage().clear();
+    }
 }

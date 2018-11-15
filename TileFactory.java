@@ -63,10 +63,10 @@ public class TileFactory {
                 tile.setTileImage("brickWall");
                 break;
             case 16:
-                tile.setTileImage("bridge");
+                tile.setTileImage("bridge", true);
                 break;
             case 17:
-                tile.setTileImage("bridgeLogs");
+                tile.setTileImage("bridgeLogs", true);
                 break;
             case 18:
                 tile.setTileImage("castle");
@@ -103,15 +103,19 @@ public class TileFactory {
                 break;
             case 29:
                 tile.setTileImage("castleHillLeft");
+                tile.isSolid = false;
                 break;
             case 30:
                 tile.setTileImage("castleHillLeft2");
+                tile.isSolid = false;
                 break;
             case 31:
                 tile.setTileImage("castleHillRight");
+                tile.isSolid = false;
                 break;
             case 32:
                 tile.setTileImage("castleHillRight2");
+                tile.isSolid = false;
                 break;
             case 33:
                 tile.setTileImage("castleLedgeLeft");
@@ -190,15 +194,18 @@ public class TileFactory {
                 break;
             case 58:
                 tile.setTileImage("doorClosedMid");
+                tile.isSolid = false;
                 break;
             case 59:
                 tile.setTileImage("doorClosedTop");
+                tile.isSolid = false;
                 break;
             case 60:
                 tile.setTileImage("doorOpenMid");
+                tile.isSolid = false;
                 break;
             case 61:
-                tile.setTileImage("doorOpenTop");
+                tile.setTileImage("doorOpenTop");tile.isSolid = false;
                 break;
             case 62:
                 tile.setTileImage("fence");
@@ -267,40 +274,48 @@ public class TileFactory {
                 tile.setTileImage("grassRight");
                 break;
             case 84:
-                tile.setTileImage("hillLarge");
+                tile.setTileImage("hillLarge", 48, 146);
                 break;
             case 85:
-                tile.setTileImage("hillLargeAlt");
+                tile.setTileImage("hillLargeAlt", 48, 146);
                 break;
             case 86:
-                tile.setTileImage("hillSmall");
+                tile.setTileImage("hillSmall", 48, 106);
                 break;
             case 87:
-                tile.setTileImage("hillSmallAlt");
+                tile.setTileImage("hillSmallAlt", 48, 106);
                 break;
             case 88:
                 tile.setTileImage("ladderMid");
+                tile.isSolid = false;
                 break;
             case 89:
                 tile.setTileImage("ladderTop");
+                tile.isSolid = false;
                 break;
             case 90:
                 tile.setTileImage("liquidLava");
+                tile.isSolid = false;
                 break;
             case 91:
                 tile.setTileImage("liquidLavaTop");
+                tile.isSolid = false;
                 break;
             case 92:
                 tile.setTileImage("liquidLavaTopMid");
+                tile.isSolid = false;
                 break;
             case 93:
                 tile.setTileImage("liquidWater");
+                tile.isSolid = false;
                 break;
             case 94:
                 tile.setTileImage("liquidWaterTop");
+                tile.isSolid = false;
                 break;
             case 95:
                 tile.setTileImage("liquidWaterTopMid");
+                tile.isSolid = false;
                 break;
             case 96:
                 tile.setTileImage("lockBlue");
@@ -322,12 +337,15 @@ public class TileFactory {
                 break;
             case 102:
                 tile.setTileImage("ropeAttached");
+                tile.isSolid = false;
                 break;
             case 103:
                 tile.setTileImage("ropeHorizontal");
+                tile.isSolid = false;
                 break;
             case 104:
                 tile.setTileImage("ropeVertical");
+                tile.isSolid = false;
                 break;
             case 105:
                 tile.setTileImage("sand");
@@ -391,15 +409,19 @@ public class TileFactory {
                 break;
             case 125:
                 tile.setTileImage("sign");
+                tile.isSolid = false;
                 break;
             case 126:
                 tile.setTileImage("signExit");
+                tile.isSolid = false;
                 break;
             case 127:
                 tile.setTileImage("signLeft");
+                tile.isSolid = false;
                 break;
             case 128:
                 tile.setTileImage("signRight");
+                tile.isSolid = false;
                 break;
             case 129:
                 tile.setTileImage("snow");
@@ -520,15 +542,19 @@ public class TileFactory {
                 break;
             case 168:
                 tile.setTileImage("tochLit");
+                tile.isSolid = false;
                 break;
             case 169:
                 tile.setTileImage("tochLit2");
+                tile.isSolid = false;
                 break;
             case 170:
                 tile.setTileImage("torch");
+                tile.isSolid = false;
                 break;
             case 171:
                 tile.setTileImage("window");
+                tile.isSolid = false;
                 break;
             default:
                 tile.setTileImage("grassMid");

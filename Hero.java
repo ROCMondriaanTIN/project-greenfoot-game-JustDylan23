@@ -3,6 +3,7 @@ import greenfoot.*;
 
 /**
  * @author R. Springer
+ * @contrubutor D. v/d Hout
  */
 public class Hero extends Mover {
 
@@ -27,10 +28,13 @@ public class Hero extends Mover {
 
     public Hero(int heroState) {
         setHeroState(heroState);
+        //Ve = Vb + a * t
+        //physics
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
         setTexture("p" + heroState + "_front");
+
     }
 
     private void setHeroState(int heroState) {
@@ -49,6 +53,9 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
+        if (Greenfoot.mouseClicked(this)) {
+            System.out.println("you clicked your hero");
+        }
         if (Greenfoot.isKeyDown("1")) setHeroState(1);
         if (Greenfoot.isKeyDown("2")) setHeroState(2);
         if (Greenfoot.isKeyDown("3")) setHeroState(3);
