@@ -10,19 +10,10 @@ public class Tile extends Actor {
     public boolean isSolid = false;
     private static int id;
     public int _id;
-    public int blockID;
+    public String type;
 
-    /**
-     * Contructor of the tile. Creates a tile based on image, width and height
-     *
-     * @param image Path to the image file
-     * @param width Width of the tile
-     * @param heigth Height of the tile
-     */
-    public Tile(String image, int width, int heigth) {
+    public Tile() {
         super();
-        setImage(image);
-        getImage().scale(width, heigth);
         if (CollisionEngine.DEBUG) {
             getImage().drawString("ÏD: " + id, 10, 10);
         }
@@ -33,12 +24,13 @@ public class Tile extends Actor {
     @Override
     public String toString() {
         return "id: " + _id + "\n"
-                + "Block ID: " + blockID
                 + "X: " + getX() + "\n"
                 + "Y: " + getY();
     }
 
-    public int getID() {
-        return blockID;
+    public void setTileImage(String texture) {
+        type = texture;
+        setImage("Tiles\\" + texture + ".png");
+        getImage().scale(TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
     }
 }

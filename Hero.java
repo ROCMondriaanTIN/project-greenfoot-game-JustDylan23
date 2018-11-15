@@ -10,13 +10,14 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
+    private int heroState = 1;
 
     public Hero() {
         super();
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
-        setImage("p1.png");
+        setHeroState("p" + heroState + "_front");
     }
 
     @Override
@@ -44,10 +45,15 @@ public class Hero extends Mover {
         }
 
         if (Greenfoot.isKeyDown("a")) {
-            velocityX = -3;
+            velocityX = -6;
         } else if (Greenfoot.isKeyDown("d")) {
-            velocityX = 3;
+            velocityX = 6;
         }
+    }
+
+    private void setHeroState(String texture) {
+        setImage("Player\\" + texture + ".png");
+        getImage().scale(60, 81);
     }
 
     public int getWidth() {
