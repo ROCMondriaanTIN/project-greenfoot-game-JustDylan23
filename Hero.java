@@ -11,6 +11,9 @@ public class Hero extends Mover {
     private final double drag;
 
     //hero stats
+    private double walkSpeed;
+    private double jumpSpeed;
+
     private int heroState = 1;
     private boolean isOnGround;
     private boolean isStandingStill;
@@ -22,16 +25,33 @@ public class Hero extends Mover {
         return x - x * 2;
     }
 
-    public Hero() {
-        super();
+    public Hero(int heroState) {
+        setHeroState(heroState);
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
         setTexture("p" + heroState + "_front");
     }
 
+    private void setHeroState(int heroState) {
+        if (heroState == 1) {
+            walkSpeed = 7;
+            jumpSpeed = -12.5;
+        } else if (heroState == 2) {
+            walkSpeed = 8;
+            jumpSpeed = -15.5;
+        } else if (heroState == 3) {
+            walkSpeed = 6;
+            jumpSpeed = -10;
+        } else throw new IllegalArgumentException("Invalid heroState\nheroState must be 1, 2 or 3");
+        this.heroState = heroState;
+    }
+
     @Override
     public void act() {
+        if (Greenfoot.isKeyDown("1")) setHeroState(1);
+        if (Greenfoot.isKeyDown("2")) setHeroState(2);
+        if (Greenfoot.isKeyDown("3")) setHeroState(3);
         handleAnimation();
         handleMovement();
         handleHeroStats();
@@ -46,7 +66,7 @@ public class Hero extends Mover {
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
                 getWorld().removeObject(this);
-                break;
+                return;
             }
         }
     }
@@ -72,19 +92,23 @@ public class Hero extends Mover {
     private void handleInAirAnimation() {
         if (velocityY < 0 && !isOnGround) {
             setTextureWithDirection("p" + heroState + "_jump");
+        } else if (velocityY > 0 && !isOnGround && Math.abs(velocityX) > 0.3) {
+            setTextureWithDirection("p" + heroState + "_fall");
+        } else if (velocityY > 0 && !isOnGround && Math.abs(velocityX) < 0.3) {
+            setTextureWithDirection("p" + heroState + "_front");
         }
     }
 
     private void handleAmbientAnimation() {
         if (isStandingStill) {
-            setTexture("p" + heroState + "_front");
+            setTextureWithDirection("p" + heroState + "_front");
         }
     }
 
     private void handleWalingAnimation() {
         if (isWalking) {
             walkState += 0.25;
-            setTextureWithDirection("p" + heroState + "_walk\\p" + heroState + "_walk" + (int) Math.ceil(walkState));
+            setTextureWithDirection("p" + heroState + "_walk\\" + (int) Math.ceil(walkState), 65, 86);
             if (walkState == 11) walkState = 0;
         } else walkState = 0;
     }
@@ -92,15 +116,15 @@ public class Hero extends Mover {
     private void jumpingHandler() {
         if (isOnGround) {
             if (Greenfoot.isKeyDown("space")) {
-                velocityY = -12.5;
+                velocityY = jumpSpeed;
             }
         }
     }
 
     private void horizontalMovementHandler() {
         if (Greenfoot.isKeyDown("a") && Greenfoot.isKeyDown("d")) return;
-        if (Greenfoot.isKeyDown("a")) velocityX = posToNeg(6);
-        if (Greenfoot.isKeyDown("d")) velocityX = 6;
+        if (Greenfoot.isKeyDown("a")) velocityX = posToNeg(walkSpeed);
+        if (Greenfoot.isKeyDown("d")) velocityX = walkSpeed;
     }
 
     private void updateOnGroundStats() {
@@ -130,9 +154,7 @@ public class Hero extends Mover {
     }
 
     private void updateIsWalking() {
-        if (Math.abs(velocityX) > 0.5 && isOnGround) {
-            isWalking = true;
-        } else isWalking = false;
+        isWalking = (Math.abs(velocityX) > 0.6 && isOnGround);
     }
 
     private void updateDirection() {
@@ -151,9 +173,7 @@ public class Hero extends Mover {
     }
 
     private void updateIsStandingStill() {
-        if (Math.abs(velocityX) < 0.4 && isOnGround) {
-            isStandingStill = true;
-        } else isStandingStill = false;
+        isStandingStill = (Math.abs(velocityX) < 0.4 && isOnGround);
     }
 
     private void setTexture(String texture) {
@@ -161,11 +181,19 @@ public class Hero extends Mover {
         getImage().scale(60, 81);
     }
 
-    private void setTextureWithDirection(String texture) {
+    private void setTexture(String texture, int width, int height) {
         setImage("Player\\" + texture + ".png");
-        getImage().scale(60, 81);
-        if (!direction) getImage().mirrorHorizontally();
+        getImage().scale(width, height);
+    }
 
+    private void setTextureWithDirection(String texture) {
+        setTexture(texture);
+        if (!direction) getImage().mirrorHorizontally();
+    }
+
+    private void setTextureWithDirection(String texture, int width, int height) {
+        setTexture(texture, width, height);
+        if (!direction) getImage().mirrorHorizontally();
     }
 
     public int getWidth() {
