@@ -46,6 +46,7 @@ public class Tile extends Actor {
         if (flip) {
             getImage().mirrorVertically();
         } else getImage().mirrorHorizontally();
+        getImage().scale(TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
 
     }
 

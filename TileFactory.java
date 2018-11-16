@@ -209,9 +209,11 @@ public class TileFactory {
                 break;
             case 62:
                 tile.setTileImage("fence");
+                tile.isSolid = false;
                 break;
             case 63:
                 tile.setTileImage("fenceBroken");
+                tile.isSolid = false;
                 break;
             case 64:
                 tile.setTileImage("grass");
@@ -275,15 +277,19 @@ public class TileFactory {
                 break;
             case 84:
                 tile.setTileImage("hillLarge", 48, 146);
+                tile.isSolid = false;
                 break;
             case 85:
                 tile.setTileImage("hillLargeAlt", 48, 146);
+                tile.isSolid = false;
                 break;
             case 86:
                 tile.setTileImage("hillSmall", 48, 106);
+                tile.isSolid = false;
                 break;
             case 87:
                 tile.setTileImage("hillSmallAlt", 48, 106);
+                tile.isSolid = false;
                 break;
             case 88:
                 tile.setTileImage("ladderMid");

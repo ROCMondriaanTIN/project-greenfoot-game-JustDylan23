@@ -1,9 +1,8 @@
-
 import greenfoot.*;
 
 /**
  * @author R. Springer
- * @contrubutor D. v/d Hout
+ * @contributor D. v/d Hout
  */
 public class Hero extends Mover {
 
@@ -11,9 +10,9 @@ public class Hero extends Mover {
     private final double acc;
     private final double drag;
 
-    //hero stats
     private double walkSpeed;
     private double jumpSpeed;
+    private double sizeMultiplier = 1;
 
     private int heroState = 1;
     private boolean isOnGround;
@@ -22,8 +21,8 @@ public class Hero extends Mover {
     private double walkState = 0;
     private boolean direction = true;
 
-    private double posToNeg(double x) {
-        return x - x * 2;
+    private double invert(double x) {
+        return x * -1;
     }
 
     public Hero(int heroState) {
@@ -41,41 +40,48 @@ public class Hero extends Mover {
         if (heroState == 1) {
             walkSpeed = 7;
             jumpSpeed = -12.5;
+            sizeMultiplier = 1;
         } else if (heroState == 2) {
             walkSpeed = 8;
             jumpSpeed = -15.5;
+            sizeMultiplier = 1.3;
         } else if (heroState == 3) {
             walkSpeed = 6;
             jumpSpeed = -10;
+            sizeMultiplier = 0.7;
         } else throw new IllegalArgumentException("Invalid heroState\nheroState must be 1, 2 or 3");
         this.heroState = heroState;
     }
 
     @Override
     public void act() {
-        if (Greenfoot.mouseClicked(this)) {
-            System.out.println("you clicked your hero");
-        }
-        if (Greenfoot.isKeyDown("1")) setHeroState(1);
-        if (Greenfoot.isKeyDown("2")) setHeroState(2);
-        if (Greenfoot.isKeyDown("3")) setHeroState(3);
-        handleAnimation();
+        if (Greenfoot.isKeyDown("escape")) System.exit(0);
+
         handleMovement();
         handleHeroStats();
+        handleWorldInteraction();
+        handlePhysics();
+        handleAnimation();
 
+        /**
+         * @Reminder: remove this shit
+         */
+        if (Greenfoot.mouseClicked(this)) {
+            heroState++;
+            if (heroState > 3) {
+                heroState = 1;
+            }
+            setHeroState(heroState);
+        }
+    }
+
+    private void handlePhysics() {
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
             velocityY = gravity;
         }
         applyVelocity();
-
-        for (Actor enemy : getIntersectingObjects(Enemy.class)) {
-            if (enemy != null) {
-                getWorld().removeObject(this);
-                return;
-            }
-        }
     }
 
     private void handleAnimation() {
@@ -96,6 +102,15 @@ public class Hero extends Mover {
         updateIsStandingStill();
     }
 
+    private void handleWorldInteraction() {
+        enemyCollisionHandler();
+        waterCollisionHandler();
+        ladderInteractionHandler();
+    }
+
+    /**
+     * @implSpec Animation handling is handled here.
+     */
     private void handleInAirAnimation() {
         if (velocityY < 0 && !isOnGround) {
             setTextureWithDirection("p" + heroState + "_jump");
@@ -115,27 +130,43 @@ public class Hero extends Mover {
     private void handleWalingAnimation() {
         if (isWalking) {
             walkState += 0.25;
-            setTextureWithDirection("p" + heroState + "_walk\\" + (int) Math.ceil(walkState), 65, 86);
+            setTextureWithDirection("p" + heroState + "_walk\\" + (int) Math.ceil(walkState), 61, 82);
             if (walkState == 11) walkState = 0;
         } else walkState = 0;
     }
 
+    /**
+     * @implSpec Movement handling is handled here.
+     */
+
     private void jumpingHandler() {
-        if (isOnGround) {
+        if (isOnGround && velocityY == 0) {
             if (Greenfoot.isKeyDown("space")) {
+                System.out.println(velocityY);
+                System.out.println(isOnGround);
                 velocityY = jumpSpeed;
+                isOnGround = false;
             }
         }
     }
 
     private void horizontalMovementHandler() {
         if (Greenfoot.isKeyDown("a") && Greenfoot.isKeyDown("d")) return;
-        if (Greenfoot.isKeyDown("a")) velocityX = posToNeg(walkSpeed);
+        if (Greenfoot.isKeyDown("a")) velocityX = invert(walkSpeed);
         if (Greenfoot.isKeyDown("d")) velocityX = walkSpeed;
     }
 
+    /**
+     * @implSpec Stats handling is handled here.
+     */
+
     private void updateOnGroundStats() {
         int width = getImage().getWidth() / 2;
+
+        if (velocityY > 0) {
+            isOnGround = false;
+            return;
+        }
 
         Boolean successRate = false;
 
@@ -147,7 +178,7 @@ public class Hero extends Mover {
                 if (tile.isSolid) successRate = true;
             }
             if (!successRate) {
-                for (Tile tile : getObjectsAtOffset((int) posToNeg(width) + 3, getImage().getHeight() / 2 + 1, Tile.class)) {
+                for (Tile tile : getObjectsAtOffset((int) invert(width) + 3, getImage().getHeight() / 2 + 1, Tile.class)) {
                     if (tile.isSolid) successRate = true;
                 }
             }
@@ -183,14 +214,56 @@ public class Hero extends Mover {
         isStandingStill = (Math.abs(velocityX) < 0.4 && isOnGround);
     }
 
+    /**
+     * @implSpec Animation handling is handled here.
+     */
+
+    private void enemyCollisionHandler() {
+        for (Actor enemy : getIntersectingObjects(Enemy.class)) {
+            if (enemy != null) {
+                getWorld().removeObject(this);
+                return;
+            }
+        }
+    }
+
+    private void waterCollisionHandler() {
+        for (Tile tile : getIntersectingObjects(Tile.class)) {
+            if (tile.type.contains("liquid")) {
+                getWorld().removeObject(this);
+                return;
+            }
+        }
+    }
+
+    private void ladderInteractionHandler() {
+        if (Greenfoot.isKeyDown("shift")) {
+            if (Greenfoot.isKeyDown("w") && Greenfoot.isKeyDown("s")) return;
+            for (Tile tile : getObjectsAtOffset(0, -5, Tile.class)) {
+                if (tile.type.contains("ladder")) {
+                    velocityY = 1;
+                    setTexture("p" + heroState + "_back");
+                    if (Greenfoot.isKeyDown("w")) {
+                        if (tile.type.equals("ladderTop")) velocityY = -10;
+                        if (tile.type.equals("ladderMid")) velocityY = -4;
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * @implSpec Setter/Getter methods are located here.
+     */
+
     private void setTexture(String texture) {
         setImage("Player\\" + texture + ".png");
-        getImage().scale(60, 81);
+        getImage().scale((int) Math.round(56 * sizeMultiplier), (int) Math.round(77 * sizeMultiplier));
     }
 
     private void setTexture(String texture, int width, int height) {
         setImage("Player\\" + texture + ".png");
-        getImage().scale(width, height);
+        getImage().scale((int) Math.round(width * sizeMultiplier), (int) Math.round(height * sizeMultiplier));
     }
 
     private void setTextureWithDirection(String texture) {
