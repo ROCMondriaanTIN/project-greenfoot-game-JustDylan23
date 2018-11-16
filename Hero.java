@@ -1,8 +1,7 @@
 import greenfoot.*;
 
 /**
- * @author R. Springer
- * @contributor D. v/d Hout
+ * @author D. Hout
  */
 public class Hero extends Mover {
 
@@ -14,12 +13,15 @@ public class Hero extends Mover {
     private double jumpSpeed;
     private double sizeMultiplier = 1;
 
+    private boolean isAlive = true;
     private int heroState = 1;
     private boolean isOnGround;
     private boolean isStandingStill;
     private boolean isWalking;
     private double walkState = 0;
     private boolean direction = true;
+    private boolean isClimbing = false;
+    private boolean hitBlock = false;
 
     private double invert(double x) {
         return x * -1;
@@ -33,10 +35,14 @@ public class Hero extends Mover {
         acc = 0.6;
         drag = 0.8;
         setTexture("p" + heroState + "_front");
+        GreenfootSound song = new GreenfootSound("music.wav");
+        song.play();
+        song.setVolume(40);
 
     }
 
     private void setHeroState(int heroState) {
+        if (this.heroState != heroState) Greenfoot.playSound("powerup.wav");
         if (heroState == 1) {
             walkSpeed = 7;
             jumpSpeed = -12.5;
@@ -55,7 +61,10 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
-        if (Greenfoot.isKeyDown("escape")) System.exit(0);
+        if (!isAlive) {
+            getWorld().removeObject(this);
+            return;
+        }
 
         handleMovement();
         handleHeroStats();
@@ -63,15 +72,17 @@ public class Hero extends Mover {
         handlePhysics();
         handleAnimation();
 
-        /**
-         * @Reminder: remove this shit
+        /*
+         * remove this shit
          */
+
         if (Greenfoot.mouseClicked(this)) {
-            heroState++;
-            if (heroState > 3) {
-                heroState = 1;
+            int state = heroState;
+            if (state >= 3) {
+                setHeroState(1);
+            } else {
+                setHeroState(state + 1);
             }
-            setHeroState(heroState);
         }
     }
 
@@ -106,12 +117,16 @@ public class Hero extends Mover {
         enemyCollisionHandler();
         waterCollisionHandler();
         ladderInteractionHandler();
+        checkHitBlock();
     }
 
     /**
-     * @implSpec Animation handling is handled here.
+     * Animation handling is handled here.
+     *
+     * @author D. Hout
      */
     private void handleInAirAnimation() {
+        if (isClimbing) return;
         if (velocityY < 0 && !isOnGround) {
             setTextureWithDirection("p" + heroState + "_jump");
         } else if (velocityY > 0 && !isOnGround && Math.abs(velocityX) > 0.3) {
@@ -136,16 +151,23 @@ public class Hero extends Mover {
     }
 
     /**
-     * @implSpec Movement handling is handled here.
+     * Movement handling is handled here.
+     *
+     * @author D. Hout
      */
 
     private void jumpingHandler() {
-        if (isOnGround && velocityY == 0) {
+        if ((isOnGround && velocityY == 0) || isClimbing) {
             if (Greenfoot.isKeyDown("space")) {
-                System.out.println(velocityY);
-                System.out.println(isOnGround);
                 velocityY = jumpSpeed;
                 isOnGround = false;
+                isClimbing = false;
+                hitBlock = false;
+                if (heroState == 3) {
+                    Greenfoot.playSound("jump_mini.wav");
+                } else {
+                    Greenfoot.playSound("jump.wav");
+                }
             }
         }
     }
@@ -157,7 +179,9 @@ public class Hero extends Mover {
     }
 
     /**
-     * @implSpec Stats handling is handled here.
+     * Stats handling is handled here.
+     *
+     * @author D. Hout
      */
 
     private void updateOnGroundStats() {
@@ -215,13 +239,15 @@ public class Hero extends Mover {
     }
 
     /**
-     * @implSpec Animation handling is handled here.
+     * Animation handling is handled here.
+     *
+     * @author D. Hout
      */
 
     private void enemyCollisionHandler() {
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
-                getWorld().removeObject(this);
+                isAlive = false;
                 return;
             }
         }
@@ -230,30 +256,54 @@ public class Hero extends Mover {
     private void waterCollisionHandler() {
         for (Tile tile : getIntersectingObjects(Tile.class)) {
             if (tile.type.contains("liquid")) {
-                getWorld().removeObject(this);
+                isAlive = false;
                 return;
             }
         }
     }
 
     private void ladderInteractionHandler() {
-        if (Greenfoot.isKeyDown("shift")) {
-            if (Greenfoot.isKeyDown("w") && Greenfoot.isKeyDown("s")) return;
-            for (Tile tile : getObjectsAtOffset(0, -5, Tile.class)) {
-                if (tile.type.contains("ladder")) {
-                    velocityY = 1;
+        if (Greenfoot.isKeyDown("space") && Greenfoot.isKeyDown("w")) return;
+        for (Tile tile : getObjectsAtOffset(0, -5, Tile.class)) {
+            if (tile.type.contains("ladder")) {
+                if (Greenfoot.isKeyDown("w")) {
                     setTexture("p" + heroState + "_back");
-                    if (Greenfoot.isKeyDown("w")) {
-                        if (tile.type.equals("ladderTop")) velocityY = -10;
-                        if (tile.type.equals("ladderMid")) velocityY = -4;
+                    velocityY = -4.5;
+                    isClimbing = true;
+                } else if (isClimbing) {
+                    setTexture("p" + heroState + "_back");
+                    velocityY = 1;
+                }
+                break;
+            } else isClimbing = false;
+        }
+    }
+
+    private void checkHitBlock() {
+        if (!hitBlock) {
+            for (Tile tile : getObjectsAtOffset(0, getImage().getHeight() / 2 * -1 -1, Tile.class)) {
+                if (tile.isSolid) {
+                    hitBlock = true;
+                    if (tile.type.equals("boxEmpty")) {
+                        Greenfoot.playSound("blockhit.wav");
+                        tile.isSolid = false;
+                        tile.getImage().clear();
+                    } else if (tile.type.equals("boxCoin")) {
+                        Greenfoot.playSound("coin.wav");
+                        tile.setTileImage("boxCoinDisabled");
+                    } else if (tile.type.contains("box")) {
+                        Greenfoot.playSound("bump.wav");
                     }
+                    break;
                 }
             }
         }
     }
 
     /**
-     * @implSpec Setter/Getter methods are located here.
+     * Setter/Getter methods are located here.
+     *
+     * @author D. Hout
      */
 
     private void setTexture(String texture) {
