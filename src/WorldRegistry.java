@@ -6,13 +6,13 @@ import java.util.Map;
 
 public class WorldRegistry {
 
-    private Map<Integer, Worlds> levels = new HashMap();
+    private Map<Integer, AbstractWorld> levels = new HashMap();
 
-    public void registerLevel(int index, Worlds worlds) {
-        levels.put(index, worlds);
+    public void registerLevel(int index, AbstractWorld abstractWorld) {
+        levels.put(index, abstractWorld);
     }
 
-    public Worlds getLevel(int index) {
+    public AbstractWorld getLevel(int index) {
         return levels.get(index);
     }
 
@@ -20,7 +20,7 @@ public class WorldRegistry {
         return levels.size();
     }
 
-    public final Iterable<Worlds> values() {
+    public final Iterable<AbstractWorld> values() {
         return Collections.unmodifiableCollection(levels.values());
     }
 }

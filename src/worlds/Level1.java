@@ -1,9 +1,9 @@
 package src.worlds;
 
 import greenfoot.Greenfoot;
-import src.Worlds;
+import src.AbstractWorld;
 
-public class Level1 extends Worlds {
+public class Level1 extends AbstractWorld {
 
     private int[][] mapRaw = { {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
             {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -43,10 +43,5 @@ public class Level1 extends Worlds {
         super(300, 200);
         this.map = mapRaw;
         renderWorld();
-    }
-
-    @Override
-    public void loadWorld() {
-        Greenfoot.setWorld(new Level1());
     }
 }

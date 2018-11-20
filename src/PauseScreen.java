@@ -8,12 +8,12 @@ import java.util.ArrayList;
 public class PauseScreen extends Actor {
 
     private long time = System.currentTimeMillis();
-    private Worlds worldsInstance;
+    private AbstractWorld abstractWorldInstance;
     public static boolean isActive;
     private ArrayList<ClickableObject> buttons = new ArrayList<>();
 
-    public PauseScreen(Worlds worldsInstance) {
-        this.worldsInstance = worldsInstance;
+    public PauseScreen(AbstractWorld abstractWorldInstance) {
+        this.abstractWorldInstance = abstractWorldInstance;
         getImage().clear();
     }
 
@@ -27,12 +27,12 @@ public class PauseScreen extends Actor {
                 if (!isActive) {
                     setImage("pauseScreen.png");
                     addButtons();
-                    worldsInstance.setPO(1);
+                    abstractWorldInstance.setPO(1);
                     Main.backgroundSong.pause();
                 } else {
                     getImage().clear();
                     removeButtons();
-                    worldsInstance.setPO(2);
+                    abstractWorldInstance.setPO(2);
                     Main.backgroundSong.play();
                 }
                 isActive = !isActive;
@@ -42,22 +42,22 @@ public class PauseScreen extends Actor {
 
     public void addButtons() {
         ClickableObject continue_ = new ClickableObject("continue.png", this);
-        worldsInstance.addObject(continue_, 323 ,348);
+        abstractWorldInstance.addObject(continue_, 323 ,348);
         buttons.add(continue_);
 
         ClickableObject reset = new ClickableObject("reset.png", this);
-        worldsInstance.addObject(reset, 323, 468);
+        abstractWorldInstance.addObject(reset, 323, 468);
         buttons.add(reset);
 
         ClickableObject exit = new ClickableObject("exitGame.png", this);
-        worldsInstance.addObject(exit, 323 ,588);
+        abstractWorldInstance.addObject(exit, 323 ,588);
         buttons.add(exit);
     }
 
     public void close() {
         getImage().clear();
         removeButtons();
-        worldsInstance.setPO(2);
+        abstractWorldInstance.setPO(2);
         Greenfoot.playSound("pause.wav");
         isActive = false;
         Main.backgroundSong.play();
@@ -65,7 +65,7 @@ public class PauseScreen extends Actor {
 
     public void removeButtons() {
         for (ClickableObject button : buttons) {
-            worldsInstance.removeObject(button);
+            abstractWorldInstance.removeObject(button);
         }
     }
 }

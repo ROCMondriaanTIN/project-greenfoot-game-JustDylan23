@@ -2,20 +2,36 @@ package src;
 
 import greenfoot.*;
 
-public abstract class Worlds extends World {
+import java.lang.reflect.Constructor;
+
+public abstract class AbstractWorld extends World {
 
     private CollisionEngine ce;
     private int x;
     private int y;
     public int[][] map;
 
-    public abstract void loadWorld();
-
-    public Worlds(int x, int y) {
+    public AbstractWorld(int x, int y) {
         super(1000, 800, 1, false);
         this.x = x;
         this.y = y;
         this.setBackground("bg.png");
+    }
+
+    public void loadWorld() {
+        String className = this.getClass().getName();
+        try {
+            Class<?> myClass = Class.forName(className);
+            Constructor<?> ctr = myClass.getConstructor();
+            World world = (World) ctr.newInstance();
+            if(world != null) {
+                Greenfoot.setWorld(world);
+            }
+        }
+        catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 
     public void renderWorld() {

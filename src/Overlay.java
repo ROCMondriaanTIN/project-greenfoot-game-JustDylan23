@@ -5,17 +5,17 @@ import greenfoot.Actor;
 public class Overlay extends Actor {
     private int heroState;
     private Hero heroInstance;
-    private Worlds worldsInstance;
+    private AbstractWorld abstractWorldInstance;
     private OverlayObject heroIcon = new OverlayObject("hud_p1", 47, 47);
     private OverlayObject coinCount = new OverlayObject(Main.newTextImage("x" + Main.coinCount, 60));
 
-    public Overlay(Hero heroInstance, Worlds worldsInstance) {
+    public Overlay(Hero heroInstance, AbstractWorld abstractWorldInstance) {
         this.heroInstance = heroInstance;
-        this.worldsInstance = worldsInstance;
+        this.abstractWorldInstance = abstractWorldInstance;
         setImage("Overlay.png");
 
-        worldsInstance.addObject(heroIcon, 947, 33);
-        worldsInstance.addObject(coinCount, 746, 33);
+        abstractWorldInstance.addObject(heroIcon, 947, 33);
+        abstractWorldInstance.addObject(coinCount, 746, 33);
     }
 
     public void updateHeroState(int heroState) {
