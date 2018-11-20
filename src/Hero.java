@@ -7,16 +7,20 @@ import greenfoot.*;
  */
 public class Hero extends Mover {
 
+    private Overlay overlayInstance;
+
+
     private final double gravity;
     private final double acc;
     private final double drag;
+    public static GreenfootSound song;
 
     private double walkSpeed;
     private double jumpSpeed;
     private double sizeMultiplier = 1;
 
     private boolean isAlive = true;
-    private int heroState = 1;
+    public int heroState = 1;
     private boolean isOnGround;
     private boolean isStandingStill;
     private boolean isWalking;
@@ -37,10 +41,14 @@ public class Hero extends Mover {
         acc = 0.6;
         drag = 0.8;
         setTexture("p" + heroState + "_front");
-        GreenfootSound song = new GreenfootSound("music.wav");
+        song = new GreenfootSound("music.wav");
         song.play();
         song.setVolume(40);
 
+    }
+
+    public void setOverlayInstance(Overlay overlay) {
+        overlayInstance = overlay;
     }
 
     private void setHeroState(int heroState) {
@@ -59,12 +67,18 @@ public class Hero extends Mover {
             sizeMultiplier = 0.7;
         } else throw new IllegalArgumentException("Invalid heroState\nheroState must be 1, 2 or 3");
         this.heroState = heroState;
+        if (overlayInstance != null) {
+            overlayInstance.updateHeroState(this.heroState);
+        }
     }
 
     @Override
     public void act() {
+        if (PauseScreen.isActive) return;
         if (!isAlive) {
             getWorld().removeObject(this);
+            song.stop();
+            Greenfoot.playSound("death.wav");
             return;
         }
 
