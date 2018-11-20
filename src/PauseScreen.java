@@ -28,12 +28,12 @@ public class PauseScreen extends Actor {
                     setImage("pauseScreen.png");
                     addButtons();
                     worldsInstance.setPO(1);
-                    Hero.song.pause();
+                    Main.backgroundSong.pause();
                 } else {
                     getImage().clear();
                     removeButtons();
                     worldsInstance.setPO(2);
-                    Hero.song.play();
+                    Main.backgroundSong.play();
                 }
                 isActive = !isActive;
             }
@@ -60,6 +60,7 @@ public class PauseScreen extends Actor {
         worldsInstance.setPO(2);
         Greenfoot.playSound("pause.wav");
         isActive = false;
+        Main.backgroundSong.play();
     }
 
     public void removeButtons() {

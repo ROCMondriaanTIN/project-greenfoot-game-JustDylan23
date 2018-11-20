@@ -10,63 +10,81 @@ public class TileFactory {
      * @param mapIcon number
      * @return Tile tile object
      */
-    public static Tile createTile(int mapIcon) {
+    protected Tile createTile(int mapIcon) {
         Tile tile = new Tile();
         tile.isSolid = true;
         switch (mapIcon) {
             case 0:
                 tile.setTileImage("box");
+                tile.setType(TileType.BOX);
                 break;
             case 1:
                 tile.setTileImage("boxAlt");
+                tile.setType(TileType.BOX);
                 break;
             case 2:
                 tile.setTileImage("boxCoin");
+                tile.setType(TileType.COINBOX);
                 break;
             case 3:
                 tile.setTileImage("boxCoinAlt");
                 break;
             case 4:
                 tile.setTileImage("boxCoinAltDisabled");
+                tile.setType(TileType.BOX);
                 break;
             case 5:
                 tile.setTileImage("boxCoinDisabled");
+                tile.setType(TileType.BOX);
                 break;
             case 6:
                 tile.setTileImage("boxEmpty");
+                tile.setType(TileType.BREAKABLEBLOCK);
                 break;
             case 7:
                 tile.setTileImage("boxExplosive");
+                tile.setType(TileType.BOX);
                 break;
             case 8:
                 tile.setTileImage("boxExplosiveAlt");
+                tile.setType(TileType.BOX);
                 break;
             case 9:
                 tile.setTileImage("boxExplosiveDisabled");
+                tile.setType(TileType.BOX);
                 break;
             case 10:
                 tile.setTileImage("boxItem");
+                tile.setType(TileType.BOX);
                 break;
             case 11:
                 tile.setTileImage("boxItemAlt");
+                tile.setType(TileType.BOX);
                 break;
             case 12:
                 tile.setTileImage("boxItemAltDisabled");
+                tile.setType(TileType.BOX);
                 break;
             case 13:
                 tile.setTileImage("boxItemDisabled");
+                tile.setType(TileType.BOX);
                 break;
             case 14:
                 tile.setTileImage("boxWarning");
+                tile.setType(TileType.BOX);
                 break;
             case 15:
                 tile.setTileImage("brickWall");
                 break;
             case 16:
-                tile.setTileImage("bridge", true);
+                tile.setTileImage("bridge");
+                tile.getImage().mirrorVertically();
+                tile.setType(TileType.BRIDGE);
                 break;
             case 17:
-                tile.setTileImage("bridgeLogs", true);
+                tile.setTileImage("bridgeLogs");
+                tile.getImage().mirrorVertically();
+                tile.setType(TileType.BRIDGE);
                 break;
             case 18:
                 tile.setTileImage("castle");
@@ -205,7 +223,8 @@ public class TileFactory {
                 tile.isSolid = false;
                 break;
             case 61:
-                tile.setTileImage("doorOpenTop");tile.isSolid = false;
+                tile.setTileImage("doorOpenTop");
+                tile.isSolid = false;
                 break;
             case 62:
                 tile.setTileImage("fence");
@@ -276,51 +295,63 @@ public class TileFactory {
                 tile.setTileImage("grassRight");
                 break;
             case 84:
-                tile.setTileImage("hillLarge", 48, 146);
+                tile.setTileImage("hillLarge");
+                tile.getImage().scale(48, 146);
                 tile.isSolid = false;
                 break;
             case 85:
-                tile.setTileImage("hillLargeAlt", 48, 146);
+                tile.setTileImage("hillLargeAlt");
+                tile.getImage().scale(48, 146);
                 tile.isSolid = false;
                 break;
             case 86:
-                tile.setTileImage("hillSmall", 48, 106);
+                tile.setTileImage("hillSmall");
+                tile.getImage().scale(48, 106);
                 tile.isSolid = false;
                 break;
             case 87:
-                tile.setTileImage("hillSmallAlt", 48, 106);
+                tile.setTileImage("hillSmallAlt");
+                tile.getImage().scale(48, 106);
                 tile.isSolid = false;
                 break;
             case 88:
                 tile.setTileImage("ladderMid");
+                tile.setType(TileType.LADDER);
                 tile.isSolid = false;
                 break;
             case 89:
                 tile.setTileImage("ladderTop");
+                tile.setType(TileType.LADDER);
                 tile.isSolid = false;
                 break;
             case 90:
                 tile.setTileImage("liquidLava");
+                tile.setType(TileType.LIQUID);
                 tile.isSolid = false;
                 break;
             case 91:
                 tile.setTileImage("liquidLavaTop");
+                tile.setType(TileType.LIQUID);
                 tile.isSolid = false;
                 break;
             case 92:
                 tile.setTileImage("liquidLavaTopMid");
+                tile.setType(TileType.LIQUID);
                 tile.isSolid = false;
                 break;
             case 93:
                 tile.setTileImage("liquidWater");
+                tile.setType(TileType.LIQUID);
                 tile.isSolid = false;
                 break;
             case 94:
                 tile.setTileImage("liquidWaterTop");
+                tile.setType(TileType.LIQUID);
                 tile.isSolid = false;
                 break;
             case 95:
                 tile.setTileImage("liquidWaterTopMid");
+                tile.setType(TileType.LIQUID);
                 tile.isSolid = false;
                 break;
             case 96:

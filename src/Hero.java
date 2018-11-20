@@ -9,11 +9,9 @@ public class Hero extends Mover {
 
     private Overlay overlayInstance;
 
-
     private final double gravity;
     private final double acc;
     private final double drag;
-    public static GreenfootSound song;
 
     private double walkSpeed;
     private double jumpSpeed;
@@ -41,9 +39,6 @@ public class Hero extends Mover {
         acc = 0.6;
         drag = 0.8;
         setTexture("p" + heroState + "_front");
-        song = new GreenfootSound("music.wav");
-        song.play();
-        song.setVolume(40);
 
     }
 
@@ -77,7 +72,7 @@ public class Hero extends Mover {
         if (PauseScreen.isActive) return;
         if (!isAlive) {
             getWorld().removeObject(this);
-            song.stop();
+            Main.backgroundSong.stop();
             Greenfoot.playSound("death.wav");
             return;
         }
@@ -271,7 +266,7 @@ public class Hero extends Mover {
 
     private void waterCollisionHandler() {
         for (Tile tile : getIntersectingObjects(Tile.class)) {
-            if (tile.type.contains("liquid")) {
+            if (tile.type == TileType.LIQUID) {
                 isAlive = false;
                 return;
             }
@@ -281,7 +276,7 @@ public class Hero extends Mover {
     private void ladderInteractionHandler() {
         if (Greenfoot.isKeyDown("space") && Greenfoot.isKeyDown("w")) return;
         for (Tile tile : getObjectsAtOffset(0, -5, Tile.class)) {
-            if (tile.type.contains("ladder")) {
+            if (tile.type == TileType.LADDER) {
                 if (Greenfoot.isKeyDown("w")) {
                     setTexture("p" + heroState + "_back");
                     velocityY = -4.5;
@@ -300,14 +295,16 @@ public class Hero extends Mover {
             for (Tile tile : getObjectsAtOffset(0, getImage().getHeight() / 2 * -1 -1, Tile.class)) {
                 if (tile.isSolid) {
                     hitBlock = true;
-                    if (tile.type.equals("boxEmpty")) {
+                    if (tile.type == TileType.BREAKABLEBLOCK) {
                         Greenfoot.playSound("blockhit.wav");
                         tile.isSolid = false;
                         tile.getImage().clear();
-                    } else if (tile.type.equals("boxCoin")) {
+                    } else if (tile.type == TileType.COINBOX) {
                         Greenfoot.playSound("coin.wav");
                         tile.setTileImage("boxCoinDisabled");
-                    } else if (tile.type.contains("box")) {
+                        tile.setType(TileType.BOX);
+                        overlayInstance.addCoin();
+                    } else if (tile.type == TileType.BOX) {
                         Greenfoot.playSound("bump.wav");
                     }
                     break;
