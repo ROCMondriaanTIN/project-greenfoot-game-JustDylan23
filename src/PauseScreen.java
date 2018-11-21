@@ -3,6 +3,11 @@ package src;
 import greenfoot.Actor;
 import greenfoot.Greenfoot;
 
+/**
+ * @author D. Hout
+ *
+ */
+
 import java.util.ArrayList;
 
 public class PauseScreen extends Actor {

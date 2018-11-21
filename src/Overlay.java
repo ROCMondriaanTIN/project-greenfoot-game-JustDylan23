@@ -2,6 +2,11 @@ package src;
 
 import greenfoot.Actor;
 
+/**
+ * @author D. Hout
+ *
+ */
+
 public class Overlay extends Actor {
     private int heroState;
     private Hero heroInstance;

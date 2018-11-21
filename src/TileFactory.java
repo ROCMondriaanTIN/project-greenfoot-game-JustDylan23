@@ -1,7 +1,10 @@
 package src;
+
 /**
- * @author R. Springer
+ * @author D. Hout
+ *
  */
+
 public class TileFactory {
 
     /**

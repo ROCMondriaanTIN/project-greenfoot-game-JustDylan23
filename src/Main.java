@@ -3,6 +3,11 @@ package src;
 import greenfoot.*;
 import src.worlds.Level1;
 
+/**
+ * @author D. Hout
+ *
+ */
+
 public class Main extends World {
     
     public static int coinCount;
@@ -17,7 +22,7 @@ public class Main extends World {
         Greenfoot.start();
         setBackground("bg_menu.png");
 
-        worldRegistry.registerLevel(1, new Level1());
+        worldRegistry.registerLevel(1, Level1.getInstance());
 
         addObject(new ClickableObject("startGame.png"), 323 ,348);
         addObject(new ClickableObject("exitGame.png"), 323 ,548);

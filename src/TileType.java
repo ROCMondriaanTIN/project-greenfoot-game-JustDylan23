@@ -1,5 +1,10 @@
 package src;
 
+/**
+ * @author D. Hout
+ *
+ */
+
 public enum TileType {
     DEFAULT,
     GROUND,

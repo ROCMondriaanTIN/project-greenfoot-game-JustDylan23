@@ -1,7 +1,5 @@
 package src;
 
-import greenfoot.*;
-
 /**
  *
  * @author R. Springer

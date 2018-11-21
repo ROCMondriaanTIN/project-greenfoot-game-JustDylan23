@@ -2,8 +2,16 @@ package src.worlds;
 
 import greenfoot.Greenfoot;
 import src.AbstractWorld;
+import src.Main;
+
+/**
+ * @author D. Hout
+ *
+ */
 
 public class Level1 extends AbstractWorld {
+
+    private static Level1 instance = new Level1();
 
     private int[][] mapRaw = { {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
             {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -39,9 +47,25 @@ public class Level1 extends AbstractWorld {
             {65,65,65,65,65,65,65,65,65,93,93,93,93,93,93,93,65,65,65,65,65,65,65,93,93,93,93,65,65,65,65,65,93,93,93,93,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65},
     };
 
-    public Level1() {
+    private Level1() {
         super(300, 200);
         this.map = mapRaw;
         renderWorld();
+    }
+
+    public static Level1 getInstance() {
+        return instance;
+    }
+
+    @Override
+    public void loadWorld() {
+        Main.backgroundSong.play();
+        Greenfoot.setWorld(instance);
+    }
+
+    @Override
+    public void reset() {
+        instance = new Level1();
+        Greenfoot.setWorld(instance);
     }
 }

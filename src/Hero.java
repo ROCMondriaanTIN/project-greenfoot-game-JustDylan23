@@ -4,6 +4,7 @@ import greenfoot.*;
 
 /**
  * @author D. Hout
+ *
  */
 public class Hero extends Mover {
 
@@ -69,6 +70,10 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
+
+        if (Greenfoot.isKeyDown("1")) {
+            Greenfoot.setWorld(Main.worldRegistry.getLevel(1));
+        }
         if (PauseScreen.isActive) return;
         if (!isAlive) {
             getWorld().removeObject(this);

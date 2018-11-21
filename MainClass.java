@@ -3,6 +3,11 @@ import greenfoot.World;
 
 import src.Main;
 
+/**
+ * @author D. Hout
+ *
+ */
+
 public class MainClass extends World {
 
     public MainClass() {

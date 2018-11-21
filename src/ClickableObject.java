@@ -3,6 +3,11 @@ package src;
 import greenfoot.Actor;
 import greenfoot.Greenfoot;
 
+/**
+ * @author D. Hout
+ *
+ */
+
 public class ClickableObject extends Actor {
 
     private String action;
@@ -26,6 +31,7 @@ public class ClickableObject extends Actor {
         if (Greenfoot.mouseClicked(this)) {
             switch (action) {
                 case "startGame":
+                    //Main.worldRegistry.getLevel(Main.LEVEL).loadWorld();
                     Main.worldRegistry.getLevel(Main.LEVEL).loadWorld();
                     break;
                 case "exitGame":
@@ -35,7 +41,7 @@ public class ClickableObject extends Actor {
                     pauseScreenInstance.close();
                     break;
                 case "reset":
-                    Main.worldRegistry.getLevel(Main.LEVEL).loadWorld();
+                    Main.worldRegistry.getLevel(Main.LEVEL).reset();
                     pauseScreenInstance.close();
             }
 

@@ -4,6 +4,11 @@ import greenfoot.*;
 
 import java.lang.reflect.Constructor;
 
+/**
+ * @author D. Hout
+ *
+ */
+
 public abstract class AbstractWorld extends World {
 
     private CollisionEngine ce;
@@ -18,7 +23,10 @@ public abstract class AbstractWorld extends World {
         this.setBackground("bg.png");
     }
 
-    public void loadWorld() {
+    public abstract void loadWorld();
+    public abstract void reset();
+
+    /*public void loadWorld() {
         String className = this.getClass().getName();
         try {
             Class<?> myClass = Class.forName(className);
@@ -31,8 +39,7 @@ public abstract class AbstractWorld extends World {
         catch (Exception e) {
             System.out.println(e);
         }
-
-    }
+    }*/
 
     public void renderWorld() {
         TileEngine te = new TileEngine(this, 60, 60, map);
@@ -52,7 +59,6 @@ public abstract class AbstractWorld extends World {
         setPO(2);
 
         addObject(new PauseScreen(this), 500, 400);
-        Main.backgroundSong.play();
     }
 
     public void setPO(int i) {

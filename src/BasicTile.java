@@ -3,8 +3,8 @@ package src;
 import greenfoot.*;
 
 /**
+ * @author D. Hout
  *
- * @author R. Springer
  */
 public class BasicTile extends Actor {
 
