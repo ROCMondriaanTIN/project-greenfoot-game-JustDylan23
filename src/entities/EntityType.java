@@ -1,19 +1,34 @@
 package src.entities;
 
 public enum EntityType {
-    BLUEKEY,
-    GREENKEY,
-    REDKEY,
-    YELLOWKEY,
+    KEY_BLUE ("blueKey"),
+    KEY_GREEN ("greenKey"),
+    KEY_RED ("redKey"),
+    KEY_YELLOW("yellowKey"),
 
-    STAR,
-    COIN,
-    YELLOWGEM,
+    STAR ("star"),
+    COIN ("coin"),
+    GEM("gem"),
 
-    SPIKES,
-    SPRINGBOARD,
+    SPIKES ("spikes"),
+    SPRINGBOARD ("springboard"),
 
-    FLY,
-    SLIME,
-    POKER
+    FLY ("fly"),
+    SLIME ("slime"),
+    POKER ("poker");
+
+    private String text;
+
+    EntityType(String text) {
+        this.text = text;
+    }
+
+    public static EntityType fromString(String text) {
+        for (EntityType entityType : EntityType.values()) {
+            if (entityType.text.equalsIgnoreCase(text)) {
+                return entityType;
+            }
+        }
+        return null;
+    }
 }

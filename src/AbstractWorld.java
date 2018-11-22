@@ -2,12 +2,14 @@ package src;
 
 import greenfoot.*;
 import src.entities.Entity;
+import src.entities.EntityFactory;
+import src.entities.EntityType;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * @author D. Hout
- *
  */
 
 public abstract class AbstractWorld extends World {
@@ -19,6 +21,8 @@ public abstract class AbstractWorld extends World {
     public ArrayList<Entity> entities = new ArrayList<>();
     private boolean includeHero;
     private boolean isRendered;
+    private Hero hero;
+    public Camera camera;
 
     private long debugTime = System.currentTimeMillis();
 
@@ -32,6 +36,7 @@ public abstract class AbstractWorld extends World {
 
 
     public abstract void loadWorld();
+
     public abstract void reset();
 
     /*public void loadWorld() {
@@ -51,10 +56,10 @@ public abstract class AbstractWorld extends World {
 
     public void renderWorld() {
         TileEngine te = new TileEngine(this, 60, 60, map);
-        Camera camera = new Camera(te);
+        camera = new Camera(te);
         addObject(camera, 0, 0);
 
-        Hero hero = new Hero(1, this);
+        hero = new Hero(1, this);
         camera.follow(hero);
         addObject(hero, x, y);
 
@@ -89,10 +94,30 @@ public abstract class AbstractWorld extends World {
     @Override
     public void act() {
         if (isRendered) ce.update();
-        if (System.currentTimeMillis() - debugTime > 1000) {
-            debugTime = System.currentTimeMillis();
+        if (Greenfoot.isKeyDown("enter")) {
+            if (System.currentTimeMillis() - debugTime > 3000) {
+                debugTime = System.currentTimeMillis();
+
+                System.out.println("typ een entity type");
+
+                Scanner sc = new Scanner(System.in);
+                String str = sc.next().toLowerCase().trim();
+
+                if (str == "generate") {
+                    for (Entity entity : entities) {
+                        System.out.println("");
+                    }
+                }
+
+                try {
+                    Entity entity = EntityFactory.createEntity(EntityType.fromString(str), this);
+                    entities.add(entity);
+                    addObject(entity, hero.getX(), hero.getY());
+                    System.out.println("entity added");
+                } catch (Exception e) {
+                    System.out.printf("failed, could not be added");
+                }
+            }
         }
-
-
     }
 }

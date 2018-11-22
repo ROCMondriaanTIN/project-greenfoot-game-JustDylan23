@@ -1,5 +1,6 @@
 package src.entities;
 
+import src.AbstractWorld;
 import src.entities.collectibles.Coin;
 import src.entities.collectibles.Gem;
 import src.entities.collectibles.Star;
@@ -14,34 +15,50 @@ import src.entities.keys.KeyRed;
 import src.entities.keys.KeyYellow;
 
 public class EntityFactory {
-    protected Entity createEntity(EntityType entityType) {
+    public static Entity createEntity(EntityType entityType, AbstractWorld worldInstance) {
         Entity entity;
         switch (entityType) {
-            case BLUEKEY:
-                return new KeyBlue();
-            case GREENKEY:
-                return new KeyGreen();
-            case REDKEY:
-                return new KeyRed();
-            case YELLOWKEY:
-                return new KeyYellow();
+            case KEY_BLUE:
+                entity = new KeyBlue();
+                break;
+            case KEY_GREEN:
+                entity = new KeyGreen();
+                break;
+            case KEY_RED:
+                entity = new KeyRed();
+                break;
+            case KEY_YELLOW:
+                entity = new KeyYellow();
+                break;
             case COIN:
-                return new Coin();
+                entity = new Coin();
+                break;
             case STAR:
-                return new Star();
-            case YELLOWGEM:
-                return new Gem();
+                entity = new Star();
+                break;
+            case GEM:
+                entity = new Gem();
+                break;
             case SPIKES:
-                return new Spikes();
+                entity = new Spikes();
+                break;
             case SPRINGBOARD:
-                return new SpringBoard();
+                entity = new SpringBoard();
+                break;
             case FLY:
-                return new Fly();
+                entity = new Fly();
+                break;
             case POKER:
-                return new Poker();
+                entity = new Poker();
+                break;
             case SLIME:
-                return new Slime();
+                entity = new Slime();
+                break;
+            default:
+                entity = new Entity();
+                break;
         }
-        return new Entity();
+        entity.setWorldInstance(worldInstance);
+        return entity;
     }
 }
