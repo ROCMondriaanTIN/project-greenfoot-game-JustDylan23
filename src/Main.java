@@ -31,4 +31,9 @@ public class Main extends World {
     public static GreenfootImage newTextImage(String text, int size) {
         return new GreenfootImage(text, size, Color.WHITE, new Color(0, 0, 0, 0), Color.BLACK);
     }
+
+    public static void addCoin(int amount) {
+        coinCount += amount;
+        Overlay.getInstance().updateCoinCount();
+    }
 }

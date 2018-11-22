@@ -65,10 +65,6 @@ public abstract class AbstractWorld extends World {
 
         ce = new CollisionEngine(te, camera);
         ce.addCollidingMover(hero);
-
-        Overlay overlay = new Overlay(hero, this);
-        hero.setOverlayInstance(overlay);
-        addObject(overlay, 500, 400);
         setPO(2);
 
         addObject(new PauseScreen(this), 500, 400);
@@ -103,10 +99,11 @@ public abstract class AbstractWorld extends World {
                 Scanner sc = new Scanner(System.in);
                 String str = sc.next().toLowerCase().trim();
 
-                if (str == "generate") {
+                if (str.equalsIgnoreCase("generate")) {
                     for (Entity entity : entities) {
-                        System.out.println("");
+                        System.out.println("addObject(EntityFactory.createEntity(EntityType." + entity.constructor + ", this), " + entity.getX() + ", " + entity.getY() + ");");
                     }
+                    return;
                 }
 
                 try {
@@ -115,7 +112,7 @@ public abstract class AbstractWorld extends World {
                     addObject(entity, hero.getX(), hero.getY());
                     System.out.println("entity added");
                 } catch (Exception e) {
-                    System.out.printf("failed, could not be added");
+                    System.out.println("failed, could not be added");
                 }
             }
         }
