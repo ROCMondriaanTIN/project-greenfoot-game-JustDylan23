@@ -1,8 +1,9 @@
 package src;
 
 import greenfoot.*;
+import src.entities.Entity;
 
-import java.lang.reflect.Constructor;
+import java.util.ArrayList;
 
 /**
  * @author D. Hout
@@ -12,16 +13,23 @@ import java.lang.reflect.Constructor;
 public abstract class AbstractWorld extends World {
 
     private CollisionEngine ce;
-    private int x;
-    private int y;
+    private Integer x;
+    private Integer y;
     public int[][] map;
+    public ArrayList<Entity> entities = new ArrayList<>();
+    private boolean includeHero;
+    private boolean isRendered;
 
-    public AbstractWorld(int x, int y) {
+    private long debugTime = System.currentTimeMillis();
+
+    public AbstractWorld(boolean includeHeroint, Integer x, Integer y) {
         super(1000, 800, 1, false);
+        this.includeHero = true;
         this.x = x;
         this.y = y;
-        this.setBackground("bg.png");
+        setBackground("bg.png");
     }
+
 
     public abstract void loadWorld();
     public abstract void reset();
@@ -46,7 +54,7 @@ public abstract class AbstractWorld extends World {
         Camera camera = new Camera(te);
         addObject(camera, 0, 0);
 
-        Hero hero = new Hero(1);
+        Hero hero = new Hero(1, this);
         camera.follow(hero);
         addObject(hero, x, y);
 
@@ -59,15 +67,20 @@ public abstract class AbstractWorld extends World {
         setPO(2);
 
         addObject(new PauseScreen(this), 500, 400);
+
+        for (Entity entity : entities) {
+            addObject(entity, entity.getX(), entity.getY());
+        }
+        isRendered = true;
     }
 
     public void setPO(int i) {
         switch (i) {
             case 1:
-                setPaintOrder(ClickableObject.class, PauseScreen.class, Hero.class, OverlayObject.class, Overlay.class, Tile.class);
+                setPaintOrder(ClickableObject.class, PauseScreen.class, Entity.class, Hero.class, OverlayObject.class, Overlay.class, Tile.class);
                 break;
             case 2:
-                setPaintOrder(Hero.class, ClickableObject.class, PauseScreen.class, OverlayObject.class, Overlay.class, Tile.class);
+                setPaintOrder(Entity.class, Hero.class, ClickableObject.class, PauseScreen.class, OverlayObject.class, Overlay.class, Tile.class);
                 break;
         }
 
@@ -75,6 +88,11 @@ public abstract class AbstractWorld extends World {
 
     @Override
     public void act() {
-        ce.update();
+        if (isRendered) ce.update();
+        if (System.currentTimeMillis() - debugTime > 1000) {
+            debugTime = System.currentTimeMillis();
+        }
+
+
     }
 }

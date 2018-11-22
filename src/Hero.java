@@ -9,6 +9,7 @@ import greenfoot.*;
 public class Hero extends Mover {
 
     private Overlay overlayInstance;
+    private AbstractWorld worldInstance;
 
     private final double gravity;
     private final double acc;
@@ -32,15 +33,16 @@ public class Hero extends Mover {
         return x * -1;
     }
 
-    public Hero(int heroState) {
-        setHeroState(heroState);
+    public Hero(int heroState, AbstractWorld worldInstance) {
         //Ve = Vb + a * t
         //physics
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
         setTexture("p" + heroState + "_front");
-
+        this.heroState = heroState;
+        setHeroState(heroState);
+        this.worldInstance = worldInstance;
     }
 
     public void setOverlayInstance(Overlay overlay) {
@@ -70,15 +72,11 @@ public class Hero extends Mover {
 
     @Override
     public void act() {
-
-        if (Greenfoot.isKeyDown("1")) {
-            Greenfoot.setWorld(Main.worldRegistry.getLevel(1));
-        }
         if (PauseScreen.isActive) return;
         if (!isAlive) {
             getWorld().removeObject(this);
-            Main.backgroundSong.stop();
             Greenfoot.playSound("death.wav");
+            Main.worldRegistry.getLevel(Main.LEVEL).reset();
             return;
         }
 
@@ -108,7 +106,11 @@ public class Hero extends Mover {
         if (velocityY > gravity) {
             velocityY = gravity;
         }
-        applyVelocity();
+        if (getX() < 0) {
+            setLocation(1, getY());
+        } else {
+            applyVelocity();
+        }
     }
 
     private void handleAnimation() {

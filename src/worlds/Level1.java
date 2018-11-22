@@ -48,7 +48,7 @@ public class Level1 extends AbstractWorld {
     };
 
     private Level1() {
-        super(300, 200);
+        super(true,238, 1342);
         this.map = mapRaw;
         renderWorld();
     }
@@ -59,8 +59,8 @@ public class Level1 extends AbstractWorld {
 
     @Override
     public void loadWorld() {
-        Main.backgroundSong.play();
         Greenfoot.setWorld(instance);
+        setPO(2);
     }
 
     @Override

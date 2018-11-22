@@ -33,12 +33,10 @@ public class PauseScreen extends Actor {
                     setImage("pauseScreen.png");
                     addButtons();
                     abstractWorldInstance.setPO(1);
-                    Main.backgroundSong.pause();
                 } else {
                     getImage().clear();
                     removeButtons();
                     abstractWorldInstance.setPO(2);
-                    Main.backgroundSong.play();
                 }
                 isActive = !isActive;
             }
@@ -47,8 +45,12 @@ public class PauseScreen extends Actor {
 
     public void addButtons() {
         ClickableObject continue_ = new ClickableObject("continue.png", this);
-        abstractWorldInstance.addObject(continue_, 323 ,348);
+        abstractWorldInstance.addObject(continue_, 323 ,228);
         buttons.add(continue_);
+
+        ClickableObject select = new ClickableObject("selectLevel.png", this);
+        abstractWorldInstance.addObject(select, 323 ,348);
+        buttons.add(select);
 
         ClickableObject reset = new ClickableObject("reset.png", this);
         abstractWorldInstance.addObject(reset, 323, 468);
@@ -65,7 +67,6 @@ public class PauseScreen extends Actor {
         abstractWorldInstance.setPO(2);
         Greenfoot.playSound("pause.wav");
         isActive = false;
-        Main.backgroundSong.play();
     }
 
     public void removeButtons() {
