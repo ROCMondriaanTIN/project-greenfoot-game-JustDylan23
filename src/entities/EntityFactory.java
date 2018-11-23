@@ -1,6 +1,9 @@
 package src.entities;
 
 import src.AbstractWorld;
+import src.entities.CharacterCoin.CharacterCoin1;
+import src.entities.CharacterCoin.CharacterCoin2;
+import src.entities.CharacterCoin.CharacterCoin3;
 import src.entities.collectibles.Coin;
 import src.entities.collectibles.Gem;
 import src.entities.collectibles.Star;
@@ -40,6 +43,18 @@ public class EntityFactory {
             case COIN:
                 entity = new Coin();
                 entity.constructor = "COIN";
+                break;
+            case CHARACTER_COIN_1:
+                entity = new CharacterCoin1();
+                entity.constructor = "CHARACTER_COIN_1";
+                break;
+            case CHARACTER_COIN_2:
+                entity = new CharacterCoin2();
+                entity.constructor = "CHARACTER_COIN_2";
+                break;
+            case CHARACTER_COIN_3:
+                entity = new CharacterCoin3();
+                entity.constructor = "CHARACTER_COIN_3";
                 break;
             case STAR:
                 entity = new Star();

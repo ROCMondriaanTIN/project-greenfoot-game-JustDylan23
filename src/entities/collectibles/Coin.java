@@ -3,7 +3,6 @@ package src.entities.collectibles;
 import greenfoot.Greenfoot;
 import src.Hero;
 import src.Main;
-import src.Overlay;
 
 public class Coin extends Collectible {
     public Coin() {
@@ -14,8 +13,9 @@ public class Coin extends Collectible {
     @Override
     public void act() {
         super.act();
+        if (Main.debug) return;
         if (getObjectsAtOffset(0, 0, Hero.class).size() != 0) {
-            Main.addCoin(1);
+            Main.addCoin();
             Greenfoot.playSound("coin.wav");
             getWorld().removeObject(this);
         }

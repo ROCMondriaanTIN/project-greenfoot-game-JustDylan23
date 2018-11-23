@@ -7,10 +7,6 @@ import greenfoot.*;
  *
  */
 public class Hero extends Mover {
-
-    private Overlay overlayInstance;
-    private AbstractWorld worldInstance;
-
     private final double gravity;
     private final double acc;
     private final double drag;
@@ -20,7 +16,7 @@ public class Hero extends Mover {
     private double sizeMultiplier = 1;
 
     private boolean isAlive = true;
-    public int heroState = 1;
+    public int heroState;
     private boolean isOnGround;
     private boolean isStandingStill;
     private boolean isWalking;
@@ -34,7 +30,7 @@ public class Hero extends Mover {
     }
 
     public Hero(int heroState, AbstractWorld worldInstance) {
-        //Ve = Vb + a * t
+        //Ve = a * t
         //physics
         gravity = 9.8;
         acc = 0.6;
@@ -42,14 +38,9 @@ public class Hero extends Mover {
         setTexture("p" + heroState + "_front");
         this.heroState = heroState;
         setHeroState(heroState);
-        this.worldInstance = worldInstance;
     }
 
-    public void setOverlayInstance(Overlay overlay) {
-        overlayInstance = overlay;
-    }
-
-    private void setHeroState(int heroState) {
+    public void setHeroState(int heroState) {
         if (this.heroState != heroState) Greenfoot.playSound("powerup.wav");
         if (heroState == 1) {
             walkSpeed = 7;
@@ -65,14 +56,13 @@ public class Hero extends Mover {
             sizeMultiplier = 0.7;
         } else throw new IllegalArgumentException("Invalid heroState\nheroState must be 1, 2 or 3");
         this.heroState = heroState;
-        if (overlayInstance != null) {
-            overlayInstance.updateHeroState(this.heroState);
-        }
+        Main.worldInstance.overlay.updateHeroState(this.heroState);
     }
 
     @Override
     public void act() {
         if (PauseScreen.isActive) return;
+
         if (!isAlive) {
             getWorld().removeObject(this);
             Greenfoot.playSound("death.wav");
@@ -203,34 +193,32 @@ public class Hero extends Mover {
      */
 
     private void updateOnGroundStats() {
-        int width = getImage().getWidth() / 2;
+        int dx = getImage().getWidth() / 2;
+        int dy = getImage().getHeight() / 2 + 1;
 
-        if (velocityY > 0) {
+        //checks if here is not going up or down
+        if (velocityY != 0) {
             isOnGround = false;
             return;
         }
-
-        Boolean successRate = false;
-
-        for (Tile tile : getObjectsAtOffset(0, getImage().getHeight() / 2 + 1, Tile.class)) {
-            if (tile.isSolid) successRate = true;
+        //checks tile exacly under hero
+        for (Tile tile : getObjectsAtOffset(0, dy, Tile.class)) {
+            if (tile.isSolid) isOnGround = true;
+            break;
         }
-        if (!successRate) {
-            for (Tile tile : getObjectsAtOffset(width - 3, getImage().getHeight() / 2 + 1, Tile.class)) {
-                if (tile.isSolid) successRate = true;
+        //checks if hero is on the edge of a block
+        if (!isOnGround) {
+            for (Tile tile : getObjectsAtOffset(dx - 3, dy, Tile.class)) {
+                if (tile.isSolid) isOnGround = true;
+                break;
             }
-            if (!successRate) {
-                for (Tile tile : getObjectsAtOffset((int) invert(width) + 3, getImage().getHeight() / 2 + 1, Tile.class)) {
-                    if (tile.isSolid) successRate = true;
+            if (!isOnGround) {
+                for (Tile tile : getObjectsAtOffset(dx * -1 + 3, dy, Tile.class)) {
+                    if (tile.isSolid) isOnGround = true;
+                    break;
                 }
             }
         }
-
-        for (Tile tile : getObjectsAtOffset(0, getImage().getHeight() / 2 + 1, Tile.class)) {
-            if (tile.isSolid) successRate = true;
-            break;
-        }
-        isOnGround = successRate;
     }
 
     private void updateIsWalking() {
@@ -310,7 +298,7 @@ public class Hero extends Mover {
                         Greenfoot.playSound("coin.wav");
                         tile.setTileImage("boxCoinDisabled");
                         tile.setType(TileType.BOX);
-                        Main.addCoin(1);
+                        Main.addCoin();
                     } else if (tile.type == TileType.BOX) {
                         Greenfoot.playSound("bump.wav");
                     }

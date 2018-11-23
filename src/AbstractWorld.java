@@ -5,6 +5,7 @@ import src.entities.Entity;
 import src.entities.EntityFactory;
 import src.entities.EntityType;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -19,16 +20,15 @@ public abstract class AbstractWorld extends World {
     private Integer y;
     public int[][] map;
     public ArrayList<Entity> entities = new ArrayList<>();
-    private boolean includeHero;
     private boolean isRendered;
-    private Hero hero;
+    public Hero hero;
     public Camera camera;
+    public Overlay overlay = new Overlay();
 
     private long debugTime = System.currentTimeMillis();
 
-    public AbstractWorld(boolean includeHeroint, Integer x, Integer y) {
+    public AbstractWorld(Integer x, Integer y) {
         super(1000, 800, 1, false);
-        this.includeHero = true;
         this.x = x;
         this.y = y;
         setBackground("bg.png");
@@ -39,22 +39,8 @@ public abstract class AbstractWorld extends World {
 
     public abstract void reset();
 
-    /*public void loadWorld() {
-        String className = this.getClass().getName();
-        try {
-            Class<?> myClass = Class.forName(className);
-            Constructor<?> ctr = myClass.getConstructor();
-            World world = (World) ctr.newInstance();
-            if(world != null) {
-                Greenfoot.setWorld(world);
-            }
-        }
-        catch (Exception e) {
-            System.out.println(e);
-        }
-    }*/
-
     public void renderWorld() {
+        Main.worldInstance = this;
         TileEngine te = new TileEngine(this, 60, 60, map);
         camera = new Camera(te);
         addObject(camera, 0, 0);
@@ -68,10 +54,12 @@ public abstract class AbstractWorld extends World {
         setPO(2);
 
         addObject(new PauseScreen(this), 500, 400);
+        addObject(overlay, 500, 400);
 
         for (Entity entity : entities) {
             addObject(entity, entity.getX(), entity.getY());
         }
+        overlay.addButtons();
         isRendered = true;
     }
 
@@ -87,6 +75,11 @@ public abstract class AbstractWorld extends World {
 
     }
 
+    public void addEntity(Entity entity, int x, int y) {
+        addObject(entity, x, y);
+        entities.add(entity);
+    }
+
     @Override
     public void act() {
         if (isRendered) ce.update();
@@ -94,15 +87,17 @@ public abstract class AbstractWorld extends World {
             if (System.currentTimeMillis() - debugTime > 3000) {
                 debugTime = System.currentTimeMillis();
 
-                System.out.println("typ een entity type");
-
-                Scanner sc = new Scanner(System.in);
-                String str = sc.next().toLowerCase().trim();
+                String str = JOptionPane.showInputDialog("request:");
 
                 if (str.equalsIgnoreCase("generate")) {
                     for (Entity entity : entities) {
-                        System.out.println("addObject(EntityFactory.createEntity(EntityType." + entity.constructor + ", this), " + entity.getX() + ", " + entity.getY() + ");");
+                        System.out.println("addEntity(EntityFactory.createEntity(EntityType." + entity.constructor + ", this), " + entity.getX() + ", " + entity.getY() + ");");
                     }
+                    return;
+                } else if (str.equalsIgnoreCase("debug")) {
+                    System.out.println("debug toggled");
+                    Main.debug = !Main.debug;
+                    System.out.println(Main.debug);
                     return;
                 }
 

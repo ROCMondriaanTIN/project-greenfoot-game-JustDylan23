@@ -21,7 +21,7 @@ public class LevelSelecting extends AbstractWorld {
             new Location(435, 684), new Location(780, 677)};
 
     LevelSelecting() {
-        super(false, null, null);
+        super(null, null);
         setBackground("levelSelecting.png");
         for (int i = 1; i < 8; i++) {
             ClickableObject object = new ClickableObject("levelHitbox.png", this);

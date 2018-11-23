@@ -51,13 +51,16 @@ public class Level1 extends AbstractWorld {
     };
 
     private Level1() {
-        super(true,238, 1342);
+        super(238, 1342);
         this.map = mapRaw;
         renderWorld();
 
-        addObject(EntityFactory.createEntity(EntityType.COIN, this), 689, 1348);
-        addObject(EntityFactory.createEntity(EntityType.COIN, this), 628, 1347);
-        addObject(EntityFactory.createEntity(EntityType.COIN, this), 571, 1347);
+        addEntity(EntityFactory.createEntity(EntityType.COIN, this), 690, 1350);
+        addEntity(EntityFactory.createEntity(EntityType.COIN, this), 630, 1350);
+        addEntity(EntityFactory.createEntity(EntityType.COIN, this), 570, 1350);
+        addEntity(EntityFactory.createEntity(EntityType.CHARACTER_COIN_1, this), 810, 1350);
+        addEntity(EntityFactory.createEntity(EntityType.CHARACTER_COIN_2, this), 870, 1350);
+        addEntity(EntityFactory.createEntity(EntityType.CHARACTER_COIN_3, this), 930, 1350);
     }
 
     public static Level1 getInstance() {

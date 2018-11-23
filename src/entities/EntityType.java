@@ -9,6 +9,9 @@ public enum EntityType {
     STAR ("star"),
     COIN ("coin"),
     GEM("gem"),
+    CHARACTER_COIN_1 ("characterCoin1"),
+    CHARACTER_COIN_2 ("characterCoin2"),
+    CHARACTER_COIN_3 ("characterCoin3"),
 
     SPIKES ("spikes"),
     SPRINGBOARD ("springboard"),

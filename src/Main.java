@@ -10,8 +10,12 @@ import src.worlds.LevelSelecting;
  */
 
 public class Main extends World {
+
+    public static boolean debug = false;
     
     public static int coinCount;
+
+    public static AbstractWorld worldInstance;
 
     public static final WorldRegistry worldRegistry = new WorldRegistry();
     public static int LEVEL = 1;
@@ -32,8 +36,8 @@ public class Main extends World {
         return new GreenfootImage(text, size, Color.WHITE, new Color(0, 0, 0, 0), Color.BLACK);
     }
 
-    public static void addCoin(int amount) {
-        coinCount += amount;
-        Overlay.getInstance().updateCoinCount();
+    public static void addCoin() {
+        coinCount++;
+        worldInstance.overlay.updateCoinCount();
     }
 }
