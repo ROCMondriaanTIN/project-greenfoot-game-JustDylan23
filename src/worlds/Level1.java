@@ -3,6 +3,9 @@ package src.worlds;
 import greenfoot.Greenfoot;
 import src.AbstractWorld;
 import src.Main;
+import src.Overlay;
+import src.entities.EntityFactory;
+import src.entities.EntityType;
 
 /**
  * @author D. Hout
@@ -51,6 +54,10 @@ public class Level1 extends AbstractWorld {
         super(true,238, 1342);
         this.map = mapRaw;
         renderWorld();
+
+        addObject(EntityFactory.createEntity(EntityType.COIN, this), 689, 1348);
+        addObject(EntityFactory.createEntity(EntityType.COIN, this), 628, 1347);
+        addObject(EntityFactory.createEntity(EntityType.COIN, this), 571, 1347);
     }
 
     public static Level1 getInstance() {

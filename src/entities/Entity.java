@@ -8,6 +8,7 @@ import src.Mover;
 public class Entity extends Mover {
 
     private AbstractWorld worldInstance;
+    public String constructor;
 
     public Entity() {
     }

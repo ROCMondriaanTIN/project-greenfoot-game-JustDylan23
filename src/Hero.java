@@ -310,7 +310,7 @@ public class Hero extends Mover {
                         Greenfoot.playSound("coin.wav");
                         tile.setTileImage("boxCoinDisabled");
                         tile.setType(TileType.BOX);
-                        overlayInstance.addCoin();
+                        Main.addCoin(1);
                     } else if (tile.type == TileType.BOX) {
                         Greenfoot.playSound("bump.wav");
                     }
