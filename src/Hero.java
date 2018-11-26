@@ -1,7 +1,6 @@
 package src;
 
 import greenfoot.*;
-import src.entities.gameplayobjects.SpringBoard;
 
 /**
  * @author D. Hout
@@ -16,7 +15,7 @@ public class Hero extends Mover {
     private double jumpSpeed;
     private double sizeMultiplier = 1;
 
-    private boolean isAlive = true;
+    public boolean isAlive = true;
     public int heroState;
     public boolean isOnGround;
     private boolean isStandingStill;
@@ -299,11 +298,11 @@ public class Hero extends Mover {
             for (Tile tile : getObjectsAtOffset(0, getImage().getHeight() / 2 * -1 -1, Tile.class)) {
                 if (tile.isSolid) {
                     hitBlock = true;
-                    if (tile.type == TileType.BREAKABLEBLOCK) {
+                    if (tile.type == TileType.BREAKABLE_BLOCK) {
                         Greenfoot.playSound("blockhit.wav");
                         tile.isSolid = false;
                         tile.getImage().clear();
-                    } else if (tile.type == TileType.COINBOX) {
+                    } else if (tile.type == TileType.COIN_BOX) {
                         Greenfoot.playSound("coin.wav");
                         tile.setTileImage("boxCoinDisabled");
                         tile.setType(TileType.BOX);

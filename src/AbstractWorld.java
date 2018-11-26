@@ -91,7 +91,7 @@ public abstract class AbstractWorld extends World {
 
                 if (str.equalsIgnoreCase("generate")) {
                     for (Entity entity : entities) {
-                        System.out.println("addEntity(EntityFactory.createEntity(EntityType." + entity.constructor + ", this), " + entity.getX() + ", " + entity.getY() + ");");
+                        System.out.println("addEntity(EntityFactory.createEntity(EntityType." + entity.constructor + "), " + entity.getX() + ", " + entity.getY() + ");");
                     }
                     return;
                 } else if (str.equalsIgnoreCase("debug")) {
@@ -100,15 +100,17 @@ public abstract class AbstractWorld extends World {
                     System.out.println(Main.debug);
                     return;
                 }
-
+                EntityType type;
                 try {
-                    Entity entity = EntityFactory.createEntity(EntityType.fromString(str), this);
-                    entities.add(entity);
-                    addObject(entity, hero.getX(), hero.getY());
-                    System.out.println("entity added");
+                    type = EntityType.fromString(str);
                 } catch (Exception e) {
                     System.out.println("failed, could not be added");
+                    return;
                 }
+                Entity entity = EntityFactory.createEntity(type);
+                entities.add(entity);
+                addObject(entity, hero.getX(), hero.getY());
+                System.out.println("entity added");
             }
         }
     }

@@ -1,10 +1,10 @@
 package src.entities;
 
 public enum EntityType {
-    KEY_BLUE ("blueKey"),
-    KEY_GREEN ("greenKey"),
-    KEY_RED ("redKey"),
-    KEY_YELLOW("yellowKey"),
+    KEY_BLUE ("keyBlue"),
+    KEY_GREEN ("keyGreen"),
+    KEY_RED ("keyRed"),
+    KEY_YELLOW("keyYellow"),
 
     STAR ("star"),
     COIN ("coin"),

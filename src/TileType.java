@@ -11,7 +11,11 @@ public enum TileType {
     LIQUID,
     BOX,
     LADDER,
-    COINBOX,
-    BREAKABLEBLOCK,
-    BRIDGE
+    COIN_BOX,
+    BREAKABLE_BLOCK,
+    BRIDGE,
+    LOCK_BLUE,
+    LOCK_GREEN,
+    LOCK_RED,
+    LOCK_YELLOW
 }

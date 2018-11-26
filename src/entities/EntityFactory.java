@@ -19,7 +19,7 @@ import src.entities.keys.KeyYellow;
 
 public class EntityFactory {
 
-    public static Entity createEntity(EntityType entityType, AbstractWorld worldInstance) {
+    public static Entity createEntity(EntityType entityType) {
 
         Entity entity;
 
@@ -88,7 +88,6 @@ public class EntityFactory {
                 entity = new Entity();
                 break;
         }
-        entity.setWorldInstance(worldInstance);
         return entity;
     }
 }

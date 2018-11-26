@@ -27,7 +27,7 @@ public class TileFactory {
                 break;
             case 2:
                 tile.setTileImage("boxCoin");
-                tile.setType(TileType.COINBOX);
+                tile.setType(TileType.COIN_BOX);
                 break;
             case 3:
                 tile.setTileImage("boxCoinAlt");
@@ -42,7 +42,7 @@ public class TileFactory {
                 break;
             case 6:
                 tile.setTileImage("boxEmpty");
-                tile.setType(TileType.BREAKABLEBLOCK);
+                tile.setType(TileType.BREAKABLE_BLOCK);
                 break;
             case 7:
                 tile.setTileImage("boxExplosive");
@@ -334,12 +334,10 @@ public class TileFactory {
                 break;
             case 91:
                 tile.setTileImage("liquidLavaTop");
-                tile.setType(TileType.LIQUID);
                 tile.isSolid = false;
                 break;
             case 92:
                 tile.setTileImage("liquidLavaTopMid");
-                tile.setType(TileType.LIQUID);
                 tile.isSolid = false;
                 break;
             case 93:
@@ -349,25 +347,27 @@ public class TileFactory {
                 break;
             case 94:
                 tile.setTileImage("liquidWaterTop");
-                tile.setType(TileType.LIQUID);
                 tile.isSolid = false;
                 break;
             case 95:
                 tile.setTileImage("liquidWaterTopMid");
-                tile.setType(TileType.LIQUID);
                 tile.isSolid = false;
                 break;
             case 96:
                 tile.setTileImage("lockBlue");
+                tile.setType(TileType.LOCK_BLUE);
                 break;
             case 97:
                 tile.setTileImage("lockGreen");
+                tile.setType(TileType.LOCK_GREEN);
                 break;
             case 98:
                 tile.setTileImage("lockRed");
+                tile.setType(TileType.LOCK_RED);
                 break;
             case 99:
                 tile.setTileImage("lockYellow");
+                tile.setType(TileType.LOCK_YELLOW);
                 break;
             case 100:
                 tile.setTileImage("rockHillLeft");

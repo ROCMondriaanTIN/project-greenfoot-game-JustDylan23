@@ -2,6 +2,7 @@ package src;
 
 import greenfoot.*;
 import src.worlds.Level1;
+import src.worlds.Level2;
 import src.worlds.LevelSelecting;
 
 /**
@@ -27,6 +28,7 @@ public class Main extends World {
 
         worldRegistry.registerLevel(0, LevelSelecting.getInstance());
         worldRegistry.registerLevel(1, Level1.getInstance());
+        worldRegistry.registerLevel(2 , Level2.getInstance());
 
         addObject(new ClickableObject("startGame.png"), 323 ,348);
         addObject(new ClickableObject("exitGame.png"), 323 ,548);

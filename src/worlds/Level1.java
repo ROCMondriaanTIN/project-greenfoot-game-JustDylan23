@@ -55,13 +55,16 @@ public class Level1 extends AbstractWorld {
         this.map = mapRaw;
         renderWorld();
 
-        addEntity(EntityFactory.createEntity(EntityType.COIN, this), 690, 1350);
-        addEntity(EntityFactory.createEntity(EntityType.COIN, this), 630, 1350);
-        addEntity(EntityFactory.createEntity(EntityType.COIN, this), 570, 1350);
-        addEntity(EntityFactory.createEntity(EntityType.CHARACTER_COIN_1, this), 810, 1350);
-        addEntity(EntityFactory.createEntity(EntityType.CHARACTER_COIN_2, this), 870, 1350);
-        addEntity(EntityFactory.createEntity(EntityType.CHARACTER_COIN_3, this), 930, 1350);
-        addEntity(EntityFactory.createEntity(EntityType.COIN, this), 510, 1350);
+        addEntity(EntityFactory.createEntity(EntityType.COIN), 690, 1350);
+        addEntity(EntityFactory.createEntity(EntityType.COIN), 630, 1350);
+        addEntity(EntityFactory.createEntity(EntityType.COIN), 570, 1350);
+        addEntity(EntityFactory.createEntity(EntityType.COIN), 510, 1350);
+        addEntity(EntityFactory.createEntity(EntityType.CHARACTER_COIN_1), 990, 1350);
+        addEntity(EntityFactory.createEntity(EntityType.CHARACTER_COIN_2), 870, 1350);
+        addEntity(EntityFactory.createEntity(EntityType.CHARACTER_COIN_3), 930, 1350);
+        addEntity(EntityFactory.createEntity(EntityType.SPIKES), 1710, 990);
+        addEntity(EntityFactory.createEntity(EntityType.SPIKES), 1770, 990);
+        addEntity(EntityFactory.createEntity(EntityType.SPIKES), 1830, 990);
     }
 
     public static Level1 getInstance() {

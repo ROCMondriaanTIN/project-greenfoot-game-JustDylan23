@@ -8,15 +8,9 @@ import src.Mover;
 import src.TileEngine;
 
 public class Entity extends Mover {
-
-    private AbstractWorld worldInstance;
     public String constructor;
 
     public Entity() {
-    }
-
-    public void setWorldInstance(AbstractWorld worldInstance) {
-        this.worldInstance = worldInstance;
     }
 
     @Override
@@ -28,7 +22,7 @@ public class Entity extends Mover {
         if (Main.debug) {
             if (Greenfoot.mouseDragged(this)) {
                 MouseInfo mouse = Greenfoot.getMouseInfo();
-                setLocation(mouse.getX() + worldInstance.camera.getX(), mouse.getY() + worldInstance.camera.getY());
+                setLocation(mouse.getX() + Main.worldInstance.camera.getX(), mouse.getY() + Main.worldInstance.camera.getY());
             } if (Greenfoot.mouseDragEnded(this)) {
                 int x = (int) Math.floor(getX() / (double) TileEngine.TILE_WIDTH);
                 int y = (int) Math.floor(getY() / (double) TileEngine.TILE_HEIGHT);
