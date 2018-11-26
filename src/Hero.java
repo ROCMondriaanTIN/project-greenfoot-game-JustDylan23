@@ -1,6 +1,7 @@
 package src;
 
 import greenfoot.*;
+import src.entities.gameplayobjects.SpringBoard;
 
 /**
  * @author D. Hout
@@ -17,7 +18,7 @@ public class Hero extends Mover {
 
     private boolean isAlive = true;
     public int heroState;
-    private boolean isOnGround;
+    public boolean isOnGround;
     private boolean isStandingStill;
     private boolean isWalking;
     private double walkState = 0;
@@ -25,13 +26,13 @@ public class Hero extends Mover {
     private boolean isClimbing = false;
     private boolean hitBlock = false;
 
+    private long time = System.currentTimeMillis();
+
     private double invert(double x) {
         return x * -1;
     }
 
-    public Hero(int heroState, AbstractWorld worldInstance) {
-        //Ve = a * t
-        //physics
+    public Hero(int heroState) {
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
@@ -147,13 +148,14 @@ public class Hero extends Mover {
     private void handleAmbientAnimation() {
         if (isStandingStill) {
             setTextureWithDirection("p" + heroState + "_front");
+            isOnGround = true;
         }
     }
 
     private void handleWalingAnimation() {
         if (isWalking) {
             walkState += 0.25;
-            setTextureWithDirection("p" + heroState + "_walk\\" + (int) Math.ceil(walkState), 61, 82);
+            setTextureWithDirection("p" + heroState + "_walk\\" + (int) Math.ceil(walkState));
             if (walkState == 11) walkState = 0;
         } else walkState = 0;
     }
@@ -165,7 +167,14 @@ public class Hero extends Mover {
      */
 
     private void jumpingHandler() {
-        if ((isOnGround && velocityY == 0) || isClimbing) {
+        if (Greenfoot.isKeyDown("space")) {
+            Long timeTemp = time;
+            time = System.currentTimeMillis();
+            if (System.currentTimeMillis() - timeTemp < 25) {
+                return;
+            }
+        }
+        if ((isOnGround) || isClimbing) {
             if (Greenfoot.isKeyDown("space")) {
                 velocityY = jumpSpeed;
                 isOnGround = false;
@@ -319,20 +328,20 @@ public class Hero extends Mover {
         getImage().scale((int) Math.round(56 * sizeMultiplier), (int) Math.round(77 * sizeMultiplier));
     }
 
-    private void setTexture(String texture, int width, int height) {
+    /*private void setTexture(String texture, int width, int height) {
         setImage("Player\\" + texture + ".png");
         getImage().scale((int) Math.round(width * sizeMultiplier), (int) Math.round(height * sizeMultiplier));
-    }
+    }*/
 
     private void setTextureWithDirection(String texture) {
         setTexture(texture);
         if (!direction) getImage().mirrorHorizontally();
     }
 
-    private void setTextureWithDirection(String texture, int width, int height) {
+    /*private void setTextureWithDirection(String texture, int width, int height) {
         setTexture(texture, width, height);
         if (!direction) getImage().mirrorHorizontally();
-    }
+    }*/
 
     public int getWidth() {
         return getImage().getWidth();

@@ -61,6 +61,7 @@ public class Level1 extends AbstractWorld {
         addEntity(EntityFactory.createEntity(EntityType.CHARACTER_COIN_1, this), 810, 1350);
         addEntity(EntityFactory.createEntity(EntityType.CHARACTER_COIN_2, this), 870, 1350);
         addEntity(EntityFactory.createEntity(EntityType.CHARACTER_COIN_3, this), 930, 1350);
+        addEntity(EntityFactory.createEntity(EntityType.COIN, this), 510, 1350);
     }
 
     public static Level1 getInstance() {

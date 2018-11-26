@@ -2,25 +2,65 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90d26ec0-945c-4af6-9686-9d44641654b5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/entities/CharacterCoin/CharacterCoin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/CharacterCoin/CharacterCoin1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/CharacterCoin/CharacterCoin2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/CharacterCoin/CharacterCoin3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/worlds/Level2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Items/items_spritesheet.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/items_spritesheet.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/tiles.tsx.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/tiles.tsx.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/HUD/hud_spritesheet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/images/HUD/hud_spritesheet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p1_back.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p1_back.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p1_fall.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p1_fall.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p1_front.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p1_front.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p1_hurt.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p1_hurt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p1_jump.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p1_jump.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p1_stand.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p1_stand.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p1_walk/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p1_walk/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p1_walk/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p1_walk/10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p1_walk/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p1_walk/11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p1_walk/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p1_walk/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p1_walk/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p1_walk/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p1_walk/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p1_walk/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p1_walk/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p1_walk/5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p1_walk/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p1_walk/6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p1_walk/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p1_walk/7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p1_walk/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p1_walk/8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p1_walk/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p1_walk/9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p2_back.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p2_back.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p2_fall.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p2_fall.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p2_front.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p2_front.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p2_hurt.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p2_hurt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p2_jump.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p2_jump.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p2_stand.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p2_stand.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p2_walk/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p2_walk/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p2_walk/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p2_walk/10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p2_walk/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p2_walk/11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p2_walk/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p2_walk/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p2_walk/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p2_walk/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p2_walk/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p2_walk/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p2_walk/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p2_walk/5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p2_walk/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p2_walk/6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p2_walk/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p2_walk/7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p2_walk/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p2_walk/8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p2_walk/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p2_walk/9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p3_back.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p3_back.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p3_fall.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p3_fall.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p3_front.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p3_front.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p3_hurt.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p3_hurt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p3_jump.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p3_jump.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p3_stand.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p3_stand.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p3_walk/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p3_walk/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p3_walk/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p3_walk/10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p3_walk/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p3_walk/11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p3_walk/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p3_walk/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p3_walk/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p3_walk/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p3_walk/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p3_walk/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p3_walk/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p3_walk/5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p3_walk/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p3_walk/6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p3_walk/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p3_walk/7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p3_walk/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p3_walk/8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Player/p3_walk/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Player/p3_walk/9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Vector/enemies.svg" beforeDir="false" afterPath="$PROJECT_DIR$/images/Vector/enemies.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Vector/tiles.svg" beforeDir="false" afterPath="$PROJECT_DIR$/images/Vector/tiles.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AbstractWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractWorld.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Overlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Overlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/EntityFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/EntityFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/EntityType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/EntityType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/collectibles/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/collectibles/Coin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mover.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/gameplayobjects/SpringBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/gameplayobjects/SpringBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/worlds/Level1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/worlds/Level1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tiles.tsx.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/tiles.tsx.tmx" afterDir="false" />
     </list>
@@ -53,32 +93,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AbstractWorld.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/entities/EntityFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="56" column="54" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entities/Entity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -86,24 +105,48 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/worlds/Level1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="62" column="92" selection-start-line="62" selection-start-column="92" selection-end-line="62" selection-end-column="92" />
+            <state relative-caret-position="555">
+              <caret line="71" column="13" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6951#6952#0" expanded="true" />
-                <element signature="e#6982#6983#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/entities/CharacterCoin/CharacterCoin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/entities/CharacterCoin/CharacterCoin.java">
+        <entry file="file://$PROJECT_DIR$/src/entities/CharacterCoin/CharacterCoin2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="63" selection-start-line="27" selection-start-column="63" selection-end-line="27" selection-end-column="63" />
+            <state relative-caret-position="68">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#116#117#0" expanded="true" />
+                <element signature="e#140#141#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/entities/CharacterCoin/CharacterCoin1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+              <folding>
+                <element signature="e#116#117#0" expanded="true" />
+                <element signature="e#140#141#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -112,12 +155,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/worlds/Level2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+            <state relative-caret-position="187">
+              <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#345#346#0" expanded="true" />
-                <element signature="e#376#377#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/worlds/LevelSelecting.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -127,19 +180,7 @@
         <entry file="file://$PROJECT_DIR$/src/entities/EntityType.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WorldRegistry.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -147,7 +188,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
+            <state relative-caret-position="187">
               <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -159,12 +200,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Hero.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="42" column="45" lean-forward="true" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
+            <state relative-caret-position="731">
+              <caret line="43" column="45" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
               <folding>
-                <element signature="e#6288#6289#0" expanded="true" />
-                <element signature="e#6783#6784#0" expanded="true" />
+                <element signature="e#9851#9852#0" expanded="true" />
                 <element signature="e#9895#9896#0" expanded="true" />
+                <element signature="e#9925#9926#0" expanded="true" />
                 <element signature="e#9970#9971#0" expanded="true" />
               </folding>
             </state>
@@ -223,7 +264,6 @@
         <option value="$PROJECT_DIR$/src/TileType.java" />
         <option value="$PROJECT_DIR$/src/Enemy.java" />
         <option value="$PROJECT_DIR$/src/WorldRegistry.java" />
-        <option value="$PROJECT_DIR$/src/worlds/LevelSelecting.java" />
         <option value="$PROJECT_DIR$/src/ClickableObject.java" />
         <option value="$PROJECT_DIR$/src/PauseScreen.java" />
         <option value="$PROJECT_DIR$/src/Entity.java" />
@@ -253,17 +293,18 @@
         <option value="$PROJECT_DIR$/src/Overlay.java" />
         <option value="$PROJECT_DIR$/src/entities/collectibles/Coin.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/worlds/Level2.java" />
         <option value="$PROJECT_DIR$/src/Hero.java" />
         <option value="$PROJECT_DIR$/src/entities/EntityType.java" />
         <option value="$PROJECT_DIR$/src/entities/EntityFactory.java" />
         <option value="$PROJECT_DIR$/src/entities/CharacterCoin/CharacterCoin1.java" />
         <option value="$PROJECT_DIR$/src/entities/CharacterCoin/CharacterCoin2.java" />
         <option value="$PROJECT_DIR$/src/entities/CharacterCoin/CharacterCoin3.java" />
-        <option value="$PROJECT_DIR$/src/worlds/Level1.java" />
         <option value="$PROJECT_DIR$/src/entities/CharacterCoin/CharacterCoin.java" />
         <option value="$PROJECT_DIR$/src/entities/Entity.java" />
         <option value="$PROJECT_DIR$/src/AbstractWorld.java" />
+        <option value="$PROJECT_DIR$/src/worlds/Level2.java" />
+        <option value="$PROJECT_DIR$/src/worlds/LevelSelecting.java" />
+        <option value="$PROJECT_DIR$/src/worlds/Level1.java" />
       </list>
     </option>
   </component>
@@ -284,8 +325,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -321,12 +360,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542973552431" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542973773488" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -406,7 +447,8 @@
       <workItem from="1542883375732" duration="110000" />
       <workItem from="1542895335078" duration="401000" />
       <workItem from="1542896287786" duration="2834000" />
-      <workItem from="1542959215622" duration="11946000" />
+      <workItem from="1542959215622" duration="12268000" />
+      <workItem from="1543221179841" duration="401000" />
     </task>
     <task id="LOCAL-00001" summary="changed hero speed">
       <created>1542269991109</created>
@@ -506,17 +548,23 @@
       <option name="project" value="LOCAL" />
       <updated>1542883419547</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="updated entities">
+      <created>1542973773311</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1542973773313</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95966000" />
+    <option name="totallyTimeSpent" value="96689000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.38113007" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.38539445" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -526,7 +574,7 @@
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49946696" visible="true" weight="0.30769232" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49946696" weight="0.30769232" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -567,7 +615,8 @@
     <MESSAGE value="improved world loading" />
     <MESSAGE value="prepairing for entities" />
     <MESSAGE value="uploading whole project" />
-    <option name="LAST_COMMIT_MESSAGE" value="uploading whole project" />
+    <MESSAGE value="updated entities" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated entities" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/ItemObject.java">
@@ -595,16 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/worlds/LevelSelecting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="66" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -833,23 +872,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Hero.java">
+    <entry file="file://$PROJECT_DIR$/src/entities/CharacterCoin/CharacterCoin3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="42" column="45" lean-forward="true" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
           <folding>
-            <element signature="e#6288#6289#0" expanded="true" />
-            <element signature="e#6783#6784#0" expanded="true" />
-            <element signature="e#9895#9896#0" expanded="true" />
-            <element signature="e#9970#9971#0" expanded="true" />
+            <element signature="e#116#117#0" expanded="true" />
+            <element signature="e#140#141#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/entities/keys/Key.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+        <state relative-caret-position="68">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/EntityFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="56" column="54" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/worlds/Level2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/worlds/LevelSelecting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -859,17 +937,39 @@
     <entry file="file://$PROJECT_DIR$/src/entities/EntityType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="37" />
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/CharacterCoin/CharacterCoin1.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        <state relative-caret-position="187">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
           <folding>
-            <element signature="e#116#117#0" expanded="true" />
-            <element signature="e#140#141#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Hero.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="45" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
+          <folding>
+            <element signature="e#9851#9852#0" expanded="true" />
+            <element signature="e#9895#9896#0" expanded="true" />
+            <element signature="e#9925#9926#0" expanded="true" />
+            <element signature="e#9970#9971#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/worlds/Level1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="71" column="13" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -885,7 +985,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/CharacterCoin/CharacterCoin3.java">
+    <entry file="file://$PROJECT_DIR$/src/entities/CharacterCoin/CharacterCoin1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
@@ -896,68 +996,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/EntityFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="56" column="54" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/worlds/Level2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#345#346#0" expanded="true" />
-            <element signature="e#376#377#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/keys/Key.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/worlds/Level1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="62" column="92" selection-start-line="62" selection-start-column="92" selection-end-line="62" selection-end-column="92" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6951#6952#0" expanded="true" />
-            <element signature="e#6982#6983#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/CharacterCoin/CharacterCoin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="63" selection-start-line="27" selection-start-column="63" selection-end-line="27" selection-end-column="63" />
+        <state relative-caret-position="153">
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AbstractWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
         </state>
       </provider>
     </entry>

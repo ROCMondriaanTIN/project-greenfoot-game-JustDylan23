@@ -45,7 +45,7 @@ public abstract class AbstractWorld extends World {
         camera = new Camera(te);
         addObject(camera, 0, 0);
 
-        hero = new Hero(1, this);
+        hero = new Hero(1);
         camera.follow(hero);
         addObject(hero, x, y);
 
@@ -84,7 +84,7 @@ public abstract class AbstractWorld extends World {
     public void act() {
         if (isRendered) ce.update();
         if (Greenfoot.isKeyDown("enter")) {
-            if (System.currentTimeMillis() - debugTime > 3000) {
+            if (System.currentTimeMillis() - debugTime > 1000) {
                 debugTime = System.currentTimeMillis();
 
                 String str = JOptionPane.showInputDialog("request:");
