@@ -68,7 +68,6 @@ public class Hero extends Mover {
             Main.worldRegistry.getLevel(Main.LEVEL).reset();
             return;
         }
-
         handleMovement();
         handleHeroStats();
         handleWorldInteraction();
@@ -135,17 +134,17 @@ public class Hero extends Mover {
     private void handleInAirAnimation() {
         if (isClimbing) return;
         if (velocityY < 0 && !isOnGround) {
-            setTextureWithDirection(5);
+            setTextureWithDirection("p" + heroState + "_jump");
         } else if (velocityY > 0 && !isOnGround && Math.abs(velocityX) > 0.3) {
-            setTextureWithDirection(2);
+            setTextureWithDirection("p" + heroState + "_fall");
         } else if (velocityY > 0 && !isOnGround && Math.abs(velocityX) < 0.3) {
-            setTextureWithDirection(3);
+            setTextureWithDirection("p" + heroState + "_front");
         }
     }
 
     private void handleAmbientAnimation() {
         if (isStandingStill) {
-            setTextureWithDirection(3);
+            setTextureWithDirection("p" + heroState + "_front");
             isOnGround = true;
         }
     }
@@ -153,7 +152,7 @@ public class Hero extends Mover {
     private void handleWalingAnimation() {
         if (isWalking) {
             walkState += 0.25;
-            setTextureWithDirection((int) Math.ceil(walkState) + 6);
+            setTextureWithDirection("p" + heroState + "_walk\\" + (int) Math.ceil(walkState));
             if (walkState == 11) walkState = 0;
         } else walkState = 0;
     }
@@ -166,7 +165,7 @@ public class Hero extends Mover {
 
     private void jumpingHandler() {
         if (Greenfoot.isKeyDown("space")) {
-            long timeTemp = time;
+            Long timeTemp = time;
             time = System.currentTimeMillis();
             if (System.currentTimeMillis() - timeTemp < 25) {
                 return;
@@ -280,11 +279,11 @@ public class Hero extends Mover {
         for (Tile tile : getObjectsAtOffset(0, -5, Tile.class)) {
             if (tile.type == TileType.LADDER) {
                 if (Greenfoot.isKeyDown("w")) {
-                    setTexture(0);
+                    setTexture("p" + heroState + "_back");
                     velocityY = -4.5;
                     isClimbing = true;
                 } else if (isClimbing) {
-                    setTexture(0);
+                    setTexture("p" + heroState + "_back");
                     velocityY = 1;
                 }
                 break;
@@ -294,7 +293,7 @@ public class Hero extends Mover {
 
     private void checkHitBlock() {
         if (!hitBlock) {
-            for (Tile tile : getObjectsAtOffset(0, getImage().getHeight() / 2 * -1 - 1, Tile.class)) {
+            for (Tile tile : getObjectsAtOffset(0, getImage().getHeight() / 2 * -1 -1, Tile.class)) {
                 if (tile.isSolid) {
                     hitBlock = true;
                     if (tile.type == TileType.BREAKABLE_BLOCK) {
@@ -321,17 +320,25 @@ public class Hero extends Mover {
      * @author D. Hout
      */
 
-    private void setTexture(int number) {
-        GreenfootImage image = HeroImages.getInstance().heroImages[heroState][number];
-        setImage(new GreenfootImage(image));
-        getImage().scale((int) Math.round(56.0 * this.sizeMultiplier), (int) Math.round(77.0 * this.sizeMultiplier));
+    private void setTexture(String texture) {
+        setImage("Player\\" + texture + ".png");
+        getImage().scale((int) Math.round(56 * sizeMultiplier), (int) Math.round(77 * sizeMultiplier));
     }
 
-    private void setTextureWithDirection(int number) {
-        setTexture(number);
-        if (!direction) this.getImage().mirrorHorizontally();
+    /*private void setTexture(String texture, int width, int height) {
+        setImage("Player\\" + texture + ".png");
+        getImage().scale((int) Math.round(width * sizeMultiplier), (int) Math.round(height * sizeMultiplier));
+    }*/
 
+    private void setTextureWithDirection(String texture) {
+        setTexture(texture);
+        if (!direction) getImage().mirrorHorizontally();
     }
+
+    /*private void setTextureWithDirection(String texture, int width, int height) {
+        setTexture(texture, width, height);
+        if (!direction) getImage().mirrorHorizontally();
+    }*/
 
     public int getWidth() {
         return getImage().getWidth();

@@ -25,13 +25,13 @@ public class Main extends World {
         super(1000, 800, 1, false);
         Greenfoot.start();
         setBackground("bg_menu.png");
-
         worldRegistry.registerLevel(0, LevelSelecting.getInstance());
         worldRegistry.registerLevel(1, Level1.getInstance());
         worldRegistry.registerLevel(2 , Level2.getInstance());
 
         addObject(new ClickableObject("startGame.png"), 323 ,348);
         addObject(new ClickableObject("exitGame.png"), 323 ,548);
+
     }
 
     public static GreenfootImage newTextImage(String text, int size) {

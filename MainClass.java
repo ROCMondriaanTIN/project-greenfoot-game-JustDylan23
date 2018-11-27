@@ -1,6 +1,7 @@
 import greenfoot.Greenfoot;
 import greenfoot.World;
 
+import src.HeroImages;
 import src.Main;
 
 /**
