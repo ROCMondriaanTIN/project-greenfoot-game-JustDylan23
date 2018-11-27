@@ -24,6 +24,7 @@ public abstract class AbstractWorld extends World {
     public Hero hero;
     public Camera camera;
     public Overlay overlay = new Overlay();
+    public int coinsGained;
 
     private long debugTime = System.currentTimeMillis();
 
@@ -35,7 +36,12 @@ public abstract class AbstractWorld extends World {
     }
 
 
-    public abstract void loadWorld();
+    public void loadWorld() {
+        Greenfoot.setWorld(this);
+        Main.worldInstance = this;
+        this.setPO(2);
+        this.overlay.updateCoinCount();
+    }
 
     public abstract void reset();
 

@@ -63,11 +63,6 @@ public class Level2 extends AbstractWorld {
     public static Level2 getInstance() {
         return instance;
     }
-    @Override
-    public void loadWorld() {
-        Greenfoot.setWorld(instance);
-        setPO(2);
-    }
 
     @Override
     public void reset() {

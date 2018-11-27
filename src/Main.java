@@ -40,6 +40,7 @@ public class Main extends World {
 
     public static void addCoin() {
         coinCount++;
+        Main.worldInstance.coinsGained++;
         worldInstance.overlay.updateCoinCount();
     }
 }

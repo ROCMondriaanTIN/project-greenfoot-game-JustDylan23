@@ -4,7 +4,6 @@ import src.Hero;
 import src.Main;
 import src.Tile;
 import src.entities.Entity;
-import src.entities.EntityType;
 
 public class Key extends Entity {
 
@@ -34,6 +33,7 @@ public class Key extends Entity {
                 if (tile.getType().toString().contains(color.toUpperCase())) {
                     tile.getImage().clear();
                     tile.isSolid = false;
+                    Main.worldInstance.overlay.addKey(this.color);
                 }
             }
             getWorld().removeObject(this);

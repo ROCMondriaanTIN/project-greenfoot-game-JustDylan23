@@ -72,12 +72,6 @@ public class Level1 extends AbstractWorld {
     }
 
     @Override
-    public void loadWorld() {
-        Greenfoot.setWorld(instance);
-        setPO(2);
-    }
-
-    @Override
     public void reset() {
         instance = new Level1();
         Greenfoot.setWorld(instance);

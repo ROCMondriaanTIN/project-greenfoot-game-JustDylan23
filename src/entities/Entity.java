@@ -16,8 +16,6 @@ public class Entity extends Mover {
     @Override
     public void act() {
         super.act();
-        velocityY = 0;
-        velocityX = 0;
         applyVelocity();
         if (Main.debug) {
             if (Greenfoot.mouseDragged(this)) {
