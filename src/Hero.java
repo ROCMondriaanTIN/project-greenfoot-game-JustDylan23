@@ -66,6 +66,8 @@ public class Hero extends Mover {
             getWorld().removeObject(this);
             Greenfoot.playSound("death.wav");
             LevelStatistics.getInstance().coins -= Main.worldInstance.coinsGained;
+            velocityX = 0;
+            velocityY = 0;
             Main.worldRegistry.getLevel(Main.LEVEL).reset();
             return;
         }
@@ -191,6 +193,7 @@ public class Hero extends Mover {
         if (Greenfoot.isKeyDown("a") && Greenfoot.isKeyDown("d")) return;
         if (Greenfoot.isKeyDown("a")) velocityX = invert(walkSpeed);
         if (Greenfoot.isKeyDown("d")) velocityX = walkSpeed;
+        if (isClimbing) velocityX /= 2;
     }
 
     /**

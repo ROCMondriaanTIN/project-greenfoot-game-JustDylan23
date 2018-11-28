@@ -9,6 +9,7 @@ import greenfoot.Actor;
 public class Overlay extends Actor {
     private OverlayObject heroIcon = new OverlayObject("hud_p1", 47, 47);
     private OverlayObject coinCount = new OverlayObject(Main.newTextImage("x" + LevelStatistics.getInstance().coins, 60));
+    private int starCount;
 
     OverlayObject keyBlue = new OverlayObject("hud_keyBlue", 60, 60);
     OverlayObject keyGreen = new OverlayObject("hud_keyGreen", 60, 60);
@@ -27,17 +28,22 @@ public class Overlay extends Actor {
     public void addKey(String color) {
         switch (color) {
             case "Blue":
-                this.getWorld().addObject(keyBlue, 30, 28);
+                getWorld().addObject(keyBlue, 30, 28);
                 break;
             case "Green":
-                this.getWorld().addObject(keyGreen, 90, 28);
+                getWorld().addObject(keyGreen, 90, 28);
                 break;
             case "Red":
-                this.getWorld().addObject(keyRed, 150, 28);
+                getWorld().addObject(keyRed, 150, 28);
                 break;
             case "Yellow":
-                this.getWorld().addObject(keyYellow, 210, 28);
+                getWorld().addObject(keyYellow, 210, 28);
         }
+    }
+
+    public void addStar() {
+        starCount++;
+        getWorld().addObject(new OverlayObject("star", 100, 100), 400 + 50 * starCount, 30);
     }
 
     public void updateHeroState(int heroState) {

@@ -22,5 +22,7 @@ public class LevelStatistics {
     public void addStar() {
         stars++;
         LevelSelecting.getInstance().updateStars();
+        LevelSelecting.getInstance().updateUnlockedLevels();
+        worldInstance.overlay.addStar();
     }
 }

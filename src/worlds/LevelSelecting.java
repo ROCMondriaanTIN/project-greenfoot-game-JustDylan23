@@ -28,11 +28,10 @@ public class LevelSelecting extends AbstractWorld {
 
     }
 
-    private void updateUnlockedLevels() {
+    public void updateUnlockedLevels() {
         int amountOfUnlockableLevels = (LevelStatistics.getInstance().stars / 2) + 1;
         for (int i = unlockedLevels; i < amountOfUnlockableLevels; i++) {
             unlockedLevels++;
-            System.out.println(unlockedLevels);
             ClickableObject object = new ClickableObject("levelHitbox.png", this);
             object.getImage().scale(160, 160);
             object.action = "level" + unlockedLevels;
