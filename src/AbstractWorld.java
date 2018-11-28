@@ -4,6 +4,7 @@ import greenfoot.*;
 import src.entities.Entity;
 import src.entities.EntityFactory;
 import src.entities.EntityType;
+import src.entities.enemies.FireBall;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -104,19 +105,19 @@ public abstract class AbstractWorld extends World {
                     System.out.println("debug toggled");
                     Main.debug = !Main.debug;
                     System.out.println(Main.debug);
-                    return;
+                } else {
+                    EntityType type;
+                    try {
+                        type = EntityType.fromString(str);
+                    } catch (Exception e) {
+                        System.out.println("failed, could not be added");
+                        return;
+                    }
+                    Entity entity = EntityFactory.createEntity(type);
+                    entities.add(entity);
+                    addObject(entity, hero.getX(), hero.getY());
+                    System.out.println("entity added");
                 }
-                EntityType type;
-                try {
-                    type = EntityType.fromString(str);
-                } catch (Exception e) {
-                    System.out.println("failed, could not be added");
-                    return;
-                }
-                Entity entity = EntityFactory.createEntity(type);
-                entities.add(entity);
-                addObject(entity, hero.getX(), hero.getY());
-                System.out.println("entity added");
             }
         }
     }

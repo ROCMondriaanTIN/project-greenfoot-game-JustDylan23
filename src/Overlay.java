@@ -8,7 +8,7 @@ import greenfoot.Actor;
 
 public class Overlay extends Actor {
     private OverlayObject heroIcon = new OverlayObject("hud_p1", 47, 47);
-    private OverlayObject coinCount = new OverlayObject(Main.newTextImage("x" + Main.coinCount, 60));
+    private OverlayObject coinCount = new OverlayObject(Main.newTextImage("x" + LevelStatistics.getInstance().coins, 60));
 
     OverlayObject keyBlue = new OverlayObject("hud_keyBlue", 60, 60);
     OverlayObject keyGreen = new OverlayObject("hud_keyGreen", 60, 60);
@@ -45,6 +45,6 @@ public class Overlay extends Actor {
     }
 
     public void updateCoinCount() {
-        coinCount.setImage(Main.newTextImage("x" + Main.coinCount, 60));
+        coinCount.setImage(Main.newTextImage("x" + LevelStatistics.getInstance().coins, 60));
     }
 }

@@ -596,6 +596,9 @@ public class TileFactory {
                 tile.setTileImage("window");
                 tile.isSolid = false;
                 break;
+            case 172:
+                tile.setTileImage("xLock");
+                break;
             default:
                 tile.setTileImage("grassMid");
                 break;

@@ -1,10 +1,7 @@
 package src.worlds;
 
 import greenfoot.Greenfoot;
-import src.AbstractWorld;
-import src.ClickableObject;
-import src.Location;
-import src.Main;
+import src.*;
 
 import java.util.ArrayList;
 
@@ -13,6 +10,9 @@ public class LevelSelecting extends AbstractWorld {
     private static LevelSelecting instance = new LevelSelecting();
 
     private ArrayList<ClickableObject> levels = new ArrayList<>();
+    private OverlayObject starCount = new OverlayObject(Main.newTextImage("x" + LevelStatistics.getInstance().stars, 60));
+
+    private int unlockedLevels;
 
     private boolean hasExecuted;
 
@@ -23,14 +23,22 @@ public class LevelSelecting extends AbstractWorld {
     LevelSelecting() {
         super(null, null);
         setBackground("levelSelecting.png");
-        for (int i = 1; i < 8; i++) {
+        addObject(starCount,100, 750);
+        updateUnlockedLevels();
+
+    }
+
+    private void updateUnlockedLevels() {
+        int amountOfUnlockableLevels = (LevelStatistics.getInstance().stars / 2) + 1;
+        for (int i = unlockedLevels; i < amountOfUnlockableLevels; i++) {
+            unlockedLevels++;
+            System.out.println(unlockedLevels);
             ClickableObject object = new ClickableObject("levelHitbox.png", this);
             object.getImage().scale(160, 160);
-            object.action = "level" + i;
+            object.action = "level" + unlockedLevels;
             levels.add(object);
-            addObject(object, locations[i - 1].x, locations[i - 1].y);
+            addObject(object, locations[unlockedLevels - 1].x, locations[unlockedLevels - 1].y);
         }
-
     }
 
     public static LevelSelecting getInstance() {
@@ -40,6 +48,10 @@ public class LevelSelecting extends AbstractWorld {
     @Override
     public void loadWorld() {
         Greenfoot.setWorld(instance);
+    }
+
+    public void updateStars() {
+        starCount.setImage(Main.newTextImage("x" + LevelStatistics.getInstance().stars, 60));
     }
 
     @Override

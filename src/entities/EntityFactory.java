@@ -7,6 +7,7 @@ import src.entities.CharacterCoin.CharacterCoin3;
 import src.entities.collectibles.Coin;
 import src.entities.collectibles.Gem;
 import src.entities.collectibles.Star;
+import src.entities.enemies.FireBall;
 import src.entities.enemies.Fly;
 import src.entities.enemies.Poker;
 import src.entities.enemies.Slime;
@@ -83,6 +84,10 @@ public class EntityFactory {
             case SLIME:
                 entity = new Slime();
                 entity.constructor = "SLIME";
+                break;
+            case FIREBALL:
+                entity = new FireBall();
+                entity.constructor = "FIREBALL";
                 break;
             default:
                 entity = new Entity();

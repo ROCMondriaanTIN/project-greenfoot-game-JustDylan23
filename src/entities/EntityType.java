@@ -18,7 +18,8 @@ public enum EntityType {
 
     FLY ("fly"),
     SLIME ("slime"),
-    POKER ("poker");
+    POKER ("poker"),
+    FIREBALL ("fireBall");
 
     private String text;
 

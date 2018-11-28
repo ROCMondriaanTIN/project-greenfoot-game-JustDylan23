@@ -13,8 +13,6 @@ import src.worlds.LevelSelecting;
 public class Main extends World {
 
     public static boolean debug = false;
-    
-    public static int coinCount;
 
     public static AbstractWorld worldInstance;
 
@@ -36,11 +34,5 @@ public class Main extends World {
 
     public static GreenfootImage newTextImage(String text, int size) {
         return new GreenfootImage(text, size, Color.WHITE, new Color(0, 0, 0, 0), Color.BLACK);
-    }
-
-    public static void addCoin() {
-        coinCount++;
-        Main.worldInstance.coinsGained++;
-        worldInstance.overlay.updateCoinCount();
     }
 }

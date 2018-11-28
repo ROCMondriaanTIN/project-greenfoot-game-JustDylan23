@@ -2,6 +2,7 @@ package src.entities.collectibles;
 
 import greenfoot.Greenfoot;
 import src.Hero;
+import src.LevelStatistics;
 import src.Main;
 
 public class Coin extends Collectible {
@@ -15,7 +16,7 @@ public class Coin extends Collectible {
         super.act();
         if (Main.debug) return;
         if (getObjectsAtOffset(0, 0, Hero.class).size() != 0) {
-            Main.addCoin();
+            LevelStatistics.getInstance().addCoin();
             Greenfoot.playSound("coin.wav");
             getWorld().removeObject(this);
         }
