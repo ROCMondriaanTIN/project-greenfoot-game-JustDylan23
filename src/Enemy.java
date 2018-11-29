@@ -21,7 +21,7 @@ public class Enemy extends Mover {
         speed = 1;
     }
 
-    @Override
+    /*@Override
     public void act() {
         int x = getX();
         int y = getY();
@@ -43,5 +43,5 @@ public class Enemy extends Mover {
             x = xMin;
             getImage().mirrorHorizontally();
         }
-    }
+    }*/
 }

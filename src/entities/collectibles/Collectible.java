@@ -6,4 +6,10 @@ public class Collectible extends Entity {
     public Collectible() {
         super();
     }
+
+    @Override
+    public void act() {
+        super.act();
+        applyVelocity();
+    }
 }

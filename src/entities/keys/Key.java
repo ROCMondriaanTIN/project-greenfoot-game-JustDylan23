@@ -27,6 +27,7 @@ public class Key extends Entity {
     @Override
     public void act() {
         super.act();
+        applyVelocity();
         if (Main.debug) return;
         if (!getIntersectingObjects(Hero.class).isEmpty()) {
             for (Tile tile : getWorld().getObjects(Tile.class)) {

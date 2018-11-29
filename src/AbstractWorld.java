@@ -16,7 +16,7 @@ import java.util.Scanner;
 
 public abstract class AbstractWorld extends World {
 
-    private CollisionEngine ce;
+    public CollisionEngine ce;
     private Integer x;
     private Integer y;
     public int[][] map;

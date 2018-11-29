@@ -23,8 +23,7 @@ public class Hero extends Mover {
     private boolean direction = true;
     private boolean isClimbing = false;
     private boolean hitBlock = false;
-
-    private long time = System.currentTimeMillis();
+    private long time;
 
     private double invert(double x) {
         return x * -1;
@@ -211,22 +210,12 @@ public class Hero extends Mover {
             isOnGround = false;
             return;
         }
-        //checks tile exacly under hero
-        for (Tile tile : getObjectsAtOffset(0, dy, Tile.class)) {
-            if (tile.isSolid) isOnGround = true;
-            break;
-        }
-        //checks if hero is on the edge of a block
-        if (!isOnGround) {
-            for (Tile tile : getObjectsAtOffset(dx - 3, dy, Tile.class)) {
+        //checks tile under hero
+        start:
+        for (int i = -1; i <= 1; i++) {
+            for (Tile tile : getObjectsAtOffset((dx * i) - (3 * i), dy, Tile.class)) {
                 if (tile.isSolid) isOnGround = true;
-                break;
-            }
-            if (!isOnGround) {
-                for (Tile tile : getObjectsAtOffset(dx * -1 + 3, dy, Tile.class)) {
-                    if (tile.isSolid) isOnGround = true;
-                    break;
-                }
+                break start;
             }
         }
     }
@@ -297,7 +286,7 @@ public class Hero extends Mover {
 
     private void checkHitBlock() {
         if (!hitBlock) {
-            for (Tile tile : getObjectsAtOffset(0, getImage().getHeight() / 2 * -1 -1, Tile.class)) {
+            for (Tile tile : getObjectsAtOffset(0, getImage().getHeight() / 2 * -1 - 1, Tile.class)) {
                 if (tile.isSolid) {
                     hitBlock = true;
                     if (tile.type == TileType.BREAKABLE_BLOCK) {

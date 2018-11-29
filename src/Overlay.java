@@ -28,16 +28,16 @@ public class Overlay extends Actor {
     public void addKey(String color) {
         switch (color) {
             case "Blue":
-                getWorld().addObject(keyBlue, 30, 28);
+                getWorld().addObject(keyBlue, 30, 772);
                 break;
             case "Green":
-                getWorld().addObject(keyGreen, 90, 28);
+                getWorld().addObject(keyGreen, 90, 772);
                 break;
             case "Red":
-                getWorld().addObject(keyRed, 150, 28);
+                getWorld().addObject(keyRed, 150, 772);
                 break;
             case "Yellow":
-                getWorld().addObject(keyYellow, 210, 28);
+                getWorld().addObject(keyYellow, 210, 772);
         }
     }
 

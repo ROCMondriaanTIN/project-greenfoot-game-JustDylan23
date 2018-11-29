@@ -9,6 +9,9 @@ public class LevelStatistics {
     public int coins;
     public int stars;
 
+    private LevelStatistics() {
+    }
+
     public static LevelStatistics getInstance() {
         return instance;
     }

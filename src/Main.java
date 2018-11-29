@@ -12,7 +12,7 @@ import src.worlds.LevelSelecting;
 
 public class Main extends World {
 
-    public static boolean debug = false;
+    public static boolean debug = true;
 
     public static AbstractWorld worldInstance;
 
