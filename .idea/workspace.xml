@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="90d26ec0-945c-4af6-9686-9d44641654b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/levelSelecting.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/levelSelecting.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LevelStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LevelStatistics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Overlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Overlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/worlds/LevelSelecting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/worlds/LevelSelecting.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -296,7 +291,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543400506180" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543400778767" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -380,7 +375,7 @@
       <workItem from="1543221179841" duration="401000" />
       <workItem from="1543221622979" duration="6926000" />
       <workItem from="1543316124261" duration="4487000" />
-      <workItem from="1543390444366" duration="8722000" />
+      <workItem from="1543390444366" duration="8996000" />
     </task>
     <task id="LOCAL-00001" summary="changed hero speed">
       <created>1542269991109</created>
@@ -529,15 +524,21 @@
       <option name="project" value="LOCAL" />
       <updated>1543397318308</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="stars are now working and added fireballs">
+      <created>1543400536973</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1543400536973</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116824000" />
+    <option name="totallyTimeSpent" value="117098000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.39818764" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -549,7 +550,7 @@
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49946696" visible="true" weight="0.30769232" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49946696" weight="0.30769232" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -595,7 +596,8 @@
     <MESSAGE value="changed stuff" />
     <MESSAGE value="updated stuff" />
     <MESSAGE value="progress on star system" />
-    <option name="LAST_COMMIT_MESSAGE" value="progress on star system" />
+    <MESSAGE value="stars are now working and added fireballs" />
+    <option name="LAST_COMMIT_MESSAGE" value="stars are now working and added fireballs" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/entities/enemies/Poker.java">
