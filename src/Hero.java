@@ -70,24 +70,23 @@ public class Hero extends Mover {
             Main.worldRegistry.getLevel(Main.LEVEL).reset();
             return;
         }
+
+        if (Main.debug) {
+            if (Greenfoot.mouseClicked(this)) {
+                int state = heroState;
+                if (state >= 3) {
+                    setHeroState(1);
+                } else {
+                    setHeroState(state + 1);
+                }
+            }
+        }
+
         handleMovement();
         handleHeroStats();
         handleWorldInteraction();
         handlePhysics();
         handleAnimation();
-
-        /*
-         * remove this shit
-         */
-
-        if (Greenfoot.mouseClicked(this)) {
-            int state = heroState;
-            if (state >= 3) {
-                setHeroState(1);
-            } else {
-                setHeroState(state + 1);
-            }
-        }
     }
 
     private void handlePhysics() {
@@ -295,7 +294,7 @@ public class Hero extends Mover {
                         tile.getImage().clear();
                     } else if (tile.type == TileType.COIN_BOX) {
                         Greenfoot.playSound("coin.wav");
-                        tile.setTileImage("boxCoinDisabled");
+                        tile.setTileImage("boxCoinAltDisabled");
                         tile.setType(TileType.BOX);
                         LevelStatistics.getInstance().addCoin();
                     } else if (tile.type == TileType.BOX) {

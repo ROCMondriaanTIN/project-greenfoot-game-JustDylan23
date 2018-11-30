@@ -46,7 +46,6 @@ public class Level2 extends AbstractWorld {
         super(120, 1440);
         setBackground("bg_castle.png");
         this.map = mapRaw;
-        renderWorld();
 
         addEntity(EntityFactory.createEntity(EntityType.CHARACTER_COIN_2), 30, 1410);
         addEntity(EntityFactory.createEntity(EntityType.CHARACTER_COIN_3), 870, 1050);

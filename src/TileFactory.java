@@ -31,6 +31,7 @@ public class TileFactory {
                 break;
             case 3:
                 tile.setTileImage("boxCoinAlt");
+                tile.setType(TileType.COIN_BOX);
                 break;
             case 4:
                 tile.setTileImage("boxCoinAltDisabled");
@@ -598,6 +599,7 @@ public class TileFactory {
                 break;
             case 172:
                 tile.setTileImage("xLock");
+                tile.setType(TileType.LOCK_X);
                 break;
             default:
                 tile.setTileImage("grassMid");

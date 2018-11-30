@@ -8,6 +8,8 @@ import src.entities.enemies.FireBall;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -21,11 +23,13 @@ public abstract class AbstractWorld extends World {
     private Integer y;
     public int[][] map;
     public ArrayList<Entity> entities = new ArrayList<>();
+    public Map<Entity, String> entityConstructors = new HashMap<>();
     private boolean isRendered;
     public Hero hero;
     public Camera camera;
     public Overlay overlay = new Overlay();
     public int coinsGained;
+    public int keyCount;
 
     private long debugTime = System.currentTimeMillis();
 
@@ -38,6 +42,7 @@ public abstract class AbstractWorld extends World {
 
 
     public void loadWorld() {
+        renderWorld();
         Greenfoot.setWorld(this);
         Main.worldInstance = this;
         this.setPO(2);
@@ -63,9 +68,6 @@ public abstract class AbstractWorld extends World {
         addObject(new PauseScreen(this), 500, 400);
         addObject(overlay, 500, 400);
 
-        for (Entity entity : entities) {
-            addObject(entity, entity.getX(), entity.getY());
-        }
         overlay.addButtons();
         isRendered = true;
     }
@@ -84,6 +86,8 @@ public abstract class AbstractWorld extends World {
 
     public void addEntity(Entity entity, int x, int y) {
         addObject(entity, x, y);
+        int length = entity.getClass().getPackage().getName().length();
+        entityConstructors.put(entity, "new " + entity.getClass().getName().substring(length + 1) + "()");
         entities.add(entity);
     }
 
@@ -98,7 +102,7 @@ public abstract class AbstractWorld extends World {
 
                 if (str.equalsIgnoreCase("generate")) {
                     for (Entity entity : entities) {
-                        System.out.println("addEntity(EntityFactory.createEntity(EntityType." + entity.constructor + "), " + entity.getX() + ", " + entity.getY() + ");");
+                        System.out.println("addEntity(" + entityConstructors.get(entity) + ", " + entity.getX() + ", " + entity.getY() + ");");
                     }
                     return;
                 } else if (str.equalsIgnoreCase("debug")) {

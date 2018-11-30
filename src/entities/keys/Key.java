@@ -3,6 +3,7 @@ package src.entities.keys;
 import src.Hero;
 import src.Main;
 import src.Tile;
+import src.TileType;
 import src.entities.Entity;
 
 public class Key extends Entity {
@@ -35,6 +36,13 @@ public class Key extends Entity {
                     tile.getImage().clear();
                     tile.isSolid = false;
                     Main.worldInstance.overlay.addKey(this.color);
+                    Main.worldInstance.keyCount++;
+                }
+                if (Main.worldInstance.keyCount == 4) {
+                    if (tile.getType() == TileType.LOCK_X) {
+                        tile.getImage().clear();
+                        tile.isSolid = false;
+                    }
                 }
             }
             getWorld().removeObject(this);

@@ -3,6 +3,7 @@ package src.entities.enemies;
 import greenfoot.GreenfootImage;
 import src.Hero;
 import src.Main;
+import src.PauseScreen;
 import src.Tile;
 
 import java.util.List;
@@ -32,6 +33,7 @@ public class Slime extends Enemy {
     @Override
     public void act() {
         super.act();
+        if (PauseScreen.isActive) return;
         velocityY = 2;
         applyVelocity();
         updateGroundStats();
@@ -41,7 +43,6 @@ public class Slime extends Enemy {
         boolean turnAround = false;
         for (int i = -1; i <= 1; i += 2) {
             List<Tile> tiles = getObjectsAtOffset(dx * i + 5 * i, dy, Tile.class);
-            System.out.println(tiles.size());
             if (tiles.isEmpty()) {
                 turnAround = true;
             }
