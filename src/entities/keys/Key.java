@@ -10,7 +10,7 @@ public class Key extends Entity {
 
     private String color;
 
-    public Key(String color) {
+    protected Key(String color) {
         super();
         switch (color) {
             case "Blue":
@@ -31,12 +31,12 @@ public class Key extends Entity {
         applyVelocity();
         if (Main.debug) return;
         if (!getIntersectingObjects(Hero.class).isEmpty()) {
+            Main.worldInstance.keyCount++;
             for (Tile tile : getWorld().getObjects(Tile.class)) {
                 if (tile.getType().toString().contains(color.toUpperCase())) {
                     tile.getImage().clear();
                     tile.isSolid = false;
                     Main.worldInstance.overlay.addKey(this.color);
-                    Main.worldInstance.keyCount++;
                 }
                 if (Main.worldInstance.keyCount == 4) {
                     if (tile.getType() == TileType.LOCK_X) {

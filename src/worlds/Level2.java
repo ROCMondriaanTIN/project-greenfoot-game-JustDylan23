@@ -1,6 +1,5 @@
 package src.worlds;
 
-import greenfoot.Greenfoot;
 import src.AbstractWorld;
 import src.entities.EntityFactory;
 import src.entities.EntityType;
@@ -9,7 +8,7 @@ public class Level2 extends AbstractWorld {
 
     private static Level2 instance = new Level2();
 
-    int[][] mapRaw = {
+    private int[][] mapRaw = {
             {19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19},
             {19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19},
             {19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19,19},
@@ -66,6 +65,6 @@ public class Level2 extends AbstractWorld {
     @Override
     public void reset() {
         instance = new Level2();
-        Greenfoot.setWorld(instance);
+        instance.loadWorld();
     }
 }

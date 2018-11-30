@@ -1,16 +1,13 @@
 package src;
 
-import greenfoot.*;
+import greenfoot.Greenfoot;
+import greenfoot.World;
 import src.entities.Entity;
 import src.entities.EntityFactory;
 import src.entities.EntityType;
-import src.entities.enemies.FireBall;
 
 import javax.swing.*;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
 
 /**
  * @author D. Hout
@@ -23,15 +20,12 @@ public abstract class AbstractWorld extends World {
     private Integer y;
     public int[][] map;
     public ArrayList<Entity> entities = new ArrayList<>();
-    public Map<Entity, String> entityConstructors = new HashMap<>();
     private boolean isRendered;
     public Hero hero;
     public Camera camera;
     public Overlay overlay = new Overlay();
     public int coinsGained;
     public int keyCount;
-
-    private long debugTime = System.currentTimeMillis();
 
     public AbstractWorld(Integer x, Integer y) {
         super(1000, 800, 1, false);
@@ -51,7 +45,7 @@ public abstract class AbstractWorld extends World {
 
     public abstract void reset();
 
-    public void renderWorld() {
+    private void renderWorld() {
         Main.worldInstance = this;
         TileEngine te = new TileEngine(this, 60, 60, map);
         camera = new Camera(te);
@@ -84,10 +78,12 @@ public abstract class AbstractWorld extends World {
 
     }
 
-    public void addEntity(Entity entity, int x, int y) {
+    protected void addEntity(Entity entity, int x, int y) {
         addObject(entity, x, y);
+        entity.spawnX = x;
+        entity.spawnY = y;
         int length = entity.getClass().getPackage().getName().length();
-        entityConstructors.put(entity, "new " + entity.getClass().getName().substring(length + 1) + "()");
+        entity.constructor = "new " + entity.getClass().getName().substring(length + 1) + "()";
         entities.add(entity);
     }
 
@@ -95,34 +91,31 @@ public abstract class AbstractWorld extends World {
     public void act() {
         if (isRendered) ce.update();
         if (Greenfoot.isKeyDown("enter")) {
-            if (System.currentTimeMillis() - debugTime > 1000) {
-                debugTime = System.currentTimeMillis();
+            String str = JOptionPane.showInputDialog("request:");
 
-                String str = JOptionPane.showInputDialog("request:");
+            if (str == null) return;
 
-                if (str.equalsIgnoreCase("generate")) {
-                    for (Entity entity : entities) {
-                        System.out.println("addEntity(" + entityConstructors.get(entity) + ", " + entity.getX() + ", " + entity.getY() + ");");
-                    }
-                    return;
-                } else if (str.equalsIgnoreCase("debug")) {
-                    System.out.println("debug toggled");
-                    Main.debug = !Main.debug;
-                    System.out.println(Main.debug);
-                } else {
-                    EntityType type;
-                    try {
-                        type = EntityType.fromString(str);
-                    } catch (Exception e) {
-                        System.out.println("failed, could not be added");
-                        return;
-                    }
-                    Entity entity = EntityFactory.createEntity(type);
-                    entities.add(entity);
-                    addObject(entity, hero.getX(), hero.getY());
-                    System.out.println("entity added");
+            if (str.equalsIgnoreCase("generate")) {
+                for (Entity entity : entities) {
+                    System.out.println("addEntity(" + entity.constructor + ", " + entity.spawnX + ", " + entity.spawnY + ");");
                 }
+            } else if (str.equalsIgnoreCase("debug")) {
+                System.out.println("debug toggled");
+                Main.debug = !Main.debug;
+                System.out.println(Main.debug);
+            } else {
+                EntityType type = EntityType.fromString(str);
+                if (type == null) {
+                    System.out.println("failed, could not be added");
+                    return;
+                }
+                Entity entity = EntityFactory.createEntity(type);
+                entities.add(entity);
+                addObject(entity, hero.getX(), hero.getY());
+                System.out.println("entity added");
+
             }
+
         }
     }
 }

@@ -1,11 +1,7 @@
 package src.worlds;
 
-import greenfoot.Greenfoot;
 import src.AbstractWorld;
-import src.entities.CharacterCoin.*;
-import src.entities.collectibles.*;
-import src.entities.gameplayobjects.*;
-import src.entities.enemies.*;
+import src.entities.enemies.Slime;
 
 /**
  * @author D. Hout
@@ -61,8 +57,13 @@ public class Level1 extends AbstractWorld {
     }
 
     @Override
+    public void loadWorld() {
+        super.loadWorld();
+        addEntity(new Slime(), 1296, 1719);
+    }
+    @Override
     public void reset() {
         instance = new Level1();
-        Greenfoot.setWorld(instance);
+        instance.loadWorld();
     }
 }
