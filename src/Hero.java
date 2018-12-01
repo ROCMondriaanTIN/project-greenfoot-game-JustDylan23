@@ -2,6 +2,8 @@ package src;
 
 import greenfoot.*;
 
+import java.util.List;
+
 /**
  * @author D. Hout
  */
@@ -258,7 +260,12 @@ public class Hero extends Mover {
 
     private void ladderInteractionHandler() {
         if (Greenfoot.isKeyDown("space") && Greenfoot.isKeyDown("w")) return;
-        for (Tile tile : getObjectsAtOffset(0, -5, Tile.class)) {
+        System.out.println(isClimbing);
+        List<Tile> tiles = getObjectsAtOffset(0, -5, Tile.class);
+        if (tiles.isEmpty()) {
+            isClimbing = false;
+        }
+        for (Tile tile : tiles) {
             if (tile.type == TileType.LADDER) {
                 if (Greenfoot.isKeyDown("w")) {
                     setTexture(0);
@@ -269,7 +276,9 @@ public class Hero extends Mover {
                     velocityY = 1;
                 }
                 break;
-            } else isClimbing = false;
+            } else {
+                isClimbing = false;
+            }
         }
     }
 
