@@ -11,7 +11,6 @@ public class ClickableObject extends Actor {
 
     public String action;
     private PauseScreen pauseScreenInstance;
-    private AbstractWorld abstractWorld;
 
     public ClickableObject(String image) {
         action = image.replace(".png", "");
@@ -26,20 +25,8 @@ public class ClickableObject extends Actor {
         this.pauseScreenInstance = pauseScreenInstance;
     }
 
-    public ClickableObject(String image, AbstractWorld abstractWorld) {
-        action = image.replace(".png", "");
-        setImage(image);
-        getImage().scale(553, 88);
-        this.abstractWorld = abstractWorld;
-    }
-
     @Override
     public void act() {
-        //if (Greenfoot.mouseDragged(this)) {
-        //    MouseInfo mouse = Greenfoot.getMouseInfo();
-        //    setLocation(mouse.getX(), mouse.getY());
-        //}
-
         if (Greenfoot.mouseClicked(this)) {
             switch (action) {
                 case "startGame":
@@ -59,7 +46,7 @@ public class ClickableObject extends Actor {
                     getImage().clear();
                     pauseScreenInstance.removeButtons();
                     pauseScreenInstance.getImage().clear();
-                    pauseScreenInstance.isActive = false;
+                    PauseScreen.isActive = false;
                     Main.worldRegistry.getLevel(0).loadWorld();
                     break;
             }

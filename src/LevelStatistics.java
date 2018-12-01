@@ -6,7 +6,7 @@ import static src.Main.worldInstance;
 
 public class LevelStatistics {
     private static final LevelStatistics instance = new LevelStatistics();
-    public int coins;
+    int coins;
     public int stars;
 
     private LevelStatistics() {

@@ -20,7 +20,6 @@ public class Camera extends Actor {
     private boolean follow;
     private Mover followActor;
     private boolean prevSwitchCameraDown;
-    private boolean currentSwitchCameraDown;
 
     /**
      * The constructor of the Camera class Camera class moves the Tiles and
@@ -76,7 +75,7 @@ public class Camera extends Actor {
         // Als je in debug modus zit kan je met de "e" toets de camera los koppelen
         // ben besturen met de pijltjes toetsen.
         if(CollisionEngine.DEBUG) {
-            currentSwitchCameraDown = Greenfoot.isKeyDown("e");
+            boolean currentSwitchCameraDown = Greenfoot.isKeyDown("e");
             if (currentSwitchCameraDown && !prevSwitchCameraDown) {
                 follow = !follow;
             }

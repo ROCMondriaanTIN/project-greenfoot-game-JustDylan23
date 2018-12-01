@@ -18,13 +18,13 @@ public abstract class AbstractWorld extends World {
     public CollisionEngine ce;
     private Integer x;
     private Integer y;
-    public int[][] map;
+    protected int[][] map;
     public ArrayList<Entity> entities = new ArrayList<>();
     private boolean isRendered;
     public Hero hero;
     public Camera camera;
     public Overlay overlay = new Overlay();
-    public int coinsGained;
+    int coinsGained;
     public int keyCount;
 
     public AbstractWorld(Integer x, Integer y) {
@@ -66,7 +66,7 @@ public abstract class AbstractWorld extends World {
         isRendered = true;
     }
 
-    public void setPO(int i) {
+    void setPO(int i) {
         switch (i) {
             case 1:
                 setPaintOrder(ClickableObject.class, PauseScreen.class, Entity.class, Hero.class, OverlayObject.class, Overlay.class, Tile.class);

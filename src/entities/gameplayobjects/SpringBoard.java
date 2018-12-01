@@ -2,7 +2,7 @@ package src.entities.gameplayobjects;
 
 public class SpringBoard extends GamePlayObject {
 
-    public boolean isDown;
+    private boolean isDown;
 
     public SpringBoard () {
         super();

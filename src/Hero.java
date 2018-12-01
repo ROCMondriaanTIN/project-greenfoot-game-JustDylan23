@@ -15,8 +15,8 @@ public class Hero extends Mover {
     private double sizeMultiplier = 1;
 
     public boolean isAlive = true;
-    public int heroState;
-    public boolean isOnGround;
+    private int heroState;
+    private boolean isOnGround;
     private boolean isStandingStill;
     private boolean isWalking;
     private double walkState = 0;
@@ -121,7 +121,6 @@ public class Hero extends Mover {
     }
 
     private void handleWorldInteraction() {
-        enemyCollisionHandler();
         waterCollisionHandler();
         ladderInteractionHandler();
         checkHitBlock();
@@ -166,7 +165,7 @@ public class Hero extends Mover {
 
     private void jumpingHandler() {
         if (Greenfoot.isKeyDown("space")) {
-            Long timeTemp = time;
+            long timeTemp = time;
             time = System.currentTimeMillis();
             if (System.currentTimeMillis() - timeTemp < 25) {
                 return;
@@ -247,15 +246,6 @@ public class Hero extends Mover {
      *
      * @author D. Hout
      */
-
-    private void enemyCollisionHandler() {
-        for (Actor enemy : getIntersectingObjects(Enemy.class)) {
-            if (enemy != null) {
-                isAlive = false;
-                return;
-            }
-        }
-    }
 
     private void waterCollisionHandler() {
         for (Tile tile : getIntersectingObjects(Tile.class)) {

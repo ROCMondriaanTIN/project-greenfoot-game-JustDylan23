@@ -16,8 +16,8 @@ public class Main extends World {
 
     public static AbstractWorld worldInstance;
 
-    public static final WorldRegistry worldRegistry = new WorldRegistry();
-    public static int LEVEL = 1;
+    static final WorldRegistry worldRegistry = new WorldRegistry();
+    static int LEVEL = 1;
 
     public Main() {
         super(1000, 800, 1, false);

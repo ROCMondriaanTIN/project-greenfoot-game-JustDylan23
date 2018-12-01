@@ -2,8 +2,8 @@ package src.entities.gameplayobjects;
 
 import src.entities.Entity;
 
-public class GamePlayObject extends Entity {
-    public GamePlayObject() {
+class GamePlayObject extends Entity {
+    GamePlayObject() {
         super();
     }
 }

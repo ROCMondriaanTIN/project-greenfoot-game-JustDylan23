@@ -7,7 +7,7 @@ import src.entities.Entity;
 public class CharacterCoin extends Entity {
     private int heroState;
 
-    public CharacterCoin(int heroState) {
+    CharacterCoin(int heroState) {
         super();
         switch (heroState) {
             case 1:

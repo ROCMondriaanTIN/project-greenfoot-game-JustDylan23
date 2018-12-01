@@ -19,8 +19,7 @@ public class LevelSelecting extends AbstractWorld {
     private Location[] locations = {new Location(218, 260), new Location( 479, 232),
             new Location(776, 325), new Location(566, 455), new Location(225, 540),
             new Location(435, 684), new Location(780, 677)};
-
-    LevelSelecting() {
+    private LevelSelecting() {
         super(null, null);
         setBackground("levelSelecting.png");
         addObject(starCount,100, 750);
@@ -29,10 +28,10 @@ public class LevelSelecting extends AbstractWorld {
     }
 
     public void updateUnlockedLevels() {
-        int amountOfUnlockableLevels = (LevelStatistics.getInstance().stars / 2) + 1;
-        for (int i = unlockedLevels; i < amountOfUnlockableLevels; i++) {
+        int amountOfLevels = (LevelStatistics.getInstance().stars / 2) + 1;
+        for (int i = unlockedLevels; i < amountOfLevels; i++) {
             unlockedLevels++;
-            ClickableObject object = new ClickableObject("levelHitbox.png", this);
+            ClickableObject object = new ClickableObject("levelHitbox.png");
             object.getImage().scale(160, 160);
             object.action = "level" + unlockedLevels;
             levels.add(object);

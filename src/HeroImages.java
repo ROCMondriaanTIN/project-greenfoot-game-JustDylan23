@@ -10,7 +10,7 @@ public class HeroImages {
     private GreenfootImage[] hero2 = new GreenfootImage[18];
     private GreenfootImage[] hero3 = new GreenfootImage[18];
 
-    public GreenfootImage[][] heroImages = {hero0, hero1, hero2, hero3};
+    GreenfootImage[][] heroImages = {hero0, hero1, hero2, hero3};
 
     public void loadImages() {
         for (int i = 1; i <= 3; i++) {

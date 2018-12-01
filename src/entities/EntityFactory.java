@@ -1,6 +1,5 @@
 package src.entities;
 
-import src.AbstractWorld;
 import src.entities.CharacterCoin.CharacterCoin1;
 import src.entities.CharacterCoin.CharacterCoin2;
 import src.entities.CharacterCoin.CharacterCoin3;

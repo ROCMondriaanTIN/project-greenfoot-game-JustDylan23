@@ -5,7 +5,7 @@ package src;
  *
  */
 
-public class TileFactory {
+class TileFactory {
 
     /**
      * Creates a Tile object based on the mapIcon number you give
@@ -13,7 +13,7 @@ public class TileFactory {
      * @param mapIcon number
      * @return Tile tile object
      */
-    protected Tile createTile(int mapIcon) {
+    Tile createTile(int mapIcon) {
         Tile tile = new Tile();
         tile.isSolid = true;
         switch (mapIcon) {

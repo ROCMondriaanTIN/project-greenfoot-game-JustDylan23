@@ -3,12 +3,12 @@ package src;
 import greenfoot.Actor;
 import greenfoot.Greenfoot;
 
+import java.util.ArrayList;
+
 /**
  * @author D. Hout
  *
  */
-
-import java.util.ArrayList;
 
 public class PauseScreen extends Actor {
 
@@ -17,7 +17,7 @@ public class PauseScreen extends Actor {
     public static boolean isActive;
     private ArrayList<ClickableObject> buttons = new ArrayList<>();
 
-    public PauseScreen(AbstractWorld abstractWorldInstance) {
+    PauseScreen(AbstractWorld abstractWorldInstance) {
         this.abstractWorldInstance = abstractWorldInstance;
         getImage().clear();
     }
@@ -43,7 +43,7 @@ public class PauseScreen extends Actor {
         }
     }
 
-    public void addButtons() {
+    private void addButtons() {
         ClickableObject continue_ = new ClickableObject("continue.png", this);
         abstractWorldInstance.addObject(continue_, 323 ,228);
         buttons.add(continue_);
@@ -61,7 +61,7 @@ public class PauseScreen extends Actor {
         buttons.add(exit);
     }
 
-    public void close() {
+    void close() {
         getImage().clear();
         removeButtons();
         abstractWorldInstance.setPO(2);
@@ -69,7 +69,7 @@ public class PauseScreen extends Actor {
         isActive = false;
     }
 
-    public void removeButtons() {
+    void removeButtons() {
         for (ClickableObject button : buttons) {
             abstractWorldInstance.removeObject(button);
         }
