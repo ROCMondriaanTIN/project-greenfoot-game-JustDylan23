@@ -1,5 +1,6 @@
 package src.entities.keys;
 
+import greenfoot.Greenfoot;
 import src.Hero;
 import src.Main;
 import src.Tile;
@@ -10,7 +11,7 @@ public class Key extends Entity {
 
     private String color;
 
-    protected Key(String color) {
+    Key(String color) {
         super();
         switch (color) {
             case "Blue":
@@ -46,6 +47,9 @@ public class Key extends Entity {
                 }
             }
             getWorld().removeObject(this);
+            if (Main.worldInstance.keyCount != 4) {
+                Greenfoot.playSound("key.wav");
+            } else Greenfoot.playSound("key2.wav");
         }
     }
 }

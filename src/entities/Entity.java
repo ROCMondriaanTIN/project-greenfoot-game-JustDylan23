@@ -23,13 +23,14 @@ public class Entity extends Mover {
             if (Greenfoot.mouseDragged(this)) {
                 MouseInfo mouse = Greenfoot.getMouseInfo();
                 setLocation(mouse.getX() + Main.worldInstance.camera.getX(), mouse.getY() + Main.worldInstance.camera.getY());
-                spawnX = getX();
-                spawnY = getY();
             } if (Greenfoot.mouseDragEnded(this)) {
                 int x = (int) Math.floor(getX() / (double) TileEngine.TILE_WIDTH);
                 int y = (int) Math.floor(getY() / (double) TileEngine.TILE_HEIGHT);
                 setLocation(x * TileEngine.TILE_WIDTH + TileEngine.TILE_WIDTH / 2,
                         y * TileEngine.TILE_HEIGHT + TileEngine.TILE_WIDTH / 2);
+
+                spawnX = x * TileEngine.TILE_WIDTH + TileEngine.TILE_WIDTH / 2;
+                spawnY = y * TileEngine.TILE_HEIGHT + TileEngine.TILE_WIDTH / 2;
             }
         }
     }

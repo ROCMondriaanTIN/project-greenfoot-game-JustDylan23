@@ -1,5 +1,6 @@
 package src.entities.collectibles;
 
+import greenfoot.Greenfoot;
 import src.Hero;
 import src.LevelStatistics;
 import src.Main;
@@ -15,6 +16,7 @@ public class Star extends Collectible {
         if (getObjectsAtOffset(0, 0, Hero.class).size() != 0) {
             LevelStatistics.getInstance().addStar();
             getWorld().removeObject(this);
+            Greenfoot.playSound("star.wav");
         }
     }
 }

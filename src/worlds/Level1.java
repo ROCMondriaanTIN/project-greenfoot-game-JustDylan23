@@ -1,7 +1,16 @@
 package src.worlds;
 
 import src.AbstractWorld;
+import src.entities.CharacterCoin.CharacterCoin1;
+import src.entities.CharacterCoin.CharacterCoin2;
+import src.entities.CharacterCoin.CharacterCoin3;
+import src.entities.collectibles.Coin;
+import src.entities.collectibles.Star;
 import src.entities.enemies.Slime;
+import src.entities.keys.KeyBlue;
+import src.entities.keys.KeyGreen;
+import src.entities.keys.KeyRed;
+import src.entities.keys.KeyYellow;
 
 /**
  * @author D. Hout
@@ -20,8 +29,8 @@ public class Level1 extends AbstractWorld {
             {65,65,65,65,65,-1,-1,-1,-1,65,65,65,65,65,65,65,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65},
             {65,65,65,65,65,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65},
             {65,65,65,65,65,-1,-1,-1,-1,-1,-1,-1,-1,6,-1,-1,-1,-1,-1,82,65,65,65,65,-1,-1,65,65,65,65,65,-1,-1,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65},
-            {65,65,65,65,65,82,82,82,82,82,82,-1,6,6,-1,-1,-1,-1,-1,172,-1,65,65,65,92,92,65,65,65,65,65,92,92,65,65,65,65,65,65,65,65,65,65,65,65,65,65,-1,-1,-1,-1,-1,65,65,65,65,65,65,65,65},
-            {65,65,65,65,65,65,65,65,82,82,65,6,-1,-1,-1,89,-1,85,86,172,-1,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,-1,-1,65,65,65,65,65,65,65,65,65,65,65,65},
+            {65,65,65,65,65,82,82,82,82,82,82,-1,6,-1,-1,-1,-1,-1,-1,172,-1,65,65,65,92,92,65,65,65,65,65,92,92,65,65,65,65,65,65,65,65,65,65,65,65,65,65,-1,-1,-1,-1,-1,65,65,65,65,65,65,65,65},
+            {65,65,65,65,65,65,65,65,82,82,65,-6,-1,-1,-1,89,-1,85,86,172,-1,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,-1,-1,65,65,65,65,65,65,65,65,65,65,65,65},
             {65,65,65,65,65,65,82,82,82,65,65,82,82,82,82,88,82,82,82,82,65,65,-1,-1,-1,98,-1,-1,-1,-1,102,-1,-1,-1,-1,65,65,65,65,65,65,65,-1,-1,-1,-1,-1,65,65,65,65,65,65,65,65,65,65,65,65,65},
             {65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,88,65,65,65,65,65,65,-1,-1,-1,98,-1,-1,-1,-1,-1,-1,-1,170,-1,65,65,65,65,65,65,65,-1,-1,125,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65},
             {65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,88,65,65,65,65,65,65,-1,-1,-1,98,-1,-1,-1,-1,-1,-1,-1,-1,-1,65,65,65,65,65,65,65,83,89,81,65,65,65,15,3,3,15,65,65,65,65,65,65,65,65},
@@ -60,6 +69,33 @@ public class Level1 extends AbstractWorld {
     public void loadWorld() {
         super.loadWorld();
         addEntity(new Slime(), 1296, 1719);
+        addEntity(new Coin(), 630, 1710);
+        addEntity(new Coin(), 510, 1710);
+        addEntity(new Coin(), 570, 1710);
+        addEntity(new Coin(), 990, 1590);
+        addEntity(new Coin(), 990, 1650);
+        addEntity(new Star(), 2130, 1770);
+        addEntity(new CharacterCoin3(), 1950, 1350);
+        addEntity(new KeyBlue(), 2250, 1230);
+        addEntity(new Coin(), 2250, 1350);
+        addEntity(new Coin(), 2250, 1410);
+        addEntity(new Coin(), 2250, 1470);
+        addEntity(new Coin(), 2250, 1530);
+        addEntity(new CharacterCoin1(), 3224, 1639);
+        addEntity(new Coin(), 3390, 930);
+        addEntity(new Coin(), 3330, 930);
+        addEntity(new KeyGreen(), 3090, 450);
+        addEntity(new Coin(), 3030, 450);
+        addEntity(new Coin(), 2970, 450);
+        addEntity(new Coin(), 2910, 450);
+        addEntity(new CharacterCoin3(), 2550, 630);
+        addEntity(new CharacterCoin1(), 2550, 930);
+        addEntity(new KeyRed(), 1830, 630);
+        addEntity(new CharacterCoin3(), 870, 510);
+        addEntity(new CharacterCoin2(), 330, 330);
+        addEntity(new Star(), 1230, 510);
+        addEntity(new KeyYellow(), 1770, 270);
+        addEntity(new CharacterCoin1(), 1230, 450);
     }
     @Override
     public void reset() {
