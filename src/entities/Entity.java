@@ -20,9 +20,15 @@ public class Entity extends Mover {
     public Entity() {
     }
 
+    public void interact1() {
+    }
+    public void interact2() {
+    }
+
     @Override
     public void act() {
         super.act();
+        applyVelocity();
         if (Main.debug) {
             if (Greenfoot.mouseDragged(this)) {
                 MouseInfo mouse = Greenfoot.getMouseInfo();

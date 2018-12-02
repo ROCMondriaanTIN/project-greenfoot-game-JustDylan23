@@ -1,6 +1,5 @@
 package src.entities.CharacterCoin;
 
-import src.Hero;
 import src.Main;
 import src.entities.Entity;
 
@@ -26,13 +25,8 @@ public class CharacterCoin extends Entity {
     }
 
     @Override
-    public void act() {
-        super.act();
-        applyVelocity();
-        if (Main.debug) return;
-        if (getObjectsAtOffset(0, 0, Hero.class).size() != 0) {
-            getWorld().removeObject(this);
-            Main.worldInstance.hero.setHeroState(heroState);
-        }
+    public void interact1() {
+        getWorld().removeObject(this);
+        Main.worldInstance.hero.setHeroState(heroState);
     }
 }

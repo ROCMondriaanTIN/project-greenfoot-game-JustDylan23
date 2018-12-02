@@ -335,10 +335,12 @@ class TileFactory {
                 break;
             case 91:
                 tile.setTileImage("liquidLavaTop");
+                tile.setType(TileType.LIQUID);
                 tile.isSolid = false;
                 break;
             case 92:
                 tile.setTileImage("liquidLavaTopMid");
+                tile.setType(TileType.LIQUID);
                 tile.isSolid = false;
                 break;
             case 93:

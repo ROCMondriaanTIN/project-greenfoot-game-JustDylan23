@@ -16,13 +16,13 @@ public class FireBall extends Entity {
     }
 
     @Override
+    public void interact1() {
+        Main.worldInstance.hero.isAlive = false;
+    }
+
+    @Override
     public void act() {
         super.act();
-        applyVelocity();
         turn(30);
-        if (Main.debug) return;
-        if (getObjectsAtOffset(0, 0, Hero.class).size() != 0) {
-            Main.worldInstance.hero.isAlive = false;
-        }
     }
 }

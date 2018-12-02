@@ -1,7 +1,6 @@
 package src.entities.enemies;
 
 import greenfoot.GreenfootImage;
-import src.Hero;
 import src.Main;
 import src.PauseScreen;
 import src.Tile;
@@ -14,6 +13,8 @@ import java.util.List;
 
 public class Slime extends Enemy {
     private GreenfootImage walk1 = new GreenfootImage("Enemies\\slimeWalk1.png");
+    private GreenfootImage walk2 = new GreenfootImage("Enemies\\slimeWalk2.png");
+    private int imageState = 1;
 
     private boolean isOnGround;
     private long time = System.currentTimeMillis();
@@ -23,7 +24,7 @@ public class Slime extends Enemy {
         setImage(walk1);
         Main.worldInstance.ce.addCollidingMover(this);
         walk1.mirrorHorizontally();
-        velocityX = 3;
+        walk2.mirrorHorizontally();
     }
 
     private void updateGroundStats() {
@@ -35,12 +36,24 @@ public class Slime extends Enemy {
     }
 
     @Override
+    public void interact2() {
+        Main.worldInstance.hero.isAlive = false;
+    }
+
+    @Override
     public void act() {
         super.act();
         if (PauseScreen.isActive) return;
         velocityY = 2;
         applyVelocity();
         updateGroundStats();
+        imageState++;
+        if (imageState == 60) {
+            setImage(walk2);
+            imageState = 0;
+        } else if (imageState == 30) {
+            setImage(walk1);
+        }
 
         int dx = getImage().getWidth() / 2;
         int dy = getImage().getHeight() / 2 + 1;
@@ -58,16 +71,12 @@ public class Slime extends Enemy {
                 isFacingRight = !isFacingRight;
                 time = now;
                 walk1.mirrorHorizontally();
+                walk2.mirrorHorizontally();
             }
         }
 
         if (isFacingRight) {
-            velocityX = 3;
-        } else velocityX = -3;
-
-        if (Main.debug) return;
-        if (!getIntersectingObjects(Hero.class).isEmpty()) {
-            Main.worldInstance.hero.isAlive = false;
-        }
+            velocityX = 2;
+        } else velocityX = -2;
     }
 }

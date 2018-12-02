@@ -1,5 +1,7 @@
 package src.worlds;
 
+import greenfoot.Greenfoot;
+import greenfoot.GreenfootSound;
 import src.AbstractWorld;
 import src.entities.CharacterCoin.CharacterCoin1;
 import src.entities.CharacterCoin.CharacterCoin2;
@@ -21,6 +23,8 @@ public class Level1 extends AbstractWorld {
 
     private static Level1 instance = new Level1();
 
+    private GreenfootSound song = new GreenfootSound("music.wav");
+
     private Level1() {
         super(90, 1740);
         this.map = new int[][]{
@@ -39,7 +43,7 @@ public class Level1 extends AbstractWorld {
                     {65, -1, -1, -1, -1, -1, -1, 102, -1, -1, 102, -1, -1, -1, -1, 88, -1, -1, -1, -1, -1, -1, -1, -1, -1, 98, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 97, -1, -1, -1, 88, -1, -1, -1, -1, 102, -1, -1, 102, -1, -1, -1, -1, -1, 65, 65, 65},
                     {65, -1, 172, 172, 172, -1, -1, 15, 2, 15, 15, -1, -1, -1, -1, 88, -1, -1, -1, -1, -1, -1, -1, -1, -1, 98, -1, -1, 6, 3, 3, 6, 3, 6, -1, -1, -1, -1, -1, 97, -1, -1, -1, -1, -1, -1, -1, -1, 104, -1, -1, 104, -1, -1, -1, -1, -1, 65, 65, 65},
                     {65, 168, 172, 61, 172, 169, -1, -1, -1, -1, 99, -1, -1, -1, -1, 88, -1, -1, -1, -1, -1, -1, -1, -1, -1, 98, 0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 97, -1, -1, 15, 3, 15, -1, -1, -1, 97, 97, 97, 97, -1, -1, -1, -1, -1, 65, 65, 65},
-                    {65, -1, 172, 60, 172, -1, -1, -1, -1, -1, 99, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 98, 0, 1, -1, -1, -1, -1, -1, 87, 84, -1, -1, -1, -1, 97, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 65, 65, 65},
+                    {65, -1, 172, 60, 172, -1, -1, -1, -1, -1, 99, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 98, 0, 1, -1, -1, -1, -1, -1, 87, 84, -1, -1, -1, -1, 97, -1, -1, 97, -1, 97, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 65, 65, 65},
                     {78, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, -1, -1, -1, 82, 82, 82, 82, 82, 82, 82, 82, -1, -1, -1, 98, 82, 82, 82, 82, 82, 82, 82, 82, 82, 82, -1, -1, -1, 82, 82, 82, 82, 82, 82, 82, 82, 82, -1, -1, -1, -1, 82, 82, 82, 89, 89, 65, 65, 65},
                     {65, 65, 65, 65, 65, 65, 65, 65, 82, 82, 82, 92, 92, 92, 82, 82, 65, 65, 65, 65, 65, 65, 92, 92, 92, 92, 65, 65, 65, 82, 82, 82, 65, 65, 65, 65, 92, 92, 92, 65, 65, 82, 82, 82, 82, 65, 65, 65, 92, 92, 92, 92, 65, 82, 82, 88, 88, 65, 65, 65},
                     {65, 65, 65, 65, 65, 82, 82, 65, 65, 65, 65, 90, 90, 90, 65, 65, 65, 82, 82, 82, 65, 65, 90, 90, 90, 90, 65, 65, 65, 65, 65, 82, 82, 65, 65, 65, 90, 90, 90, 65, 82, 82, 82, 82, 65, 82, 82, 65, 90, 90, 90, 90, 65, 65, 65, 88, 88, 65, 65, 65},
@@ -66,6 +70,9 @@ public class Level1 extends AbstractWorld {
     @Override
     public void loadWorld() {
         super.loadWorld();
+        song.play();
+        song.setVolume(50);
+
         addEntity(new Slime(), 1296, 1719);
         addEntity(new Coin(), 630, 1710);
         addEntity(new Coin(), 510, 1710);
@@ -87,16 +94,17 @@ public class Level1 extends AbstractWorld {
         addEntity(new Coin(), 2970, 450);
         addEntity(new Coin(), 2910, 450);
         addEntity(new CharacterCoin3(), 2550, 630);
-        addEntity(new CharacterCoin1(), 2550, 930);
+        addEntity(new CharacterCoin1(), 2610, 930);
         addEntity(new KeyRed(), 1830, 630);
         addEntity(new CharacterCoin3(), 870, 510);
-        addEntity(new CharacterCoin2(), 330, 330);
+        addEntity(new CharacterCoin2(), 390, 330);
         addEntity(new Star(), 1230, 510);
         addEntity(new KeyYellow(), 1770, 270);
         addEntity(new CharacterCoin1(), 1230, 450);
     }
     @Override
     public void reset() {
+        if (song.isPlaying()) song.stop();
         instance = new Level1();
         instance.loadWorld();
     }

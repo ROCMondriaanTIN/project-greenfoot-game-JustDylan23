@@ -1,6 +1,8 @@
 package src;
 
-import greenfoot.*;
+import greenfoot.Greenfoot;
+import greenfoot.GreenfootImage;
+import src.entities.Entity;
 
 import java.util.List;
 
@@ -127,6 +129,7 @@ public class Hero extends Mover {
         waterCollisionHandler();
         ladderInteractionHandler();
         checkHitBlock();
+        entityInteraction();
     }
 
     /**
@@ -191,9 +194,11 @@ public class Hero extends Mover {
 
     private void horizontalMovementHandler() {
         if (Greenfoot.isKeyDown("a") && Greenfoot.isKeyDown("d")) return;
-        if (Greenfoot.isKeyDown("a")) velocityX = invert(walkSpeed);
-        if (Greenfoot.isKeyDown("d")) velocityX = walkSpeed;
-        if (isClimbing) velocityX /= 2;
+        double factor = 1;
+        if (isClimbing) factor = 0.5;
+        if (Greenfoot.isKeyDown("a")) velocityX = invert(walkSpeed * factor);
+        if (Greenfoot.isKeyDown("d")) velocityX = walkSpeed * factor;
+
     }
 
     /**
@@ -261,7 +266,6 @@ public class Hero extends Mover {
 
     private void ladderInteractionHandler() {
         if (Greenfoot.isKeyDown("space") && Greenfoot.isKeyDown("w")) return;
-        System.out.println(isClimbing);
         List<Tile> tiles = getObjectsAtOffset(0, -5, Tile.class);
         if (tiles.isEmpty()) {
             isClimbing = false;
@@ -303,6 +307,16 @@ public class Hero extends Mover {
                     break;
                 }
             }
+        }
+    }
+
+    private void entityInteraction() {
+        if (Main.debug) return;
+        for (Entity entity : getObjectsAtOffset(0, 0, Entity.class)) {
+            entity.interact1();
+        }
+        for (Entity entity : getIntersectingObjects(Entity.class)) {
+            entity.interact2();
         }
     }
 

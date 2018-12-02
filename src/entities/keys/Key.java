@@ -31,29 +31,24 @@ public class Key extends Entity {
     }
 
     @Override
-    public void act() {
-        super.act();
-        applyVelocity();
-        if (Main.debug) return;
-        if (!getIntersectingObjects(Hero.class).isEmpty()) {
-            Main.worldInstance.keyCount++;
-            for (Tile tile : getWorld().getObjects(Tile.class)) {
-                if (tile.getType().toString().contains(color.toUpperCase())) {
+    public void interact1() {
+        Main.worldInstance.keyCount++;
+        for (Tile tile : getWorld().getObjects(Tile.class)) {
+            if (tile.getType().toString().contains(color.toUpperCase())) {
+                tile.getImage().clear();
+                tile.isSolid = false;
+                Main.worldInstance.overlay.addKey(this.color);
+            }
+            if (Main.worldInstance.keyCount == 4) {
+                if (tile.getType() == TileType.LOCK_X) {
                     tile.getImage().clear();
                     tile.isSolid = false;
-                    Main.worldInstance.overlay.addKey(this.color);
-                }
-                if (Main.worldInstance.keyCount == 4) {
-                    if (tile.getType() == TileType.LOCK_X) {
-                        tile.getImage().clear();
-                        tile.isSolid = false;
-                    }
                 }
             }
-            getWorld().removeObject(this);
-            if (Main.worldInstance.keyCount != 4) {
-                Greenfoot.playSound("key.wav");
-            } else Greenfoot.playSound("key2.wav");
         }
+        getWorld().removeObject(this);
+        if (Main.worldInstance.keyCount != 4) {
+            Greenfoot.playSound("key.wav");
+        } else Greenfoot.playSound("key2.wav");
     }
 }

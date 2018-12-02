@@ -17,12 +17,7 @@ public class Spikes extends GamePlayObject {
     }
 
     @Override
-    public void act() {
-        super.act();
-        applyVelocity();
-        if (Main.debug) return;
-        if (!getIntersectingObjects(Hero.class).isEmpty()) {
-            Main.worldInstance.hero.isAlive = false;
-        }
+    public void interact1() {
+        Main.worldInstance.hero.isAlive = false;
     }
 }
