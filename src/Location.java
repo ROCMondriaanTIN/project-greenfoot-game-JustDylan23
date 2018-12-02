@@ -1,5 +1,9 @@
 package src;
 
+/**
+ * @author D. Hout
+ */
+
 public class Location {
     public int x;
     public int y;

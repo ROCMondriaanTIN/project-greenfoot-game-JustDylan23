@@ -7,6 +7,10 @@ import src.Main;
 import src.Mover;
 import src.TileEngine;
 
+/**
+ * @author D. Hout
+ */
+
 public class Entity extends Mover {
     public String constructor;
 

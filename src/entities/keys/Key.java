@@ -7,6 +7,10 @@ import src.Tile;
 import src.TileType;
 import src.entities.Entity;
 
+/**
+ * @author D. Hout
+ */
+
 public class Key extends Entity {
 
     private String color;

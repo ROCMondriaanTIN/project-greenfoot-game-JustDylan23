@@ -1,5 +1,9 @@
 package src.entities.gameplayobjects;
 
+/**
+ * @author D. Hout
+ */
+
 public class SpringBoard extends GamePlayObject {
 
     private boolean isDown;

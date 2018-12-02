@@ -2,6 +2,10 @@ package src;
 
 import greenfoot.GreenfootImage;
 
+/**
+ * @author D. Hout
+ */
+
 public class HeroImages {
 
     private static final HeroImages instance = new HeroImages();

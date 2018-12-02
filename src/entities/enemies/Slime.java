@@ -8,6 +8,10 @@ import src.Tile;
 
 import java.util.List;
 
+/**
+ * @author D. Hout
+ */
+
 public class Slime extends Enemy {
     private GreenfootImage walk1 = new GreenfootImage("Enemies\\slimeWalk1.png");
 

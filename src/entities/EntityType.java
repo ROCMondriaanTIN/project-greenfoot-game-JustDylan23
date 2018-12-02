@@ -1,5 +1,9 @@
 package src.entities;
 
+/**
+ * @author D. Hout
+ */
+
 public enum EntityType {
     KEY_BLUE ("keyBlue"),
     KEY_GREEN ("keyGreen"),

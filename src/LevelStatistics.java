@@ -2,7 +2,9 @@ package src;
 
 import src.worlds.LevelSelecting;
 
-import static src.Main.worldInstance;
+/**
+ * @author D. Hout
+ */
 
 public class LevelStatistics {
     private static final LevelStatistics instance = new LevelStatistics();
@@ -18,14 +20,14 @@ public class LevelStatistics {
 
     public void addCoin() {
         coins++;
-        worldInstance.coinsGained++;
-        worldInstance.overlay.updateCoinCount();
+        Main.worldInstance.coinsGained++;
+        Main.worldInstance.overlay.updateCoinCount();
     }
 
     public void addStar() {
         stars++;
         LevelSelecting.getInstance().updateStars();
         LevelSelecting.getInstance().updateUnlockedLevels();
-        worldInstance.overlay.addStar();
+        Main.worldInstance.overlay.addStar();
     }
 }

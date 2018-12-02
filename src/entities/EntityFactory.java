@@ -17,6 +17,10 @@ import src.entities.keys.KeyGreen;
 import src.entities.keys.KeyRed;
 import src.entities.keys.KeyYellow;
 
+/**
+ * @author D. Hout
+ */
+
 public class EntityFactory {
 
     public static Entity createEntity(EntityType entityType) {

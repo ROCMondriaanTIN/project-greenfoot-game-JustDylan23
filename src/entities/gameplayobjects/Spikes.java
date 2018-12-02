@@ -4,6 +4,10 @@ import src.Hero;
 import src.Main;
 import src.TileEngine;
 
+/**
+ * @author D. Hout
+ */
+
 public class Spikes extends GamePlayObject {
 
     public Spikes() {

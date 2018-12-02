@@ -6,6 +6,7 @@ import greenfoot.*;
  * @author D. Hout
  *
  */
+
 public class Tile extends Actor {
 
     public boolean isSolid = false;

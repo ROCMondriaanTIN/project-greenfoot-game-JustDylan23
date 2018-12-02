@@ -4,6 +4,10 @@ import src.Hero;
 import src.Main;
 import src.entities.Entity;
 
+/**
+ * @author D. Hout
+ */
+
 public class FireBall extends Entity {
 
     public FireBall() {

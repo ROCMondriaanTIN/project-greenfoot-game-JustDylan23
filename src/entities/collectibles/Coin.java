@@ -5,6 +5,10 @@ import src.Hero;
 import src.LevelStatistics;
 import src.Main;
 
+/**
+ * @author D. Hout
+ */
+
 public class Coin extends Collectible {
     public Coin() {
         super();

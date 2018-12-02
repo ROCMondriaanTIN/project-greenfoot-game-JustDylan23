@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * @author D. Hout
  */
+
 public class Hero extends Mover {
     private final double gravity;
     private final double acc;
