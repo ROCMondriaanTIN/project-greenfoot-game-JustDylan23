@@ -3,12 +3,11 @@ package src;
 import greenfoot.*;
 
 /**
- *
  * @author R. Springer
  */
 public class Camera extends Actor {
 
-    public static int SPEED = 10;
+    private static int SPEED = 10;
     private int width;
     private int height;
     private int maxX;
@@ -19,15 +18,7 @@ public class Camera extends Actor {
     private double dirY;
     private boolean follow;
     private Mover followActor;
-    private boolean prevSwitchCameraDown;
 
-    /**
-     * The constructor of the Camera class Camera class moves the Tiles and
-     * Mover classes around according to the camera position. Uses the tile
-     * engine to retrieve the tiles to move.
-     *
-     * @param tileEngine TileEngine that is used to retrieve the tiles.
-     */
     public Camera(TileEngine tileEngine) {
         this.width = TileEngine.SCREEN_WIDTH;
         this.height = TileEngine.SCREEN_HEIGHT;
@@ -39,26 +30,16 @@ public class Camera extends Actor {
         this.setImage(new GreenfootImage(1, 1));
     }
 
-    /**
-     * The contructor of the Camera class Camera class moves the Tiles and Mover
-     * classes around according to the camera position. Uses the tile engine to
-     * retrieve the tiles to move.
-     *
-     * @param tileEngine TileEngine that is used to retrieve te tiles.
-     * @param speed the speed of the movement of the camera (Free movement)
-     */
     public Camera(TileEngine tileEngine, int speed) {
         this(tileEngine);
         SPEED = speed;
     }
 
-    /**
-     * This methode will make this class follow the Mover you give.
-     *
-     * @param mover A Mover class or an extend of it. The Mover class is able to
-     * be followed.
-     */
-    public void follow(Mover mover) {
+    private int calculate(int number, int maxNumber) {
+        return Math.max(0, Math.min(number, maxNumber));
+    }
+
+    void follow(Mover mover) {
         this.follow = true;
         mover.setCamera(this);
         this.followActor = mover;
@@ -66,45 +47,40 @@ public class Camera extends Actor {
 
     @Override
     public void act() {
-        dirX *= cameraDrag;
-        dirY *= cameraDrag;
+        dirX *= (Math.abs(dirX) > 0.1) ? cameraDrag : 0;
+        dirY *= (Math.abs(dirY) > 0.1) ? cameraDrag : 0;
 
         int x;
         int y;
 
-        // Als je in debug modus zit kan je met de "e" toets de camera los koppelen
-        // ben besturen met de pijltjes toetsen.
-        if(CollisionEngine.DEBUG) {
-            boolean currentSwitchCameraDown = Greenfoot.isKeyDown("e");
-            if (currentSwitchCameraDown && !prevSwitchCameraDown) {
+        if (Main.debug) {
+            if (Greenfoot.isKeyDown("e")) {
                 follow = !follow;
             }
-            prevSwitchCameraDown = currentSwitchCameraDown;
         }
 
         if (follow) {
-            this.followActor.screenX = this.width / 2;
-            this.followActor.screenY = this.height / 2;
+            int halfWidth = width / 2;
+            int halfHeight = height / 2;
 
-            x = this.followActor.getX() - this.width / 2;
-            y = this.followActor.getY() - this.height / 2;
+            followActor.screenX = halfWidth;
+            followActor.screenY = halfHeight;
 
-            x = Math.max(0, Math.min(x, this.maxX));
-            y = Math.max(0, Math.min(y, this.maxY));
+            x = followActor.getX() - halfWidth;
+            y = followActor.getY() - halfHeight;
 
-            this.setLocation(x, y);
+            x = calculate(x, maxX);
+            y = calculate(y, maxY);
 
-//          left and right sides
-            if (this.followActor.getX() < this.width / 2
-                    || this.followActor.getX() > this.maxX + this.width / 2) {
+            setLocation(x, y);
 
-                this.followActor.screenX = this.followActor.getX() - this.getX();
+            if (followActor.getX() < halfWidth || followActor.getX() > maxX + halfWidth) {
+
+                followActor.screenX = followActor.getX() - getX();
             }
 
-//          top and bottom sides
-            if (this.followActor.getY() < this.height / 2
-                    || this.followActor.getY() > this.maxY + this.height / 2) {
-                this.followActor.screenY = this.followActor.getY() - this.getY();
+            if (followActor.getY() < halfHeight || followActor.getY() > maxY + halfHeight) {
+                followActor.screenY = followActor.getY() - getY();
             }
         } else {
             if (Greenfoot.isKeyDown("UP")) {
@@ -117,30 +93,29 @@ public class Camera extends Actor {
             } else if (Greenfoot.isKeyDown("RIGHT")) {
                 dirX = 1;
             }
-            this.move(dirX, dirY);
+            move(dirX, dirY);
         }
 
         this.updateView();
     }
 
     /**
-     * This methode can be used to move the camera around the world. Make sure
+     * This method can be used to move the camera around the world. Make sure
      * you don't move when you are following.
      *
      * @param dirX The direction x
      * @param dirY The direction y
      */
     public void move(double dirX, double dirY) {
-        int x = this.getX();
-        int y = this.getY();
+        int x = getX();
+        int y = getY();
 
         x += dirX * SPEED;
         y += dirY * SPEED;
 
-        x = Math.max(0, Math.min(x, this.maxX));
-        y = Math.max(0, Math.min(y, this.maxY));
-        this.setLocation(x, y);
-        System.out.println("Move at location: " + getX() + ", " + getY());
+        x = calculate(x, maxX);
+        y = calculate(y, maxY);
+        setLocation(x, y);
     }
 
     /**
@@ -159,8 +134,8 @@ public class Camera extends Actor {
         int offsetY = -this.getY() + startRow * TileEngine.TILE_HEIGHT;
 
         Tile currentTile;
-        int x = 0;
-        int y = 0;
+        int x;
+        int y;
         for (y = 0; y < TileEngine.MAP_HEIGHT; y++) {
             for (x = 0; x < TileEngine.MAP_WIDTH; x++) {
                 currentTile = tileEngine.getTileAt(x, y);

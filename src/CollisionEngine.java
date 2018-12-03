@@ -1,6 +1,7 @@
 package src;
 
-import greenfoot.*;
+import greenfoot.Actor;
+
 import java.util.ArrayList;
 import java.util.List;
 

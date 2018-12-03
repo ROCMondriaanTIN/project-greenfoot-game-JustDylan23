@@ -2,12 +2,16 @@ package src;
 
 import src.worlds.LevelSelecting;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author D. Hout
  */
 
 public class LevelStatistics {
     private static final LevelStatistics instance = new LevelStatistics();
+    private Map<Integer, Boolean> ownedStars = new HashMap<>();
     int coins;
     public int stars;
 
