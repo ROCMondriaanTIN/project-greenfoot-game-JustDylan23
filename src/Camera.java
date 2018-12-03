@@ -20,14 +20,14 @@ public class Camera extends Actor {
     private Mover followActor;
 
     public Camera(TileEngine tileEngine) {
-        this.width = TileEngine.SCREEN_WIDTH;
-        this.height = TileEngine.SCREEN_HEIGHT;
-        this.setLocation(0, 0);
-        this.maxX = TileEngine.MAP_WIDTH * TileEngine.TILE_WIDTH - this.width;
-        this.maxY = TileEngine.MAP_HEIGHT * TileEngine.TILE_HEIGHT - this.height;
+        width = TileEngine.SCREEN_WIDTH;
+        height = TileEngine.SCREEN_HEIGHT;
+        setLocation(0, 0);
+        maxX = TileEngine.MAP_WIDTH * TileEngine.TILE_WIDTH - width;
+        maxY = TileEngine.MAP_HEIGHT * TileEngine.TILE_HEIGHT - height;
         this.tileEngine = tileEngine;
-        this.cameraDrag = 0.9;
-        this.setImage(new GreenfootImage(1, 1));
+        cameraDrag = 0.9;
+        setImage(new GreenfootImage(1, 1));
     }
 
     public Camera(TileEngine tileEngine, int speed) {
@@ -40,9 +40,9 @@ public class Camera extends Actor {
     }
 
     void follow(Mover mover) {
-        this.follow = true;
+        follow = true;
         mover.setCamera(this);
-        this.followActor = mover;
+        followActor = mover;
     }
 
     @Override
@@ -96,7 +96,7 @@ public class Camera extends Actor {
             move(dirX, dirY);
         }
 
-        this.updateView();
+        updateView();
     }
 
     /**
@@ -126,12 +126,12 @@ public class Camera extends Actor {
      * extend of the Mover class.
      */
     public void updateView() {
-        int startCol = (int) Math.floor(this.getY() / TileEngine.TILE_HEIGHT);
-        int endCol = startCol + (this.height / TileEngine.TILE_HEIGHT);
-        int startRow = (int) Math.floor(this.getX() / TileEngine.TILE_WIDTH);
-        int endRow = startRow + (this.width / TileEngine.TILE_WIDTH);
-        int offsetX = -this.getX() + startCol * TileEngine.TILE_WIDTH;
-        int offsetY = -this.getY() + startRow * TileEngine.TILE_HEIGHT;
+        int startCol = (int) Math.floor((double) getY() / (double) TileEngine.TILE_HEIGHT);
+        int endCol = startCol + (height / TileEngine.TILE_HEIGHT);
+        int startRow = (int) Math.floor((double) getX() / (double) TileEngine.TILE_WIDTH);
+        int endRow = startRow + (width / TileEngine.TILE_WIDTH);
+        int offsetX = -getX() + startCol * TileEngine.TILE_WIDTH;
+        int offsetY = -getY() + startRow * TileEngine.TILE_HEIGHT;
 
         Tile currentTile;
         int x;
@@ -149,17 +149,17 @@ public class Camera extends Actor {
             }
         }
 
-        if (!this.follow) {
-            this.followActor.screenX = this.followActor.getX() - this.getX();
-            this.followActor.screenY = this.followActor.getY() - this.getY();
+        if (!follow) {
+            followActor.screenX = followActor.getX() - getX();
+            followActor.screenY = followActor.getY() - getY();
         }
 
-        for (Mover actor : this.getWorld().getObjects(Mover.class)) {
-            if (actor == this.followActor) {
+        for (Mover actor : getWorld().getObjects(Mover.class)) {
+            if (actor == followActor) {
                 continue;
             }
-            actor.screenX = actor.getX() - this.getX();
-            actor.screenY = actor.getY() - this.getY();
+            actor.screenX = actor.getX() - getX();
+            actor.screenY = actor.getY() - getY();
         }
     }
 }
