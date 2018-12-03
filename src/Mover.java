@@ -4,49 +4,24 @@ import greenfoot.*;
 
 /**
  *
- * @author R. Springer
+ * @author D. Hout
  */
 public class Mover extends Actor {
 
-    public int screenX;
-    public int screenY;
-    public double velocityX;
-    public double velocityY;
-    protected Camera camera;
+    int screenX;
+    int screenY;
+    protected double velocityX;
+    protected double velocityY;
 
-    public int worldX;
-    public int worldY;
+    private int worldX;
+    private int worldY;
     private boolean firstLocation = true;
-    private boolean hasCamera;
 
-    /**
-     * Methode to set the camera a Mover can have
-     *
-     * @param camera A Camera class
-     */
-    public void setCamera(Camera camera) {
-        this.camera = camera;
-        hasCamera = true;
-    }
-
-    /**
-     * Removes the camera if a camera has been set
-     */
-    public void removeCamera() {
-        if (hasCamera) {
-            this.camera = null;
-            hasCamera = false;
-        }
-    }
-
-    /**
-     * Apply change in position based on velocityX and velocityY
-     */
-    public void applyVelocity() {
-        if (Math.abs(velocityX) < 0.01) {
+    protected void applyVelocity() {
+        if (Math.abs(velocityX) < 0.02) {
             velocityX = 0;
         }
-        if (Math.abs(velocityY) < 0.01) {
+        if (Math.abs(velocityY) < 0.02) {
             velocityY = 0;
         }
         setLocation((int) (getX() + .5 + velocityX), (int) (getY() + .5 + velocityY));
@@ -54,42 +29,32 @@ public class Mover extends Actor {
 
     @Override
     public void setLocation(int x, int y) {
-        if (firstLocation == true) {
+        if (firstLocation) {
             firstLocation = false;
             screenX = x;
             screenY = y;
         }
         super.setLocation(screenX, screenY);
-        this.worldX = x;
-        this.worldY = y;
+        worldX = x;
+        worldY = y;
     }
 
     @Override
     public int getX() {
-        return this.worldX;
+        return worldX;
     }
 
     @Override
     public int getY() {
-        return this.worldY;
+        return worldY;
     }
 
-    /**
-     * Returns the x position based on the screen
-     *
-     * @return
-     */
-    public int getScreenX() {
-        return this.screenX;
+    private int getScreenX() {
+        return screenX;
     }
 
-    /**
-     * Returns the y position based on the screen
-     *
-     * @return
-     */
-    public int getScreenY() {
-        return this.screenY;
+    private int getScreenY() {
+        return screenY;
     }
 
     @Override

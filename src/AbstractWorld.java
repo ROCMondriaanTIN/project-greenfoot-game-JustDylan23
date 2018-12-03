@@ -111,7 +111,7 @@ public abstract class AbstractWorld extends World {
                 }
                 Entity entity = EntityFactory.createEntity(type);
                 entities.add(entity);
-                addObject(entity, hero.getX(), hero.getY());
+                addObject(entity, camera.getX() + 500, camera.getY() + 400);
                 System.out.println("entity added");
 
             }

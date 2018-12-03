@@ -3,8 +3,9 @@ package src;
 import greenfoot.*;
 
 /**
- * @author R. Springer
+ * @author D. Hout
  */
+
 public class Camera extends Actor {
 
     private static int SPEED = 10;
@@ -41,7 +42,6 @@ public class Camera extends Actor {
 
     void follow(Mover mover) {
         follow = true;
-        mover.setCamera(this);
         followActor = mover;
     }
 
