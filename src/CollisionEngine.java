@@ -1,16 +1,16 @@
 package src;
 
-import greenfoot.*;
+import greenfoot.Actor;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * @author R. Springer
  */
 public class CollisionEngine {
 
-    public static final boolean DEBUG = false;
+    public static final boolean DEBUG = true;
     private final Camera camera;
     private final TileEngine tileEngine;
     private final List<Mover> collidingActors;
@@ -20,7 +20,7 @@ public class CollisionEngine {
      * The constructor of the CollisionEngine.
      *
      * @param tileEngine The TileEngine
-     * @param camera The camera
+     * @param camera     The camera
      */
     public CollisionEngine(TileEngine tileEngine, Camera camera) {
         this.tileEngine = tileEngine;
@@ -54,7 +54,7 @@ public class CollisionEngine {
      * This methode must be called every update of the game. Else the collision
      * will not apply correctly
      */
-    public void update() {
+    void update() {
         for (Mover mover : this.collidingActors) {
             List<Tile> tiles = getCollidingTiles(mover, false);
 
@@ -87,90 +87,58 @@ public class CollisionEngine {
     /**
      * This methode will detect if a Mover is overlapping with the tiles
      *
-     * @param mover A Mover class or a extend of it.
-     * @param actorLeft The far most left x position of the Mover.
-     * @param actorRight The far most right x position of the Mover.
-     * @param actorTop The far most top y position of the Mover.
+     * @param mover       A Mover class or a extend of it.
+     * @param actorLeft   The far most left x position of the Mover.
+     * @param actorRight  The far most right x position of the Mover.
+     * @param actorTop    The far most top y position of the Mover.
      * @param actorBottom The far most bottom y position of the Mover.
      * @return
      */
-    public boolean detect(Mover mover, int actorLeft, int actorRight, int actorTop, int actorBottom) {
+    private boolean detect(Mover mover, int actorLeft, int actorRight, int actorTop, int actorBottom) {
         return !getCollidingTiles(actorTop, actorLeft, actorRight, actorBottom, mover.getX(), mover.getY(), false).isEmpty();
     }
 
     /**
      * This methode will get all the tiles at the different x and y position
      *
-     * @param top The far most top y position
-     * @param left The far most left x position
-     * @param right The far most right x position
+     * @param top    The far most top y position
+     * @param left   The far most left x position
+     * @param right  The far most right x position
      * @param bottom The far most bottom y position
-     * @param midX The middle x position
-     * @param midY The middle y position
+     * @param midX   The middle x position
+     * @param midY   The middle y position
      * @return Returns a list of tiles that are located on those positions.
      */
-    public List<Tile> getCollidingTiles(int top, int left, int right, int bottom, int midX, int midY, boolean addNoneSolid) {
+    private List<Tile> getCollidingTiles(int top, int left, int right, int bottom, int midX, int midY, boolean addNoneSolid) {
         collidingTiles.clear();
+        int[] paramX = {left, left, right, right, midX, midX, left, right};
+        int[] paramY = {top, bottom, bottom, top, top, bottom, midY, midY};
+        Tile tile;
 
-        Tile tile = tileEngine.getTileAtXY(left, top);
-        if (tile != null && (addNoneSolid || tile.isSolid)) {
-            collidingTiles.add(tile);
-        }
-        tile = tileEngine.getTileAtXY(left, bottom);
-        if (tile != null && (addNoneSolid || tile.isSolid)) {
-            if (!collidingTiles.contains(tile)) {
-                collidingTiles.add(tile);
-            }
-        }
-        tile = tileEngine.getTileAtXY(right, bottom);
-        if (tile != null && (addNoneSolid || tile.isSolid)) {
-            if (!collidingTiles.contains(tile)) {
-                collidingTiles.add(tile);
-            }
-        }
-        tile = tileEngine.getTileAtXY(right, top);
-        if (tile != null && (addNoneSolid || tile.isSolid)) {
-            if (!collidingTiles.contains(tile)) {
-                collidingTiles.add(tile);
-            }
-        }
-
-        tile = tileEngine.getTileAtXY(midX, top);
-        if (tile != null && (addNoneSolid || tile.isSolid)) {
-            if (!collidingTiles.contains(tile)) {
-                collidingTiles.add(tile);
-            }
-        }
-        tile = tileEngine.getTileAtXY(midX, bottom);
-        if (tile != null && (addNoneSolid || tile.isSolid)) {
-            if (!collidingTiles.contains(tile)) {
-                collidingTiles.add(tile);
-            }
-        }
-        tile = tileEngine.getTileAtXY(left, midY);
-        if (tile != null && (addNoneSolid || tile.isSolid)) {
-            if (!collidingTiles.contains(tile)) {
-                collidingTiles.add(tile);
-            }
-        }
-        tile = tileEngine.getTileAtXY(right, midY);
-        if (tile != null && (addNoneSolid || tile.isSolid)) {
-            if (!collidingTiles.contains(tile)) {
-                collidingTiles.add(tile);
-            }
+        for (int i = 0; i < 8; i++) {
+            tile = tileEngine.getTileAtXY(paramX[i], paramY[i]);
+            addCollidingTile(tile, addNoneSolid);
         }
         return collidingTiles;
+    }
+
+    private void addCollidingTile(Tile tile, boolean addNoneSolid) {
+        if (tile != null && (addNoneSolid || tile.isSolid)) {
+            if (!collidingTiles.contains(tile)) {
+                collidingTiles.add(tile);
+            }
+        }
     }
 
     /**
      * Getting the colliding Tiles from the collision engine
      *
-     * @param mover A Mover class or a extend of it.
+     * @param mover        A Mover class or a extend of it.
      * @param addNoneSolid If true it also add tiles that are not solid to the
-     * list
+     *                     list
      * @return A List of overlapping tiles.
      */
-    public List<Tile> getCollidingTiles(Mover mover, boolean addNoneSolid) {
+    private List<Tile> getCollidingTiles(Mover mover, boolean addNoneSolid) {
         int actorLeft = getActorLeft(mover);
         int actorRight = getActorRight(mover);
         int actorTop = getActorTop(mover);
@@ -182,10 +150,10 @@ public class CollisionEngine {
      * This methode will resolves the overlapping.
      *
      * @param mover A Mover class or a extend of it.
-     * @param tile A Tile class or a extend of it.
+     * @param tile  A Tile class or a extend of it.
      * @return Returns a true if the overlap was resolved.
      */
-    public boolean resolve(Mover mover, Tile tile) {
+    private boolean resolve(Mover mover, Tile tile) {
         int left = getActorLeft(mover);
         int right = getActorRight(mover);
         int top = getActorTop(mover);
@@ -241,7 +209,7 @@ public class CollisionEngine {
      * @param actor An Actor class or an extend of it.
      * @return returns the half width
      */
-    public static int getActorHalfWidth(Actor actor) {
+    private static int getActorHalfWidth(Actor actor) {
         return actor.getImage().getWidth() / 2;
     }
 
@@ -251,7 +219,7 @@ public class CollisionEngine {
      * @param actor An Actor class or an extend of it.
      * @return returns the half height
      */
-    public static int getActorHalfHeigth(Actor actor) {
+    private static int getActorHalfHeigth(Actor actor) {
         return actor.getImage().getHeight() / 2;
     }
 
@@ -261,7 +229,7 @@ public class CollisionEngine {
      * @param actor An Actor class or an extend of it.
      * @return return top Y actor position
      */
-    public static int getActorTop(Actor actor) {
+    private static int getActorTop(Actor actor) {
         return actor.getY() - actor.getImage().getHeight() / 2;
     }
 
@@ -271,7 +239,7 @@ public class CollisionEngine {
      * @param actor An Actor class or an extend of it.
      * @return return bottom Y actor position
      */
-    public static int getActorBottom(Actor actor) {
+    private static int getActorBottom(Actor actor) {
         return actor.getY() + actor.getImage().getHeight() / 2;
     }
 
@@ -281,7 +249,7 @@ public class CollisionEngine {
      * @param actor An Actor class or an extend of it.
      * @return return left X actor position
      */
-    public static int getActorLeft(Actor actor) {
+    private static int getActorLeft(Actor actor) {
         return actor.getX() - actor.getImage().getWidth() / 2;
     }
 
@@ -291,7 +259,7 @@ public class CollisionEngine {
      * @param actor An Actor class or an extend of it.
      * @return return right X actor position
      */
-    public static int getActorRight(Actor actor) {
+    private static int getActorRight(Actor actor) {
         return actor.getX() + actor.getImage().getWidth() / 2;
     }
 }
