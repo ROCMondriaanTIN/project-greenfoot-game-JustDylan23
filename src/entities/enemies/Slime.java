@@ -22,7 +22,7 @@ public class Slime extends Enemy {
 
     public Slime() {
         setImage(walk1);
-        Main.worldInstance.ce.addCollidingMover(this);
+        canCollide = true;
         walk1.mirrorHorizontally();
         walk2.mirrorHorizontally();
     }

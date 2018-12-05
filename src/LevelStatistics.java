@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class LevelStatistics {
     private static final LevelStatistics instance = new LevelStatistics();
-    private Map<Integer, Boolean> ownedStars = new HashMap<>();
+    public Map<Integer, Boolean> ownedStars = new HashMap<>();
     int coins;
     public int stars;
 

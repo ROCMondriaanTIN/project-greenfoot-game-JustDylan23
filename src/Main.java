@@ -14,7 +14,7 @@ public class Main extends World {
 
     public static boolean debug = false;
 
-    public static AbstractWorld worldInstance;
+    public static AbstractWorld worldInstance = LevelSelecting.getInstance();
 
     static final WorldRegistry worldRegistry = new WorldRegistry();
     static int LEVEL = 1;

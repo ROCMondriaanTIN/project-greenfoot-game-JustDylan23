@@ -17,5 +17,7 @@ public enum TileType {
     LOCK_GREEN,
     LOCK_RED,
     LOCK_YELLOW,
-    LOCK_X
+    LOCK_X,
+    DOOR_OPENED,
+    DOOR_CLOSED
 }

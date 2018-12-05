@@ -216,18 +216,22 @@ class TileFactory {
                 break;
             case 58:
                 tile.setTileImage("doorClosedMid");
+                tile.setType(TileType.DOOR_CLOSED);
                 tile.isSolid = false;
                 break;
             case 59:
                 tile.setTileImage("doorClosedTop");
+                tile.setType(TileType.DOOR_CLOSED);
                 tile.isSolid = false;
                 break;
             case 60:
                 tile.setTileImage("doorOpenMid");
+                tile.setType(TileType.DOOR_OPENED);
                 tile.isSolid = false;
                 break;
             case 61:
                 tile.setTileImage("doorOpenTop");
+                tile.setType(TileType.DOOR_OPENED);
                 tile.isSolid = false;
                 break;
             case 62:

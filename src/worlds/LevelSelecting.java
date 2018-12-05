@@ -16,6 +16,8 @@ public class LevelSelecting extends AbstractWorld {
 
     private boolean hasExecuted;
 
+    public int levelsBought;
+
     private Location[] locations = {new Location(218, 260), new Location( 479, 232),
             new Location(776, 325), new Location(566, 455), new Location(225, 540),
             new Location(435, 684), new Location(780, 677)};
@@ -49,7 +51,7 @@ public class LevelSelecting extends AbstractWorld {
     }
 
     public void updateStars() {
-        starCount.setImage(Main.newTextImage("x" + LevelStatistics.getInstance().stars, 60));
+        starCount.setImage(Main.newTextImage("x" + (LevelStatistics.getInstance().stars - levelsBought * 2), 60));
     }
 
     @Override

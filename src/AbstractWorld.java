@@ -15,17 +15,20 @@ import java.util.ArrayList;
 
 public abstract class AbstractWorld extends World {
 
+    public boolean isLoaded = false;
+
     public CollisionEngine ce;
     private Integer x;
     private Integer y;
     protected int[][] map;
     public ArrayList<Entity> entities = new ArrayList<>();
-    private boolean isRendered;
     public Hero hero;
     public Camera camera;
     public Overlay overlay = new Overlay();
     int coinsGained;
     public int keyCount;
+
+
 
     public AbstractWorld(Integer x, Integer y) {
         super(1000, 800, 1, false);
@@ -35,21 +38,35 @@ public abstract class AbstractWorld extends World {
     }
 
 
-    public void loadWorld() {
-        renderWorld();
-        Greenfoot.setWorld(this);
-        Main.worldInstance = this;
-        this.setPO(2);
-        this.overlay.updateCoinCount();
-    }
-
     public abstract void reset();
 
-    private void renderWorld() {
+    public void loadWorld() {
         Main.worldInstance = this;
+        renderWorld();
+        Greenfoot.setWorld(this);
+        this.setPO(2);
+        this.overlay.updateCoinCount();
+        Greenfoot.setWorld(this);
+    }
+
+    protected void addEntity(Entity entity, int x, int y) {
+        if (isLoaded) return;
+        entity.spawnX = x;
+        entity.spawnY = y;
+        int length = entity.getClass().getPackage().getName().length();
+        entity.constructor = "new " + entity.getClass().getName().substring(length + 1) + "()";
+        entities.add(entity);
+    }
+
+    private void renderWorld() {
+        if (isLoaded) return;
         TileEngine te = new TileEngine(this, 60, 60, map);
         camera = new Camera(te);
-        addObject(camera, 0, 0);
+        addObject(camera, x, y);
+
+        if (hero != null) {
+            Main.worldRegistry.getLevel(Main.LEVEL).reset();
+        }
 
         hero = new Hero(1);
         camera.follow(hero);
@@ -63,7 +80,14 @@ public abstract class AbstractWorld extends World {
         addObject(overlay, 500, 400);
 
         overlay.addButtons();
-        isRendered = true;
+
+        for (Entity entity : entities) {
+            addObject(entity, entity.spawnX, entity.spawnY);
+            if (entity.canCollide) {
+                ce.addCollidingMover(entity);
+            }
+        }
+        isLoaded = true;
     }
 
     void setPO(int i) {
@@ -78,18 +102,9 @@ public abstract class AbstractWorld extends World {
 
     }
 
-    protected void addEntity(Entity entity, int x, int y) {
-        addObject(entity, x, y);
-        entity.spawnX = x;
-        entity.spawnY = y;
-        int length = entity.getClass().getPackage().getName().length();
-        entity.constructor = "new " + entity.getClass().getName().substring(length + 1) + "()";
-        entities.add(entity);
-    }
-
     @Override
     public void act() {
-        if (isRendered) ce.update();
+        if (isLoaded) ce.update();
         if (Greenfoot.isKeyDown("enter")) {
             String str = JOptionPane.showInputDialog("request:");
 

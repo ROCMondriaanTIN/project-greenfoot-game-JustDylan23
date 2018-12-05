@@ -8,8 +8,16 @@ import src.LevelStatistics;
  */
 
 public class Star extends Collectible {
+
+    private int id;
+
     public Star() {
         this.setImage("Items\\star.png");
+    }
+
+    public Star(int id) {
+        this();
+        this.id = id;
     }
 
 
@@ -18,5 +26,9 @@ public class Star extends Collectible {
         LevelStatistics.getInstance().addStar();
         getWorld().removeObject(this);
         Greenfoot.playSound("star.wav");
+
+        if (id != 0) {
+            LevelStatistics.getInstance().ownedStars.put(id, true);
+        }
     }
 }

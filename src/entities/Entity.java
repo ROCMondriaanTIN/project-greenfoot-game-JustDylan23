@@ -16,6 +16,7 @@ public class Entity extends Mover {
 
     public int spawnX;
     public int spawnY;
+    public boolean canCollide;
 
     public Entity() {
     }

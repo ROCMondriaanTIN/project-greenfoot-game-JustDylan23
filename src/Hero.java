@@ -130,6 +130,7 @@ public class Hero extends Mover {
         ladderInteractionHandler();
         checkHitBlock();
         entityInteraction();
+        doorInteraction();
     }
 
     /**
@@ -317,6 +318,16 @@ public class Hero extends Mover {
         }
         for (Entity entity : getIntersectingObjects(Entity.class)) {
             entity.interact2();
+        }
+    }
+
+    private void doorInteraction() {
+        if (Greenfoot.isKeyDown("w")) {
+            for (Tile tile : getObjectsAtOffset(0, 0, Tile.class)) {
+                if (tile.getType() == TileType.DOOR_OPENED) {
+                    Main.worldRegistry.getLevel(0).loadWorld();
+                }
+            }
         }
     }
 

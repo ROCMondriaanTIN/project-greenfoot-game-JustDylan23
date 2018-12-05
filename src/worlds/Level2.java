@@ -43,17 +43,6 @@ public class Level2 extends AbstractWorld {
                     {19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19},
                     {19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19, 19},
             };
-
-        addEntity(EntityFactory.createEntity(EntityType.CHARACTER_COIN_2), 30, 1410);
-        addEntity(EntityFactory.createEntity(EntityType.CHARACTER_COIN_3), 870, 1050);
-        addEntity(EntityFactory.createEntity(EntityType.CHARACTER_COIN_1), 870, 1350);
-        addEntity(EntityFactory.createEntity(EntityType.CHARACTER_COIN_3), 2910, 690);
-        addEntity(EntityFactory.createEntity(EntityType.CHARACTER_COIN_2), 2190, 690);
-        addEntity(EntityFactory.createEntity(EntityType.CHARACTER_COIN_1), 1890, 570);
-        addEntity(EntityFactory.createEntity(EntityType.KEY_RED), 870, 690);
-        addEntity(EntityFactory.createEntity(EntityType.KEY_GREEN), 810, 690);
-        addEntity(EntityFactory.createEntity(EntityType.KEY_YELLOW), 930, 690);
-        addEntity(EntityFactory.createEntity(EntityType.KEY_BLUE), 750, 690);
     }
 
     public static Level2 getInstance() {
