@@ -10,15 +10,15 @@ import java.util.Map;
  *
  */
 
-class WorldRegistry {
+public class WorldRegistry {
 
     private Map<Integer, AbstractWorld> levels = new HashMap<>();
 
-    void registerLevel(int index, AbstractWorld abstractWorld) {
+    public void registerLevel(int index, AbstractWorld abstractWorld) {
         levels.put(index, abstractWorld);
     }
 
-    AbstractWorld getLevel(int index) {
+    public AbstractWorld getLevel(int index) {
         levels.putIfAbsent(index, Level1.getInstance());
         return levels.get(index);
     }

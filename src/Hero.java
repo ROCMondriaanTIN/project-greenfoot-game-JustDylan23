@@ -257,7 +257,7 @@ public class Hero extends Mover {
      */
 
     private void waterCollisionHandler() {
-        for (Tile tile : getIntersectingObjects(Tile.class)) {
+        for (Tile tile : getObjectsAtOffset(0, 0, Tile.class)) {
             if (tile.type == TileType.LIQUID) {
                 isAlive = false;
                 return;
@@ -326,6 +326,7 @@ public class Hero extends Mover {
             for (Tile tile : getObjectsAtOffset(0, 0, Tile.class)) {
                 if (tile.getType() == TileType.DOOR_OPENED) {
                     Main.worldRegistry.getLevel(0).loadWorld();
+                    Greenfoot.playSound("finish.wav");
                 }
             }
         }

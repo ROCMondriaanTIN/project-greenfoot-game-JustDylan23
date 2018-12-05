@@ -15,9 +15,9 @@ import java.util.ArrayList;
 
 public abstract class AbstractWorld extends World {
 
-    public boolean isLoaded = false;
+    private boolean isLoaded = false;
 
-    public CollisionEngine ce;
+    private CollisionEngine ce;
     private Integer x;
     private Integer y;
     protected int[][] map;
