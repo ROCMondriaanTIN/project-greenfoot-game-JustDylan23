@@ -102,7 +102,7 @@ public class Level1 extends AbstractWorld {
         instance.ownedStars.putIfAbsent(2, false);
 
         if (!instance.ownedStars.get(1)) addEntity(new Star(1), 2130, 1770);
-        if (!instance.ownedStars.get(2)) addEntity(new Star(1), 1230, 510);
+        if (!instance.ownedStars.get(2)) addEntity(new Star(2), 1230, 510);
 
         super.loadWorld();
     }

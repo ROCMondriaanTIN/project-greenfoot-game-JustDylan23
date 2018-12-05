@@ -74,7 +74,7 @@ public abstract class AbstractWorld extends World {
 
         ce = new CollisionEngine(te, camera);
         ce.addCollidingMover(hero);
-        setPO(2);
+        setPO(1);
 
         addObject(new PauseScreen(this), 500, 400);
         addObject(overlay, 500, 400);
@@ -93,12 +93,13 @@ public abstract class AbstractWorld extends World {
     void setPO(int i) {
         switch (i) {
             case 1:
-                setPaintOrder(ClickableObject.class, PauseScreen.class, Entity.class, Hero.class, OverlayObject.class, Overlay.class, Tile.class);
+                setPaintOrder(ClickableObject.class, PauseScreen.class, Overlay.class, OverlayObject.class, Hero.class, Entity.class, Tile.class);
                 break;
             case 2:
-                setPaintOrder(Entity.class, Hero.class, ClickableObject.class, PauseScreen.class, OverlayObject.class, Overlay.class, Tile.class);
+                setPaintOrder(ClickableObject.class, PauseScreen.class, Hero.class, Entity.class, Overlay.class, OverlayObject.class, Tile.class);
                 break;
         }
+
 
     }
 
