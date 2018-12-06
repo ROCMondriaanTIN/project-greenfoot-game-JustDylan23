@@ -29,6 +29,7 @@ public class Hero extends Mover {
     private boolean isClimbing = false;
     private boolean hitBlock = false;
     private long time;
+    private boolean isOnMovingPlatform;
 
     private double invert(double x) {
         return x * -1;
@@ -59,7 +60,7 @@ public class Hero extends Mover {
             sizeMultiplier = 0.7;
         } else throw new IllegalArgumentException("Invalid heroState\nheroState must be 1, 2 or 3");
         this.heroState = heroState;
-        Main.worldInstance.overlay.updateHeroState(this.heroState);
+        Main.cachedWorld.overlay.updateHeroState(this.heroState);
     }
 
     @Override
@@ -69,10 +70,10 @@ public class Hero extends Mover {
         if (!isAlive) {
             getWorld().removeObject(this);
             Greenfoot.playSound("death.wav");
-            LevelStatistics.getInstance().coins -= Main.worldInstance.coinsGained;
+            LevelStatistics.getInstance().coins -= Main.cachedWorld.coinsGained;
             velocityX = 0;
             velocityY = 0;
-            Main.worldRegistry.getLevel(Main.LEVEL).reset();
+            Main.cachedWorld.reset();
             return;
         }
 
@@ -131,6 +132,7 @@ public class Hero extends Mover {
         checkHitBlock();
         entityInteraction();
         doorInteraction();
+        movingPlatformInteraction();
     }
 
     /**
@@ -174,7 +176,7 @@ public class Hero extends Mover {
         if (Greenfoot.isKeyDown("space")) {
             long timeTemp = time;
             time = System.currentTimeMillis();
-            if (System.currentTimeMillis() - timeTemp < 25) {
+            if (System.currentTimeMillis() - timeTemp < 50) {
                 return;
             }
         }
@@ -184,6 +186,7 @@ public class Hero extends Mover {
                 isOnGround = false;
                 isClimbing = false;
                 hitBlock = false;
+                isOnMovingPlatform = false;
                 if (heroState == 3) {
                     Greenfoot.playSound("jump_mini.wav");
                 } else {
@@ -209,6 +212,10 @@ public class Hero extends Mover {
      */
 
     private void updateOnGroundStats() {
+        if (isOnMovingPlatform) {
+            isOnGround = true;
+            return;
+        }
         int dx = getImage().getWidth() / 2;
         int dy = getImage().getHeight() / 2 + 1;
 
@@ -325,11 +332,14 @@ public class Hero extends Mover {
         if (Greenfoot.isKeyDown("w")) {
             for (Tile tile : getObjectsAtOffset(0, 0, Tile.class)) {
                 if (tile.getType() == TileType.DOOR_OPENED) {
-                    Main.worldRegistry.getLevel(0).loadWorld();
+                    Main.worldRegistry.loadLevel(0);
                     Greenfoot.playSound("finish.wav");
                 }
             }
         }
+    }
+    private void movingPlatformInteraction() {
+
     }
 
     /**

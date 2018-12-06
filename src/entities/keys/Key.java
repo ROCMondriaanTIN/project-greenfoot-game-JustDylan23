@@ -1,7 +1,6 @@
 package src.entities.keys;
 
 import greenfoot.Greenfoot;
-import src.Hero;
 import src.Main;
 import src.Tile;
 import src.TileType;
@@ -26,20 +25,20 @@ public class Key extends Entity {
                 this.color = color;
                 break;
             default:
-                throw new IllegalArgumentException("Invailid color in the Key constructor");
+                throw new IllegalArgumentException("Invalid color in the Key constructor");
         }
     }
 
     @Override
     public void interact1() {
-        Main.worldInstance.keyCount++;
+        Main.cachedWorld.keyCount++;
         for (Tile tile : getWorld().getObjects(Tile.class)) {
             if (tile.getType().toString().contains(color.toUpperCase())) {
                 tile.getImage().clear();
                 tile.isSolid = false;
-                Main.worldInstance.overlay.addKey(this.color);
+                Main.cachedWorld.overlay.addKey(this.color);
             }
-            if (Main.worldInstance.keyCount == 4) {
+            if (Main.cachedWorld.keyCount == 4) {
                 if (tile.getType() == TileType.LOCK_X) {
                     tile.getImage().clear();
                     tile.isSolid = false;
@@ -47,7 +46,7 @@ public class Key extends Entity {
             }
         }
         getWorld().removeObject(this);
-        if (Main.worldInstance.keyCount != 4) {
+        if (Main.cachedWorld.keyCount != 4) {
             Greenfoot.playSound("key.wav");
         } else Greenfoot.playSound("key2.wav");
     }

@@ -27,6 +27,6 @@ public class CharacterCoin extends Entity {
     @Override
     public void interact1() {
         getWorld().removeObject(this);
-        Main.worldInstance.hero.setHeroState(heroState);
+        Main.cachedWorld.hero.setHeroState(heroState);
     }
 }

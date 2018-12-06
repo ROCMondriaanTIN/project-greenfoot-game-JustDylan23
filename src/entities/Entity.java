@@ -11,7 +11,7 @@ import src.TileEngine;
  * @author D. Hout
  */
 
-public class Entity extends Mover {
+public  class Entity extends Mover {
     public String constructor;
 
     public int spawnX;
@@ -33,7 +33,7 @@ public class Entity extends Mover {
         if (Main.debug) {
             if (Greenfoot.mouseDragged(this)) {
                 MouseInfo mouse = Greenfoot.getMouseInfo();
-                setLocation(mouse.getX() + Main.worldInstance.camera.getX(), mouse.getY() + Main.worldInstance.camera.getY());
+                setLocation(mouse.getX() + Main.cachedWorld.camera.getX(), mouse.getY() + Main.cachedWorld.camera.getY());
             } if (Greenfoot.mouseDragEnded(this)) {
                 int x = (int) Math.floor(getX() / (double) TileEngine.TILE_WIDTH);
                 int y = (int) Math.floor(getY() / (double) TileEngine.TILE_HEIGHT);

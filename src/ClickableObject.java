@@ -43,7 +43,7 @@ public class ClickableObject extends Actor {
             }
             switch (action) {
                 case "startGame":
-                    Main.worldRegistry.getLevel(0).loadWorld();
+                    Main.worldRegistry.loadLevel(0);
                     break;
                 case "exitGame":
                     System.exit(0);
@@ -53,19 +53,19 @@ public class ClickableObject extends Actor {
                     break;
                 case "reset":
                     pauseScreenInstance.close();
-                    Main.worldRegistry.getLevel(Main.LEVEL).reset();
+                    Main.worldRegistry.loadLevel(Main.LEVEL);
                     break;
                 case "selectLevel":
                     getImage().clear();
                     pauseScreenInstance.removeButtons();
                     pauseScreenInstance.getImage().clear();
                     PauseScreen.isActive = false;
-                    Main.worldRegistry.getLevel(0).loadWorld();
+                    Main.worldRegistry.loadLevel(0);
                     break;
             }
 
             if (action.contains("level")) {
-                Main.worldRegistry.getLevel(Integer.parseInt(action.substring(5))).loadWorld();
+                Main.worldRegistry.loadLevel(Integer.parseInt(action.substring(5)));
                 Greenfoot.playSound("enterLevel.wav");
             }
 

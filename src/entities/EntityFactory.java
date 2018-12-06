@@ -10,6 +10,7 @@ import src.entities.enemies.FireBall;
 import src.entities.enemies.Fly;
 import src.entities.enemies.Poker;
 import src.entities.enemies.Slime;
+import src.entities.gameplayobjects.MovingPlatform;
 import src.entities.gameplayobjects.Spikes;
 import src.entities.gameplayobjects.SpringBoard;
 import src.entities.keys.KeyBlue;
@@ -75,6 +76,10 @@ public class EntityFactory {
             case SPRINGBOARD:
                 entity = new SpringBoard();
                 entity.constructor = "new SpringBoard()";
+                break;
+            case MOVING_PLATFORM:
+                entity = new MovingPlatform();
+                entity.constructor = "new MovingPlatform()";
                 break;
             case FLY:
                 entity = new Fly();

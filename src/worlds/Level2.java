@@ -9,9 +9,7 @@ import src.entities.collectibles.Star;
 
 public class Level2 extends AbstractWorld {
 
-    private static Level2 instance = new Level2();
-
-    private Level2() {
+    public Level2() {
         super(120, 1440);
         setBackground("bg_castle.png");
         this.map = new int[][]{
@@ -48,10 +46,6 @@ public class Level2 extends AbstractWorld {
             };
     }
 
-    public static Level2 getInstance() {
-        return instance;
-    }
-
     @Override
     public void loadWorld() {
 
@@ -66,12 +60,5 @@ public class Level2 extends AbstractWorld {
         //if (!instance.ownedStars.get(2)) addEntity(new Star(4), 1230, 510);
 
         super.loadWorld();
-    }
-
-    @Override
-    public void reset() {
-        instance = new Level2();
-        Main.worldRegistry.registerLevel(2, getInstance());
-        instance.loadWorld();
     }
 }

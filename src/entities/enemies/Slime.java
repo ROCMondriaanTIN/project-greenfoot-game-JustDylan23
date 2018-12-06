@@ -16,9 +16,9 @@ public class Slime extends Enemy {
     private GreenfootImage walk2 = new GreenfootImage("Enemies\\slimeWalk2.png");
     private int imageState = 1;
 
+    private boolean isFacingRight = true;
     private boolean isOnGround;
     private long time = System.currentTimeMillis();
-    private boolean isFacingRight = true;
 
     public Slime() {
         setImage(walk1);
@@ -37,7 +37,7 @@ public class Slime extends Enemy {
 
     @Override
     public void interact2() {
-        Main.worldInstance.hero.isAlive = false;
+        Main.cachedWorld.hero.isAlive = false;
     }
 
     @Override

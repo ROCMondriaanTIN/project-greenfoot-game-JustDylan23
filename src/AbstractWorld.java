@@ -13,11 +13,9 @@ import java.util.ArrayList;
  * @author D. Hout
  */
 
-public abstract class AbstractWorld extends World {
+public class AbstractWorld extends World {
 
-    private boolean isLoaded = false;
-
-    private CollisionEngine ce;
+    public CollisionEngine ce;
     private Integer x;
     private Integer y;
     protected int[][] map;
@@ -27,30 +25,29 @@ public abstract class AbstractWorld extends World {
     public Overlay overlay = new Overlay();
     int coinsGained;
     public int keyCount;
-
-
+    private boolean isLoaded = false;
 
     public AbstractWorld(Integer x, Integer y) {
         super(1000, 800, 1, false);
         this.x = x;
         this.y = y;
         setBackground("bg.png");
+        Greenfoot.setWorld(this);
     }
 
 
-    public abstract void reset();
+    public void reset() {
+        Main.worldRegistry.loadLevel(Main.LEVEL);
+    }
 
     public void loadWorld() {
-        Main.worldInstance = this;
+        Main.cachedWorld = this;
         renderWorld();
-        Greenfoot.setWorld(this);
         this.setPO(2);
         this.overlay.updateCoinCount();
-        Greenfoot.setWorld(this);
     }
 
     protected void addEntity(Entity entity, int x, int y) {
-        if (isLoaded) return;
         entity.spawnX = x;
         entity.spawnY = y;
         int length = entity.getClass().getPackage().getName().length();
@@ -59,14 +56,9 @@ public abstract class AbstractWorld extends World {
     }
 
     private void renderWorld() {
-        if (isLoaded) return;
         TileEngine te = new TileEngine(this, 60, 60, map);
         camera = new Camera(te);
         addObject(camera, x, y);
-
-        if (hero != null) {
-            Main.worldRegistry.getLevel(Main.LEVEL).reset();
-        }
 
         hero = new Hero(1);
         camera.follow(hero);
@@ -87,6 +79,7 @@ public abstract class AbstractWorld extends World {
                 ce.addCollidingMover(entity);
             }
         }
+
         isLoaded = true;
     }
 
@@ -105,7 +98,8 @@ public abstract class AbstractWorld extends World {
 
     @Override
     public void act() {
-        if (isLoaded) ce.update();
+        if (!isLoaded) return;
+        ce.update();
         if (Greenfoot.isKeyDown("enter")) {
             String str = JOptionPane.showInputDialog("request:");
 
@@ -128,6 +122,8 @@ public abstract class AbstractWorld extends World {
                 Entity entity = EntityFactory.createEntity(type);
                 entities.add(entity);
                 addObject(entity, camera.getX() + 500, camera.getY() + 400);
+                entity.spawnX = camera.getX() + 500;
+                entity.spawnY = camera.getY() + 400;
                 System.out.println("entity added");
 
             }

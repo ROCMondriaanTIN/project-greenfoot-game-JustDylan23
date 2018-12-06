@@ -1,6 +1,5 @@
 package src.entities.gameplayobjects;
 
-import src.Hero;
 import src.Main;
 import src.TileEngine;
 
@@ -18,6 +17,6 @@ public class Spikes extends GamePlayObject {
 
     @Override
     public void interact1() {
-        Main.worldInstance.hero.isAlive = false;
+        Main.cachedWorld.hero.isAlive = false;
     }
 }

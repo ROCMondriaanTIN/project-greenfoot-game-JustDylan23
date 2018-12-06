@@ -47,8 +47,8 @@ public class Camera extends Actor {
 
     @Override
     public void act() {
-        dirX *= (Math.abs(dirX) > 0.1) ? cameraDrag : 0;
-        dirY *= (Math.abs(dirY) > 0.1) ? cameraDrag : 0;
+        dirX *= (Math.abs(dirX) > 0.2) ? cameraDrag : 0;
+        dirY *= (Math.abs(dirY) > 0.2) ? cameraDrag : 0;
 
         int x;
         int y;

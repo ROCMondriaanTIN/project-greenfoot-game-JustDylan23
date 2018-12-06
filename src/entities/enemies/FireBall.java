@@ -1,6 +1,5 @@
 package src.entities.enemies;
 
-import src.Hero;
 import src.Main;
 import src.entities.Entity;
 
@@ -17,7 +16,7 @@ public class FireBall extends Entity {
 
     @Override
     public void interact1() {
-        Main.worldInstance.hero.isAlive = false;
+        Main.cachedWorld.hero.isAlive = false;
     }
 
     @Override

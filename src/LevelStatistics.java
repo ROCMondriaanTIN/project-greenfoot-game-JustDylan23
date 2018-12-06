@@ -24,14 +24,14 @@ public class LevelStatistics {
 
     public void addCoin() {
         coins++;
-        Main.worldInstance.coinsGained++;
-        Main.worldInstance.overlay.updateCoinCount();
+        Main.cachedWorld.coinsGained++;
+        Main.cachedWorld.overlay.updateCoinCount();
     }
 
     public void addStar() {
         stars++;
         LevelSelecting.getInstance().updateStars();
         LevelSelecting.getInstance().updateUnlockedLevels();
-        Main.worldInstance.overlay.addStar();
+        Main.cachedWorld.overlay.addStar();
     }
 }

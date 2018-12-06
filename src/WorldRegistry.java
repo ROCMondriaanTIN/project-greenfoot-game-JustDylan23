@@ -1,25 +1,31 @@
 package src;
 
 import src.worlds.Level1;
-
-import java.util.HashMap;
-import java.util.Map;
+import src.worlds.Level2;
+import src.worlds.LevelSelecting;
 
 /**
  * @author D. Hout
- *
  */
 
 public class WorldRegistry {
-
-    private Map<Integer, AbstractWorld> levels = new HashMap<>();
-
-    public void registerLevel(int index, AbstractWorld abstractWorld) {
-        levels.put(index, abstractWorld);
-    }
-
-    public AbstractWorld getLevel(int index) {
-        levels.putIfAbsent(index, Level1.getInstance());
-        return levels.get(index);
+    public void loadLevel(int i) {
+        Main.LEVEL = i;
+        switch (i) {
+            case 0:
+                Main.cachedWorld = LevelSelecting.getInstance();
+                break;
+            case 1:
+                Main.cachedWorld = new Level1();
+                break;
+            case 2:
+                Main.cachedWorld = new Level2();
+                break;
+            default:
+                System.out.println("resorted to default world");
+                Main.cachedWorld = new Level1();
+                break;
+        }
+        Main.cachedWorld.loadWorld();
     }
 }

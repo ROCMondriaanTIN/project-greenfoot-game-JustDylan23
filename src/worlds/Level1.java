@@ -1,6 +1,5 @@
 package src.worlds;
 
-import greenfoot.GreenfootSound;
 import src.AbstractWorld;
 import src.LevelStatistics;
 import src.Main;
@@ -9,7 +8,9 @@ import src.entities.CharacterCoin.CharacterCoin2;
 import src.entities.CharacterCoin.CharacterCoin3;
 import src.entities.collectibles.Coin;
 import src.entities.collectibles.Star;
+import src.entities.enemies.Fly;
 import src.entities.enemies.Slime;
+import src.entities.gameplayobjects.MovingPlatform;
 import src.entities.keys.KeyBlue;
 import src.entities.keys.KeyGreen;
 import src.entities.keys.KeyRed;
@@ -21,10 +22,8 @@ import src.entities.keys.KeyYellow;
 
 public class Level1 extends AbstractWorld {
 
-    public static Level1 instance = new Level1();
-
-    private Level1() {
-        super(90, 1740);
+    public Level1() {
+        super(90, 1680);
         this.map = new int[][]{
                 {65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65},
                 {65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65},
@@ -61,15 +60,8 @@ public class Level1 extends AbstractWorld {
         };
     }
 
-    public static Level1 getInstance() {
-        return instance;
-    }
-
     @Override
     public void loadWorld() {
-
-        Main.LEVEL = 1;
-
         addEntity(new Slime(), 1296, 1719);
         addEntity(new Coin(), 630, 1710);
         addEntity(new Coin(), 510, 1710);
@@ -96,6 +88,8 @@ public class Level1 extends AbstractWorld {
         addEntity(new CharacterCoin2(), 390, 330);
         addEntity(new KeyYellow(), 1770, 270);
         addEntity(new CharacterCoin1(), 1230, 450);
+        addEntity(new Fly(), 3150, 1530);
+        addEntity(new MovingPlatform(), 210, 1650);
         LevelStatistics instance = LevelStatistics.getInstance();
 
         instance.ownedStars.putIfAbsent(1, false);
@@ -105,12 +99,5 @@ public class Level1 extends AbstractWorld {
         if (!instance.ownedStars.get(2)) addEntity(new Star(2), 1230, 510);
 
         super.loadWorld();
-    }
-
-    @Override
-    public void reset() {
-        instance = new Level1();
-        Main.worldRegistry.registerLevel(1, getInstance());
-        instance.loadWorld();
     }
 }

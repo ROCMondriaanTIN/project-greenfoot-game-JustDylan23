@@ -7,6 +7,10 @@ import greenfoot.Actor;
  */
 
 public class Overlay extends Actor {
+
+    private long time = System.currentTimeMillis();
+    private OverlayObject tickCount = new OverlayObject(Main.newTextImage("tickDelay:" + 0, 60));
+
     private OverlayObject heroIcon = new OverlayObject("hud_p1", 47, 47);
     private OverlayObject coinCount = new OverlayObject(Main.newTextImage("x" + LevelStatistics.getInstance().coins, 60));
     private int starCount;
@@ -52,5 +56,22 @@ public class Overlay extends Actor {
 
     public void updateCoinCount() {
         coinCount.setImage(Main.newTextImage("x" + LevelStatistics.getInstance().coins, 60));
+    }
+
+    @Override
+    public void act() {
+        long now = System.currentTimeMillis();
+
+        if (Main.debug) {
+            if (tickCount == null) {
+                tickCount = new OverlayObject(Main.newTextImage("tickDelay:" + 0, 60));
+                getWorld().addObject(tickCount, 200, 33);
+            }
+            tickCount.setImage(Main.newTextImage("tickDelay:" + (now - time), 60));
+        } else if (tickCount != null) {
+            getWorld().removeObject(tickCount);
+            tickCount = null;
+        }
+        time = now;
     }
 }

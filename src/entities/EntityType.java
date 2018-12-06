@@ -19,6 +19,7 @@ public enum EntityType {
 
     SPIKES ("spikes"),
     SPRINGBOARD ("springboard"),
+    MOVING_PLATFORM("movingPlatform"),
 
     FLY ("fly"),
     SLIME ("slime"),

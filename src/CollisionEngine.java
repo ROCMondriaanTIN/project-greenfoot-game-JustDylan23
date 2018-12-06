@@ -209,7 +209,7 @@ public class CollisionEngine {
      * @param actor An Actor class or an extend of it.
      * @return returns the half width
      */
-    private static int getActorHalfWidth(Actor actor) {
+    public static int getActorHalfWidth(Actor actor) {
         return actor.getImage().getWidth() / 2;
     }
 
@@ -219,7 +219,7 @@ public class CollisionEngine {
      * @param actor An Actor class or an extend of it.
      * @return returns the half height
      */
-    private static int getActorHalfHeigth(Actor actor) {
+    public static int getActorHalfHeigth(Actor actor) {
         return actor.getImage().getHeight() / 2;
     }
 
@@ -229,7 +229,7 @@ public class CollisionEngine {
      * @param actor An Actor class or an extend of it.
      * @return return top Y actor position
      */
-    private static int getActorTop(Actor actor) {
+    public static int getActorTop(Actor actor) {
         return actor.getY() - actor.getImage().getHeight() / 2;
     }
 
@@ -239,7 +239,7 @@ public class CollisionEngine {
      * @param actor An Actor class or an extend of it.
      * @return return bottom Y actor position
      */
-    private static int getActorBottom(Actor actor) {
+    public static int getActorBottom(Actor actor) {
         return actor.getY() + actor.getImage().getHeight() / 2;
     }
 
@@ -249,7 +249,7 @@ public class CollisionEngine {
      * @param actor An Actor class or an extend of it.
      * @return return left X actor position
      */
-    private static int getActorLeft(Actor actor) {
+    public static int getActorLeft(Actor actor) {
         return actor.getX() - actor.getImage().getWidth() / 2;
     }
 
@@ -259,7 +259,7 @@ public class CollisionEngine {
      * @param actor An Actor class or an extend of it.
      * @return return right X actor position
      */
-    private static int getActorRight(Actor actor) {
+    public static int getActorRight(Actor actor) {
         return actor.getX() + actor.getImage().getWidth() / 2;
     }
 }
