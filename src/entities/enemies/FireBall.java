@@ -22,6 +22,6 @@ public class FireBall extends Entity {
     @Override
     public void act() {
         super.act();
-        turn(30);
+        turn(10);
     }
 }

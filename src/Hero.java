@@ -21,7 +21,7 @@ public class Hero extends Mover {
 
     public boolean isAlive = true;
     private int heroState;
-    public boolean isOnGround;
+    private boolean isOnGround;
     private boolean isStandingStill;
     private boolean isWalking;
     private double walkState = 0;
