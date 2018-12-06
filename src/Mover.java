@@ -10,8 +10,8 @@ public class Mover extends Actor {
 
     int screenX;
     int screenY;
-    protected double velocityX;
-    protected double velocityY;
+    public double velocityX;
+    public double velocityY;
 
     private int worldX;
     private int worldY;

@@ -16,12 +16,12 @@ public class Hero extends Mover {
     private final double drag;
 
     private double walkSpeed;
-    private double jumpSpeed;
+    public double jumpSpeed;
     private double sizeMultiplier = 1;
 
     public boolean isAlive = true;
     private int heroState;
-    private boolean isOnGround;
+    public boolean isOnGround;
     private boolean isStandingStill;
     private boolean isWalking;
     private double walkState = 0;
@@ -29,7 +29,7 @@ public class Hero extends Mover {
     private boolean isClimbing = false;
     private boolean hitBlock = false;
     private long time;
-    private boolean isOnMovingPlatform;
+    public boolean isOnMovingPlatform;
 
     private double invert(double x) {
         return x * -1;
@@ -42,6 +42,7 @@ public class Hero extends Mover {
         this.heroState = heroState;
         setTexture(3);
         setHeroState(heroState);
+
     }
 
     public void setHeroState(int heroState) {
@@ -66,7 +67,6 @@ public class Hero extends Mover {
     @Override
     public void act() {
         if (PauseScreen.isActive) return;
-
         if (!isAlive) {
             getWorld().removeObject(this);
             Greenfoot.playSound("death.wav");
@@ -319,7 +319,6 @@ public class Hero extends Mover {
     }
 
     private void entityInteraction() {
-        if (Main.debug) return;
         for (Entity entity : getObjectsAtOffset(0, 0, Entity.class)) {
             entity.interact1();
         }

@@ -153,6 +153,7 @@ public class CollisionEngine {
      * @param tile  A Tile class or a extend of it.
      * @return Returns a true if the overlap was resolved.
      */
+
     private boolean resolve(Mover mover, Tile tile) {
         int left = getActorLeft(mover);
         int right = getActorRight(mover);
