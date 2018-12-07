@@ -85,6 +85,8 @@ public class Level3 extends AbstractWorld {
         addEntity(new KeyBlue(), 3570, 1230);
         addEntity(new Slime(), 3330, 1230);
         addEntity(new Fly(), 3030, 1230);
+        addEntity(new MovingPlatform(), 1170, 1590);
+        addEntity(new Coin(), 1530, 1530);
 
         super.loadWorld();
     }

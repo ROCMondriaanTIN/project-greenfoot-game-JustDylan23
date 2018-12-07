@@ -1,6 +1,7 @@
 package src.entities.enemies;
 
 import src.Main;
+import src.PauseScreen;
 import src.entities.Entity;
 
 /**
@@ -22,6 +23,7 @@ public class FireBall extends Entity {
     @Override
     public void act() {
         super.act();
+        if (PauseScreen.isActive) return;
         turn(10);
     }
 }

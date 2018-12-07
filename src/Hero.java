@@ -20,7 +20,7 @@ public class Hero extends Mover {
     private double sizeMultiplier = 1;
 
     public boolean isAlive = true;
-    private int heroState;
+    public int heroState;
     private boolean isOnGround;
     private boolean isStandingStill;
     private boolean isWalking;

@@ -3,6 +3,7 @@ package src.entities.gameplayobjects;
 import greenfoot.Greenfoot;
 import src.Hero;
 import src.Main;
+import src.PauseScreen;
 
 public class MovingPlatform extends GamePlayObject {
 
@@ -34,17 +35,18 @@ public class MovingPlatform extends GamePlayObject {
             }
             time = now;
             isInteracting = true;
-
             hero.setLocation(hero.getX() + (int) velocityX, hero.getY() + overlapY);
             hero.isOnMovingPlatform = true;
             if (Greenfoot.isKeyDown("space") && now - starTime > 200) {
                 hero.velocityY = hero.jumpSpeed;
-            } else hero.velocityY = velocityY;
+            } hero.velocityY = velocityY;
+            hero.applyVelocity();
         }
     }
 
     @Override
     public void act() {
+        if (PauseScreen.isActive) return;
         if (System.currentTimeMillis() - time > 100) isInteracting = false;
         super.act();
         if (getY() - spawnY < 60 * blocksUpwards * -1 - 30) {

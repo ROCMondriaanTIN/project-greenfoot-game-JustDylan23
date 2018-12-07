@@ -2,6 +2,7 @@ package src.entities.enemies;
 
 import greenfoot.GreenfootImage;
 import src.Main;
+import src.PauseScreen;
 
 /**
  * @author D. Hout
@@ -27,6 +28,7 @@ public class Fly extends Enemy {
 
     @Override
     public void act() {
+        if (PauseScreen.isActive) return;
         super.act();
         imageState++;
         if (imageState == 1) setImage(fly1);

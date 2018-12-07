@@ -17,7 +17,7 @@ public class Mover extends Actor {
     private int worldY;
     private boolean firstLocation = true;
 
-    protected void applyVelocity() {
+    public void applyVelocity() {
         if (Math.abs(velocityX) < 0.02) {
             velocityX = 0;
         }
