@@ -11,6 +11,7 @@ import src.entities.collectibles.Star;
 import src.entities.enemies.Fly;
 import src.entities.enemies.Slime;
 import src.entities.gameplayobjects.MovingPlatform;
+import src.entities.gameplayobjects.Spikes;
 import src.entities.keys.KeyBlue;
 import src.entities.keys.KeyGreen;
 import src.entities.keys.KeyRed;
@@ -82,14 +83,16 @@ public class Level1 extends AbstractWorld {
         addEntity(new Coin(), 2970, 450);
         addEntity(new Coin(), 2910, 450);
         addEntity(new CharacterCoin3(), 2550, 630);
-        addEntity(new CharacterCoin1(), 2610, 930);
+        addEntity(new CharacterCoin1(), 1590, 810);
         addEntity(new KeyRed(), 1830, 630);
         addEntity(new CharacterCoin3(), 870, 510);
         addEntity(new CharacterCoin2(), 390, 330);
         addEntity(new KeyYellow(), 1770, 270);
         addEntity(new CharacterCoin1(), 1230, 450);
         addEntity(new Fly(), 3150, 1530);
-        addEntity(new MovingPlatform(), 210, 1650);
+        addEntity(new MovingPlatform(), 2250, 990);
+        addEntity(new Spikes(), 810, 1710);
+
         LevelStatistics instance = LevelStatistics.getInstance();
 
         instance.ownedStars.putIfAbsent(1, false);

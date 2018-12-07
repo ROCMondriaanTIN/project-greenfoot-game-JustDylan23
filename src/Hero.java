@@ -101,11 +101,17 @@ public class Hero extends Mover {
         if (velocityY > gravity) {
             velocityY = gravity;
         }
-        if (getX() < 0) {
-            setLocation(1, getY());
-        } else {
-            applyVelocity();
+        applyVelocity();
+        int xMin = getImage().getWidth() / 2;
+        int xMax = TileEngine.MAP_WIDTH * TileEngine.TILE_WIDTH - xMin;
+        if (getX() <= xMin) {
+            setLocation(xMin, getY());
+            velocityX = 0;
+        } else if (getX() >= xMax) {
+            setLocation(xMax, getY());
+            velocityX = 0;
         }
+
     }
 
     private void handleAnimation() {
@@ -319,6 +325,7 @@ public class Hero extends Mover {
     }
 
     private void entityInteraction() {
+        if (Main.debug) return;
         for (Entity entity : getObjectsAtOffset(0, 0, Entity.class)) {
             entity.interact1();
         }
@@ -337,6 +344,7 @@ public class Hero extends Mover {
             }
         }
     }
+
     private void movingPlatformInteraction() {
 
     }

@@ -2,6 +2,7 @@ package src;
 
 import src.worlds.Level1;
 import src.worlds.Level2;
+import src.worlds.Level3;
 import src.worlds.LevelSelecting;
 
 /**
@@ -20,6 +21,9 @@ public class WorldRegistry {
                 break;
             case 2:
                 Main.cachedWorld = new Level2();
+                break;
+            case 3:
+                Main.cachedWorld = new Level3();
                 break;
             default:
                 System.out.println("resorted to default world");

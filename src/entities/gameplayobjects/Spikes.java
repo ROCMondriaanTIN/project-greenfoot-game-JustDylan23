@@ -9,14 +9,19 @@ import src.TileEngine;
 
 public class Spikes extends GamePlayObject {
 
+    private boolean hasStarted;
+
     public Spikes() {
         super();
         setImage("Items\\spikes.png");
-        getImage().scale(TileEngine.TILE_WIDTH, getImage().getHeight());
     }
 
     @Override
     public void interact1() {
+        if (!hasStarted) {
+            getImage().scale(TileEngine.TILE_WIDTH, getImage().getHeight());
+        }
+        hasStarted = true;
         Main.cachedWorld.hero.isAlive = false;
     }
 }

@@ -9,9 +9,16 @@ public class MovingPlatform extends GamePlayObject {
     private long time;
     private long starTime;
     private boolean isInteracting;
+    private int blocksUpwards = 3;
 
     public MovingPlatform() {
         setImage("Enemies\\flyingPlatform.png");
+        velocityY = -2;
+    }
+
+    public MovingPlatform(int i) {
+        this();
+        blocksUpwards = Math.abs(i);
     }
 
     @Override
@@ -40,12 +47,11 @@ public class MovingPlatform extends GamePlayObject {
     public void act() {
         if (System.currentTimeMillis() - time > 100) isInteracting = false;
         super.act();
-        double drag = 0.8;
-        velocityX *= (Math.abs(velocityX) > 0.2) ? drag : 0;
-        velocityY *= (Math.abs(velocityY) > 0.2) ? drag : 0;
-        if (Greenfoot.isKeyDown("UP")) velocityY = -3;
-        if (Greenfoot.isKeyDown("DOWN")) velocityY = 3;
-        if (Greenfoot.isKeyDown("RIGHT")) velocityX = 3;
-        if (Greenfoot.isKeyDown("LEFT")) velocityX = -3;
+        if (getY() - spawnY < 60 * blocksUpwards * -1 - 30) {
+            velocityY *= -1;
+        } else if (getY() - spawnY >= -10) {
+            velocityY *= -1;
+            setLocation(getX(), getY() - 2);
+        }
     }
 }

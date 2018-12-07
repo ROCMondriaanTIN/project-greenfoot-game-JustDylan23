@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class AbstractWorld extends World {
 
     public CollisionEngine ce;
+    public TileEngine te;
     private Integer x;
     private Integer y;
     protected int[][] map;
@@ -56,7 +57,7 @@ public class AbstractWorld extends World {
     }
 
     private void renderWorld() {
-        TileEngine te = new TileEngine(this, 60, 60, map);
+        te = new TileEngine(this, 60, 60, map);
         camera = new Camera(te);
         addObject(camera, x, y);
 
@@ -75,9 +76,6 @@ public class AbstractWorld extends World {
 
         for (Entity entity : entities) {
             addObject(entity, entity.spawnX, entity.spawnY);
-            if (entity.canCollide) {
-                ce.addCollidingMover(entity);
-            }
         }
 
         isLoaded = true;

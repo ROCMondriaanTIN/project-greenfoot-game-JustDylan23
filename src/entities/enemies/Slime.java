@@ -20,9 +20,10 @@ public class Slime extends Enemy {
     private boolean isOnGround;
     private long time = System.currentTimeMillis();
 
+    private boolean isAdded;
+
     public Slime() {
         setImage(walk1);
-        canCollide = true;
         walk1.mirrorHorizontally();
         walk2.mirrorHorizontally();
     }
@@ -43,6 +44,10 @@ public class Slime extends Enemy {
     @Override
     public void act() {
         super.act();
+        if (!isAdded) {
+            Main.cachedWorld.ce.addCollidingMover(this);
+        }
+        isAdded = true;
         if (PauseScreen.isActive) return;
         velocityY = 2;
         applyVelocity();
