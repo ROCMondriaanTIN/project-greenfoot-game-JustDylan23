@@ -11,7 +11,6 @@ import src.entities.Entity;
 public class FireBall extends Entity {
 
     public FireBall() {
-        System.out.println("new fireball has been created");
         setImage("Items\\fireball.png");
     }
 

@@ -2,7 +2,6 @@ package src.worlds;
 
 import src.AbstractWorld;
 import src.LevelStatistics;
-import src.Main;
 import src.entities.CharacterCoin.CharacterCoin1;
 import src.entities.CharacterCoin.CharacterCoin2;
 import src.entities.CharacterCoin.CharacterCoin3;
@@ -92,6 +91,7 @@ public class Level1 extends AbstractWorld {
         addEntity(new Fly(), 3150, 1530);
         addEntity(new MovingPlatform(), 2250, 990);
         addEntity(new Spikes(), 810, 1710);
+        addEntity(new MovingPlatform(), 90, 1770);
 
         LevelStatistics instance = LevelStatistics.getInstance();
 

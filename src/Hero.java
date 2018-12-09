@@ -3,6 +3,7 @@ package src;
 import greenfoot.Greenfoot;
 import greenfoot.GreenfootImage;
 import src.entities.Entity;
+import src.entities.gameplayobjects.MovingPlatform;
 
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class Hero extends Mover {
     private double sizeMultiplier = 1;
 
     public boolean isAlive = true;
-    public int heroState;
+    private int heroState;
     private boolean isOnGround;
     private boolean isStandingStill;
     private boolean isWalking;
@@ -29,7 +30,8 @@ public class Hero extends Mover {
     private boolean isClimbing = false;
     private boolean hitBlock = false;
     private long time;
-    public boolean isOnMovingPlatform;
+    private boolean isOnMovingPlatform;
+    private int i;
 
     private double invert(double x) {
         return x * -1;
@@ -96,8 +98,10 @@ public class Hero extends Mover {
     }
 
     private void handlePhysics() {
+        if (!isOnMovingPlatform) {
+            velocityY += acc;
+        }
         velocityX *= drag;
-        velocityY += acc;
         if (velocityY > gravity) {
             velocityY = gravity;
         }
@@ -147,7 +151,7 @@ public class Hero extends Mover {
      * @author D. Hout
      */
     private void handleInAirAnimation() {
-        if (isClimbing) return;
+        if (isClimbing || isOnGround || Math.abs(velocityY) < 2) return;
         if (velocityY < 0 && !isOnGround) {
             setTextureWithDirection(5);
         } else if (velocityY > 0 && !isOnGround && Math.abs(velocityX) > 0.3) {
@@ -220,22 +224,17 @@ public class Hero extends Mover {
     private void updateOnGroundStats() {
         if (isOnMovingPlatform) {
             isOnGround = true;
-            return;
-        }
-        int dx = getImage().getWidth() / 2;
-        int dy = getImage().getHeight() / 2 + 1;
-
-        //checks if here is not going up or down
-        if (velocityY != 0) {
+        } else if (velocityY != 0) {
             isOnGround = false;
-            return;
-        }
-        //checks tile under hero
-        start:
-        for (int i = -1; i <= 1; i++) {
-            for (Tile tile : getObjectsAtOffset((dx * i) - (3 * i), dy, Tile.class)) {
-                if (tile.isSolid) isOnGround = true;
-                break start;
+        } else {
+            int dx = getImage().getWidth() / 2;
+            int dy = getImage().getHeight() / 2 + 1;
+            start:
+            for (int i = -1; i <= 1; i++) {
+                for (Tile tile : getObjectsAtOffset((dx * i) - (3 * i), dy, Tile.class)) {
+                    if (tile.isSolid) isOnGround = true;
+                    break start;
+                }
             }
         }
     }
@@ -325,12 +324,13 @@ public class Hero extends Mover {
     }
 
     private void entityInteraction() {
-        if (Main.debug) return;
-        for (Entity entity : getObjectsAtOffset(0, 0, Entity.class)) {
-            entity.interact1();
-        }
-        for (Entity entity : getIntersectingObjects(Entity.class)) {
-            entity.interact2();
+        if (!Main.debug) {
+            for (Entity entity : getObjectsAtOffset(0, 0, Entity.class)) {
+                entity.interact1();
+            }
+            for (Entity entity : getIntersectingObjects(Entity.class)) {
+                entity.interact2();
+            }
         }
     }
 
@@ -346,7 +346,11 @@ public class Hero extends Mover {
     }
 
     private void movingPlatformInteraction() {
-
+        List<MovingPlatform> movingPlatforms = getObjectsAtOffset(0, getHeight() / 2, MovingPlatform.class);
+        isOnMovingPlatform = !movingPlatforms.isEmpty();
+        for (MovingPlatform entity : movingPlatforms) {
+            entity.interact3();
+        }
     }
 
     /**

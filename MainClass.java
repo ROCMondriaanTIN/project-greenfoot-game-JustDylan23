@@ -1,6 +1,5 @@
 import greenfoot.Greenfoot;
 import greenfoot.World;
-
 import src.HeroImages;
 import src.Main;
 
@@ -13,6 +12,7 @@ public class MainClass extends World {
 
     public MainClass() {
         super(1000, 800, 1, false);
+        Greenfoot.start();
         HeroImages.getInstance().loadImages();
         Greenfoot.setWorld(new Main());
     }

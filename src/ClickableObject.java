@@ -66,8 +66,6 @@ public class ClickableObject extends Actor {
             if (action.contains("level")) {
                 Main.worldRegistry.loadLevel(Integer.parseInt(action.substring(5)));
                 Greenfoot.playSound("enterLevel.wav");
-                Greenfoot.stop();
-                Greenfoot.start();
             }
 
         }
