@@ -1,17 +1,429 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="project-greenfoot-game-JustDylan23:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/MainClass.java" line="18" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="90d26ec0-945c-4af6-9686-9d44641654b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Items.tsx.tmx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Enemies/flyingPlatform.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Enemies/flyingPlatform.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Vector/characters.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Vector/characters.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Vector/enemies.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Vector/enemies.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Vector/tiles.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Vector/tiles.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cross.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/dot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/license.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/preview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/sample.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/level1.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/map.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/map.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/map3.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/map3.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/.idea/libraries/bluejcore.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/Items.tsx.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/README.MD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Enemies/blockerBody.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Enemies/blockerMad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Enemies/blockerSad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Enemies/enemies_spritesheet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Enemies/enemies_spritesheet.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Enemies/fishDead.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Enemies/fishSwim1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Enemies/fishSwim2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Enemies/flyDead.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Enemies/flyFly1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Enemies/flyFly2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Enemies/pokerMad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Enemies/pokerSad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Enemies/slimeDead.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Enemies/slimeWalk1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Enemies/slimeWalk2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Enemies/snailShell.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Enemies/snailShell_upsidedown.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Enemies/snailWalk1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Enemies/snailWalk2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_coins.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_gem_blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_gem_blue_empty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_gem_green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_gem_red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_gem_yellow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_heartEmpty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_heartFull.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_heartHalf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_keyBlue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_keyBlue_disabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_keyGreem_disabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_keyGreen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_keyRed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_keyRed_disabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_keyYellow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_keyYellow_disabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_p1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_p1Alt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_p2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_p2Alt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_p3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_p3Alt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_spritesheet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_spritesheet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/HUD/hud_x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/bomb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/bombFlash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/bush.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/buttonBlue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/buttonBlue_pressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/buttonGreen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/buttonGreen_pressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/buttonRed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/buttonRed_pressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/buttonYellow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/buttonYellow_pressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/cactus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/chain.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/cloud1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/cloud2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/cloud3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/coinBronze.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/coinGold.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/coinSilver.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/fireball.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/flagBlue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/flagBlue2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/flagBlueHanging.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/flagGreen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/flagGreen2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/flagGreenHanging.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/flagRed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/flagRed2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/flagRedHanging.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/flagYellow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/flagYellow2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/flagYellowHanging.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/gemBlue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/gemGreen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/gemRed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/gemYellow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/keyBlue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/keyGreen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/keyRed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/keyYellow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/mushroomBrown.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/mushroomRed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/particleBrick1a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/particleBrick1b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/particleBrick2a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/particleBrick2b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/plant.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/plantPurple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/rock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/snowhill.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/spikes.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/springboardDown.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/springboardUp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/star.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/switchLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/switchMid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/switchRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/weight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Items/weightChained.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Overlay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p1_back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p1_fall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p1_front.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p1_hurt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p1_jump.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p1_stand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p1_walk/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p1_walk/10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p1_walk/11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p1_walk/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p1_walk/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p1_walk/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p1_walk/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p1_walk/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p1_walk/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p1_walk/8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p1_walk/9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p2_back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p2_fall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p2_front.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p2_hurt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p2_jump.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p2_stand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p2_walk/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p2_walk/10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p2_walk/11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p2_walk/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p2_walk/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p2_walk/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p2_walk/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p2_walk/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p2_walk/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p2_walk/8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p2_walk/9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p3_back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p3_fall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p3_front.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p3_hurt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p3_jump.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p3_stand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p3_walk/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p3_walk/10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p3_walk/11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p3_walk/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p3_walk/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p3_walk/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p3_walk/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p3_walk/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p3_walk/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p3_walk/8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Player/p3_walk/9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/box.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/boxAlt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/boxCoin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/boxCoinAlt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/boxCoinAltDisabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/boxCoinDisabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/boxEmpty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/boxExplosive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/boxExplosiveAlt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/boxExplosiveDisabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/boxItem.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/boxItemAlt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/boxItemAltDisabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/boxItemDisabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/boxWarning.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/brickWall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/bridge.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/bridgeLogs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/castle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/castleCenter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/castleCenterRounded.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/castleCliffLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/castleCliffLeftAlt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/castleCliffRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/castleCliffRightAlt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/castleHalf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/castleHalfLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/castleHalfMid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/castleHalfRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/castleHillLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/castleHillLeft2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/castleHillRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/castleHillRight2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/castleLedgeLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/castleLedgeRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/castleLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/castleMid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/castleRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/dirt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/dirtCenter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/dirtCenterRounded.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/dirtCliffLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/dirtCliffLeftAlt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/dirtCliffRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/dirtCliffRightAlt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/dirtHalf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/dirtHalfLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/dirtHalfMid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/dirtHalfRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/dirtHillLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/dirtHillLeft2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/dirtHillRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/dirtHillRight2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/dirtLedgeLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/dirtLedgeRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/dirtLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/dirtMid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/dirtRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/doorClosedMid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/doorClosedTop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/doorOpenMid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/doorOpenTop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/fence.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/fenceBroken.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/grass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/grassCenter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/grassCenterRounded.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/grassCliffLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/grassCliffLeftAlt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/grassCliffRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/grassCliffRightAlt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/grassHalf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/grassHalfLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/grassHalfMid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/grassHalfRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/grassHillLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/grassHillLeft2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/grassHillRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/grassHillRight2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/grassLedgeLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/grassLedgeRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/grassLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/grassMid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/grassRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/hillLarge.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/hillLargeAlt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/hillSmall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/hillSmallAlt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/ladderMid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/ladderTop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/liquidLava.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/liquidLavaTop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/liquidLavaTopMid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/liquidWater.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/liquidWaterTop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/liquidWaterTopMid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/lockBlue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/lockGreen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/lockRed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/lockYellow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/rockHillLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/rockHillRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/ropeAttached.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/ropeHorizontal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/ropeVertical.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sandCenter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sandCenterRounded.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sandCliffLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sandCliffLeftAlt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sandCliffRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sandCliffRightAlt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sandHalf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sandHalfLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sandHalfMid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sandHalfRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sandHillLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sandHillLeft2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sandHillRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sandHillRight2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sandLedgeLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sandLedgeRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sandLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sandMid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sandRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/sign.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/signExit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/signLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/signRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/snow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/snowCenter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/snowCenterRounded.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/snowCliffLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/snowCliffLeftAlt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/snowCliffRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/snowCliffRightAlt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/snowHalf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/snowHalfLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/snowHalfMid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/snowHalfRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/snowHillLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/snowHillLeft2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/snowHillRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/snowHillRight2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/snowLedgeLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/snowLedgeRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/snowLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/snowMid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/snowRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/stone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/stoneCenter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/stoneCenterRounded.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/stoneCliffLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/stoneCliffLeftAlt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/stoneCliffRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/stoneCliffRightAlt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/stoneHalf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/stoneHalfLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/stoneHalfMid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/stoneHalfRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/stoneHillLeft2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/stoneHillRight2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/stoneLedgeLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/stoneLedgeRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/stoneLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/stoneMid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/stoneRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/stoneWall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/tochLit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/tochLit2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/torch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Tiles/window.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Vector/characters.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Vector/characters.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Vector/enemies.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Vector/enemies.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Vector/tiles.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/Vector/tiles.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/bg_castle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/bg_menu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/continue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/cross.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/exitGame.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/levelHitbox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/levelSelecting.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/mainMenu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/pauseScreen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/preview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/reset.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/sample.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/selectLevel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/images/startGame.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/map.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/map.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/project-greenfoot-game-JustDylan23.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/project.greenfoot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/sounds/blockhit.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/sounds/bump.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/sounds/coin.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/sounds/death.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/sounds/jump.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/sounds/jump_mini.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/sounds/music.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/sounds/pause.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/sounds/powerup.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-greenfoot-game-JustDylan23/tiles.tsx.tmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.greenfoot" beforeDir="false" afterPath="$PROJECT_DIR$/project.greenfoot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds/buy.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds/enterLevel.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds/finish.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds/music.wav" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClickableObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClickableObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/enemies/FireBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/enemies/FireBall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/gameplayobjects/MovingPlatform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/gameplayobjects/MovingPlatform.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/worlds/Level1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/worlds/Level1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/worlds/Level3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/worlds/Level3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tiles.tsx.tmx" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,11 +454,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/entities/gameplayobjects/MovingPlatform.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Hero.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="30" column="12" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="12" />
+            <state relative-caret-position="159">
+              <caret line="73" column="39" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
+              <folding>
+                <element signature="e#6809#6810#0" expanded="true" />
+                <element signature="e#7304#7305#0" expanded="true" />
+                <element signature="e#10879#10880#0" expanded="true" />
+                <element signature="e#10954#10955#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/entities/collectibles/Coin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,43 +482,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Hero.java">
+        <entry file="file://$PROJECT_DIR$/src/TileFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="326" column="26" selection-start-line="326" selection-start-column="26" selection-end-line="326" selection-end-column="26" />
-              <folding>
-                <element signature="e#6809#6810#0" expanded="true" />
-                <element signature="e#7304#7305#0" expanded="true" />
-                <element signature="e#10934#10935#0" expanded="true" />
-                <element signature="e#11009#11010#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="231">
+              <caret line="80" column="40" selection-start-line="80" selection-start-column="35" selection-end-line="80" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/entities/Entity.java">
+        <entry file="file://$PROJECT_DIR$/src/worlds/Level3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+            <state relative-caret-position="209">
+              <caret line="106" column="40" selection-start-line="106" selection-start-column="40" selection-end-line="106" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/entities/enemies/Slime.java">
+        <entry file="file://$PROJECT_DIR$/MainClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="50" column="41" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AbstractWorld.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+            <state relative-caret-position="34">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -99,17 +511,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClickableObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="67" column="54" selection-start-line="67" selection-start-column="54" selection-end-line="67" selection-end-column="54" />
+            <state relative-caret-position="204">
+              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CollisionEngine.java">
+        <entry file="file://$PROJECT_DIR$/src/worlds/Level1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2856">
-              <caret line="173" column="21" selection-start-line="173" selection-start-column="21" selection-end-line="173" selection-end-column="21" />
+            <state relative-caret-position="78">
+              <caret line="27" column="155" selection-start-line="27" selection-start-column="155" selection-end-line="27" selection-end-column="155" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -120,8 +535,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+            <state relative-caret-position="259">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -141,16 +556,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>min</find>
-      <find>setImage</find>
-      <find>this</find>
-      <find>camera</find>
-      <find>setCamera</find>
-      <find>screen</find>
-      <find>loc</find>
-      <find>velocity</find>
-      <find>createTo;e</find>
-      <find>public static</find>
       <find>new hero</find>
       <find>updateStars</find>
       <find>worldInstance</find>
@@ -171,7 +576,20 @@
       <find>interact2</find>
       <find>start()</find>
       <find>return</find>
+      <find>star</find>
+      <find>buy</find>
+      <find>wav</find>
+      <find>mp3</find>
+      <find>ladder</find>
+      <find>65, 65, 65}</find>
+      <find>finish</find>
+      <find>addEntity(new Coin(), 1530, 1530);</find>
+      <find>brick</find>
+      <find>Greenfoot.playSound</find>
     </findStrings>
+    <replaceStrings>
+      <replace>wav</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -179,10 +597,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ItemObject.java" />
         <option value="$PROJECT_DIR$/src/Enemy.java" />
         <option value="$PROJECT_DIR$/src/OverlayObject.java" />
-        <option value="$PROJECT_DIR$/src/PauseScreen.java" />
         <option value="$PROJECT_DIR$/src/BasicTile.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/entities/CharacterCoin/CharacterCoin1.java" />
@@ -202,18 +618,15 @@
         <option value="$PROJECT_DIR$/src/HeroImages.java" />
         <option value="$PROJECT_DIR$/src/Location.java" />
         <option value="$PROJECT_DIR$/src/Tile.java" />
-        <option value="$PROJECT_DIR$/src/entities/collectibles/Coin.java" />
         <option value="$PROJECT_DIR$/src/entities/CharacterCoin/CharacterCoin.java" />
         <option value="$PROJECT_DIR$/src/entities/collectibles/Collectible.java" />
         <option value="$PROJECT_DIR$/src/entities/gameplayobjects/Spikes.java" />
-        <option value="$PROJECT_DIR$/src/entities/keys/Key.java" />
         <option value="$PROJECT_DIR$/src/entities/keys/KeyBlue.java" />
         <option value="$PROJECT_DIR$/src/TileEngine.java" />
         <option value="$PROJECT_DIR$/src/Mover.java" />
         <option value="$PROJECT_DIR$/src/Camera.java" />
         <option value="$PROJECT_DIR$/src/CollisionEngine.java" />
         <option value="$PROJECT_DIR$/src/LevelStatistics.java" />
-        <option value="$PROJECT_DIR$/src/entities/collectibles/Star.java" />
         <option value="$PROJECT_DIR$/src/TileFactory.java" />
         <option value="$PROJECT_DIR$/src/TileType.java" />
         <option value="$PROJECT_DIR$/src/Overlay.java" />
@@ -222,14 +635,19 @@
         <option value="$PROJECT_DIR$/src/WorldRegistry.java" />
         <option value="$PROJECT_DIR$/src/worlds/Level2.java" />
         <option value="$PROJECT_DIR$/src/AbstractWorld.java" />
-        <option value="$PROJECT_DIR$/src/worlds/Level1.java" />
         <option value="$PROJECT_DIR$/src/entities/enemies/FireBall.java" />
         <option value="$PROJECT_DIR$/src/entities/Entity.java" />
-        <option value="$PROJECT_DIR$/src/Hero.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/ClickableObject.java" />
-        <option value="$PROJECT_DIR$/MainClass.java" />
         <option value="$PROJECT_DIR$/src/entities/gameplayobjects/MovingPlatform.java" />
+        <option value="$PROJECT_DIR$/src/worlds/Level1.java" />
+        <option value="$PROJECT_DIR$/src/worlds/Level3.java" />
+        <option value="$PROJECT_DIR$/MainClass.java" />
+        <option value="$PROJECT_DIR$/src/ClickableObject.java" />
+        <option value="$PROJECT_DIR$/src/entities/collectibles/Coin.java" />
+        <option value="$PROJECT_DIR$/src/PauseScreen.java" />
+        <option value="$PROJECT_DIR$/src/entities/collectibles/Star.java" />
+        <option value="$PROJECT_DIR$/src/entities/keys/Key.java" />
+        <option value="$PROJECT_DIR$/src/Hero.java" />
       </list>
     </option>
   </component>
@@ -240,10 +658,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1837" />
-    <option name="y" value="-19" />
-    <option name="width" value="2398" />
-    <option name="height" value="1103" />
+    <option name="x" value="-1929" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -284,9 +702,7 @@
             </path>
             <path>
               <item name="project-greenfoot-game-JustDylan23" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project-greenfoot-game-JustDylan23" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="worlds" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -303,12 +719,12 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544368522231" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544377583137" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15234375" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -327,7 +743,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Greenfoot">
     <configuration name="Greenfoot" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="greenfoot.export.GreenfootScenarioMain" />
       <module name="project-greenfoot-game-JustDylan23" />
@@ -336,6 +752,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainClass" />
+      <module name="project-greenfoot-game-JustDylan23" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainClass" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -414,7 +842,7 @@
       <workItem from="1544187586251" duration="865000" />
       <workItem from="1544225662899" duration="4683000" />
       <workItem from="1544264066879" duration="4047000" />
-      <workItem from="1544358249753" duration="7675000" />
+      <workItem from="1544358249753" duration="15637000" />
     </task>
     <task id="LOCAL-00001" summary="changed hero speed">
       <created>1542269991109</created>
@@ -668,11 +1096,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544125597673</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="finally fixed moving patforms">
+      <created>1544368626993</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1544368626993</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210377000" />
+    <option name="totallyTimeSpent" value="218339000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -694,6 +1129,7 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Duplicate detector" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3286119" />
@@ -762,7 +1198,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="imporved multiple worlds support" />
     <MESSAGE value="improved world loading" />
     <MESSAGE value="prepairing for entities" />
     <MESSAGE value="uploading whole project" />
@@ -787,25 +1222,12 @@
     <MESSAGE value="finally fixed world related bug" />
     <MESSAGE value="minor bug fixes" />
     <MESSAGE value="updated MovingPlatform" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated MovingPlatform" />
+    <MESSAGE value="finally fixed moving patforms" />
+    <option name="LAST_COMMIT_MESSAGE" value="finally fixed moving patforms" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/entities/enemies/Poker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/gameplayobjects/SpringBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/HeroImages.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -948,16 +1370,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/collectibles/Coin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files (x86)/Greenfoot/lib/extensions/greenfoot.jar!/greenfoot/Actor.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2567">
@@ -1052,23 +1464,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TileFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3689">
-          <caret line="217" column="39" selection-start-line="217" selection-start-column="35" selection-end-line="217" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/worlds/Level1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="94" column="50" selection-start-line="94" selection-start-column="50" selection-end-line="94" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Mover.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1097,23 +1492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AbstractWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CollisionEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2856">
-          <caret line="173" column="21" selection-start-line="173" selection-start-column="21" selection-end-line="173" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/enemies/FireBall.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -1133,6 +1511,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/gameplayobjects/MovingPlatform.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CollisionEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="173" column="21" selection-start-line="173" selection-start-column="21" selection-end-line="173" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/entities/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1140,23 +1545,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files (x86)/Greenfoot/lib/extensions/greenfoot.jar!/greenfoot/util/GreenfootUtil.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="328" selection-start-line="328" selection-end-line="328" />
+          <folding>
+            <element signature="e#10283#10284#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Hero.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="326" column="26" selection-start-line="326" selection-start-column="26" selection-end-line="326" selection-end-column="26" />
+        <state relative-caret-position="159">
+          <caret line="73" column="39" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
           <folding>
             <element signature="e#6809#6810#0" expanded="true" />
             <element signature="e#7304#7305#0" expanded="true" />
-            <element signature="e#10934#10935#0" expanded="true" />
-            <element signature="e#11009#11010#0" expanded="true" />
+            <element signature="e#10879#10880#0" expanded="true" />
+            <element signature="e#10954#10955#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+        <state relative-caret-position="259">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/worlds/Level1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="27" column="155" selection-start-line="27" selection-start-column="155" selection-end-line="27" selection-end-column="155" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClickableObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1165,22 +1600,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MainClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        <state relative-caret-position="34">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClickableObject.java">
+    <entry file="file://$PROJECT_DIR$/src/worlds/Level3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="67" column="54" selection-start-line="67" selection-start-column="54" selection-end-line="67" selection-end-column="54" />
+        <state relative-caret-position="209">
+          <caret line="106" column="40" selection-start-line="106" selection-start-column="40" selection-end-line="106" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entities/gameplayobjects/MovingPlatform.java">
+    <entry file="file://$PROJECT_DIR$/src/TileFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="30" column="12" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="12" />
+        <state relative-caret-position="231">
+          <caret line="80" column="40" selection-start-line="80" selection-start-column="35" selection-end-line="80" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entities/collectibles/Coin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1193,10 +1635,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>project-greenfoot-game-JustDylan23:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

@@ -9,11 +9,14 @@ import src.Main;
  */
 
 public class MainClass extends World {
-
     public MainClass() {
         super(1000, 800, 1, false);
         Greenfoot.start();
         HeroImages.getInstance().loadImages();
         Greenfoot.setWorld(new Main());
+    }
+
+    public static void main(String[] args) {
+
     }
 }

@@ -35,7 +35,6 @@ public class ClickableObject extends Actor {
                 if (Integer.parseInt(action.substring(5)) != 1) {
                     LevelSelecting.getInstance().levelsBought++;
                     LevelSelecting.getInstance().updateStars();
-                    Greenfoot.playSound("buy.wav");
                     isTriggered = true;
                     return;
                 }
@@ -65,7 +64,6 @@ public class ClickableObject extends Actor {
 
             if (action.contains("level")) {
                 Main.worldRegistry.loadLevel(Integer.parseInt(action.substring(5)));
-                Greenfoot.playSound("enterLevel.wav");
             }
 
         }

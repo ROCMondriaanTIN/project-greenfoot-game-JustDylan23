@@ -339,7 +339,6 @@ public class Hero extends Mover {
             for (Tile tile : getObjectsAtOffset(0, 0, Tile.class)) {
                 if (tile.getType() == TileType.DOOR_OPENED) {
                     Main.worldRegistry.loadLevel(0);
-                    Greenfoot.playSound("finish.wav");
                 }
             }
         }
