@@ -32,7 +32,7 @@ public class MovingPlatform extends GamePlayObject {
 
         Hero hero = Main.cachedWorld.hero;
         int overlapY = (getY() - (hero.getY() + hero.getImage().getHeight() / 2) - getImage().getHeight() / 2);
-        if (overlapY < -2) {
+        if (overlapY < -2 && !Greenfoot.isKeyDown("s") && hero.velocityY >= 0) {
             hero.setLocation(hero.getX(), hero.getY() + overlapY);
             if (Greenfoot.isKeyDown("space") && now - starTime > 200) {
                 hero.velocityY = hero.jumpSpeed;

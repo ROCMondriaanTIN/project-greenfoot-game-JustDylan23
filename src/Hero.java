@@ -279,23 +279,29 @@ public class Hero extends Mover {
 
     private void ladderInteractionHandler() {
         if (Greenfoot.isKeyDown("space") && Greenfoot.isKeyDown("w")) return;
-        List<Tile> tiles = getObjectsAtOffset(0, -5, Tile.class);
+        List<Tile> tiles = getObjectsAtOffset(0, getHeight() / 4, Tile.class);
         if (tiles.isEmpty()) {
             isClimbing = false;
-        }
-        for (Tile tile : tiles) {
-            if (tile.type == TileType.LADDER) {
-                if (Greenfoot.isKeyDown("w")) {
+        } else {
+            for (Tile tile : tiles) {
+                if (tile.type == TileType.LADDER) {
                     setTexture(0);
-                    velocityY = -4.5;
-                    isClimbing = true;
-                } else if (isClimbing) {
-                    setTexture(0);
-                    velocityY = 1;
+                    if (Greenfoot.isKeyDown("w")) {
+                        isClimbing = true;
+                        velocityY = -4.5;
+                        Tile tileTop = ((Tile) getOneObjectAtOffset(0, 0, Tile.class));
+                        if (tileTop == null) {
+                            velocityY = -1;
+                        } else if (tileTop.getType() != TileType.LADDER) {
+                            velocityY = -1;
+                        }
+                    } else if (isClimbing) {
+                        velocityY = 1;
+                    }
+                    break;
+                } else {
+                    isClimbing = false;
                 }
-                break;
-            } else {
-                isClimbing = false;
             }
         }
     }
@@ -306,10 +312,12 @@ public class Hero extends Mover {
                 if (tile.isSolid) {
                     hitBlock = true;
                     if (tile.type == TileType.BREAKABLE_BLOCK) {
+                        velocityY = 0;
                         Greenfoot.playSound("blockhit.wav");
                         tile.isSolid = false;
                         tile.getImage().clear();
                     } else if (tile.type == TileType.COIN_BOX) {
+                        velocityY = 0;
                         Greenfoot.playSound("coin.wav");
                         tile.setTileImage("boxCoinAltDisabled");
                         tile.setType(TileType.BOX);
@@ -339,6 +347,7 @@ public class Hero extends Mover {
             for (Tile tile : getObjectsAtOffset(0, 0, Tile.class)) {
                 if (tile.getType() == TileType.DOOR_OPENED) {
                     Main.worldRegistry.loadLevel(0);
+                    Greenfoot.playSound("finish.wav");
                 }
             }
         }

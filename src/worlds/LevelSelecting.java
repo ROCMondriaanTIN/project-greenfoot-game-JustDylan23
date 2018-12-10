@@ -36,6 +36,7 @@ public class LevelSelecting extends AbstractWorld {
             new Location(435, 684), new Location(780, 677)};
 
     public void updateUnlockedLevels() {
+        if (unlockedLevels >= 7) return;
         int amountOfLevels = (LevelStatistics.getInstance().stars / 2) + 1;
         for (int i = unlockedLevels; i < amountOfLevels; i++) {
             unlockedLevels++;
