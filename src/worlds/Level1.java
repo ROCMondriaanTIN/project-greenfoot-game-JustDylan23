@@ -91,6 +91,7 @@ public class Level1 extends AbstractWorld {
         addEntity(new Fly(), 3150, 1530);
         addEntity(new MovingPlatform(), 2250, 990);
         addEntity(new Spikes(), 810, 1710);
+        addEntity(new MovingPlatform(), 210, 1770);
 
         LevelStatistics instance = LevelStatistics.getInstance();
 

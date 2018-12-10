@@ -90,8 +90,6 @@ public class AbstractWorld extends World {
                 setPaintOrder(ClickableObject.class, PauseScreen.class, Hero.class, Entity.class, Overlay.class, OverlayObject.class, Tile.class);
                 break;
         }
-
-
     }
 
     @Override

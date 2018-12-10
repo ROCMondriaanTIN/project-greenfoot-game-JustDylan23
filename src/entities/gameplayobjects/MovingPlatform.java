@@ -23,20 +23,24 @@ public class MovingPlatform extends GamePlayObject {
     }
 
     public void interact3() {
+        Hero hero = Main.cachedWorld.hero;
+        if (Greenfoot.isKeyDown("s") || (hero.velocityY < -1 && !isInteracting)) {
+            hero.isOnMovingPlatform = false;
+            return;
+        }
         long now = System.currentTimeMillis();
         if (!isInteracting) {
             starTime = now;
         }
         isInteracting = true;
         time = now;
-
-        Hero hero = Main.cachedWorld.hero;
         int overlapY = (getY() - (hero.getY() + hero.getImage().getHeight() / 2) - getImage().getHeight() / 2);
-        if (overlapY < -2 && !Greenfoot.isKeyDown("s") && hero.velocityY >= 0) {
+        if (overlapY < -2) {
             hero.setLocation(hero.getX(), hero.getY() + overlapY);
             if (Greenfoot.isKeyDown("space") && now - starTime > 200) {
                 hero.velocityY = hero.jumpSpeed;
-            } else hero.velocityY = velocityY;
+            }
+            hero.velocityY = velocityY;
         }
     }
 

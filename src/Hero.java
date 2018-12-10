@@ -30,8 +30,7 @@ public class Hero extends Mover {
     private boolean isClimbing = false;
     private boolean hitBlock = false;
     private long time;
-    private boolean isOnMovingPlatform;
-    private int i;
+    public boolean isOnMovingPlatform;
 
     private double invert(double x) {
         return x * -1;
@@ -151,7 +150,7 @@ public class Hero extends Mover {
      * @author D. Hout
      */
     private void handleInAirAnimation() {
-        if (isClimbing || isOnGround || Math.abs(velocityY) < 2) return;
+        if (isOnMovingPlatform || isClimbing || isOnGround || Math.abs(velocityY) < 2) return;
         if (velocityY < 0 && !isOnGround) {
             setTextureWithDirection(5);
         } else if (velocityY > 0 && !isOnGround && Math.abs(velocityX) > 0.3) {
@@ -354,9 +353,9 @@ public class Hero extends Mover {
     }
 
     private void movingPlatformInteraction() {
-        List<MovingPlatform> movingPlatforms = getObjectsAtOffset(0, getHeight() / 2, MovingPlatform.class);
-        isOnMovingPlatform = !movingPlatforms.isEmpty();
-        for (MovingPlatform entity : movingPlatforms) {
+        List<MovingPlatform> m1 = getObjectsAtOffset(0, getHeight() / 2, MovingPlatform.class);
+        isOnMovingPlatform = !m1.isEmpty();
+        for (MovingPlatform entity : m1) {
             entity.interact3();
         }
     }
