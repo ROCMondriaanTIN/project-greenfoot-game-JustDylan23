@@ -2,7 +2,6 @@ package src.entities;
 
 import greenfoot.Greenfoot;
 import greenfoot.MouseInfo;
-
 import src.Main;
 import src.Mover;
 import src.TileEngine;
@@ -13,6 +12,7 @@ import src.TileEngine;
 
 public  class Entity extends Mover {
     public String constructor;
+    public String constructorValue = "";
 
     public int spawnX;
     public int spawnY;

@@ -1,6 +1,7 @@
 package src.worlds;
 
 import src.AbstractWorld;
+import src.entities.CharacterCoin.CharacterCoin3;
 import src.entities.collectibles.Coin;
 import src.entities.collectibles.Star;
 import src.entities.enemies.Fly;
@@ -73,7 +74,6 @@ public class Level3 extends AbstractWorld {
         addEntity(new Fly(), 3090, 2010);
         addEntity(new MovingPlatform(4), 3090, 2310);
         addEntity(new KeyYellow(), 3570, 2250);
-        addEntity(new Star(), 2430, 2250);
         addEntity(new MovingPlatform(5), 3510, 2070);
         addEntity(new Coin(), 3510, 1890);
         addEntity(new Coin(), 3510, 1830);
@@ -108,6 +108,16 @@ public class Level3 extends AbstractWorld {
         addEntity(new Coin(), 270, 570);
         addEntity(new Coin(), 150, 570);
         addEntity(new Coin(), 210, 510);
+        addEntity(new CharacterCoin3(), 2130, 570);
+        addEntity(new Coin(), 2610, 690);
+        addEntity(new Coin(), 2730, 690);
+        addEntity(new Coin(), 2850, 690);
+        addEntity(new Coin(), 2970, 690);
+        addEntity(new Coin(), 2490, 690);
+        addEntity(new Coin(), 2490, 810);
+
+        addEntity(new Star(7), 2610, 810);
+        addEntity(new Star(8), 2430, 2250);
 
         super.loadWorld();
     }

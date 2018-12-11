@@ -150,12 +150,12 @@ public class Hero extends Mover {
      * @author D. Hout
      */
     private void handleInAirAnimation() {
-        if (isOnMovingPlatform || isClimbing || isOnGround || Math.abs(velocityY) < 2) return;
-        if (velocityY < 0 && !isOnGround) {
+        if (isClimbing || isOnGround || Math.abs(velocityY) < 2) return;
+        if (velocityY < 0) {
             setTextureWithDirection(5);
-        } else if (velocityY > 0 && !isOnGround && Math.abs(velocityX) > 0.3) {
+        } else if (velocityY > 0 && Math.abs(velocityX) > 0.3) {
             setTextureWithDirection(2);
-        } else if (velocityY > 0 && !isOnGround && Math.abs(velocityX) < 0.3) {
+        } else if (velocityY > 0 && Math.abs(velocityX) < 0.3) {
             setTextureWithDirection(3);
         }
     }
@@ -346,7 +346,6 @@ public class Hero extends Mover {
             for (Tile tile : getObjectsAtOffset(0, 0, Tile.class)) {
                 if (tile.getType() == TileType.DOOR_OPENED) {
                     Main.worldRegistry.loadLevel(0);
-                    Greenfoot.playSound("finish.wav");
                 }
             }
         }

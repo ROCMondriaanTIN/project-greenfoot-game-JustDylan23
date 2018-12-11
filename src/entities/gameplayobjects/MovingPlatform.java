@@ -20,6 +20,7 @@ public class MovingPlatform extends GamePlayObject {
     public MovingPlatform(int i) {
         this();
         blocksUpwards = Math.abs(i);
+        constructorValue = String.valueOf(i);
     }
 
     public void interact3() {
@@ -46,8 +47,8 @@ public class MovingPlatform extends GamePlayObject {
 
     @Override
     public void act() {
-        super.act();
         if (PauseScreen.isActive) return;
+        super.act();
         if (System.currentTimeMillis() - time > 100) isInteracting = false;
         if (getY() - spawnY < 60 * blocksUpwards * -1 - 30) {
             velocityY *= -1;

@@ -15,8 +15,4 @@ public class MainClass extends World {
         HeroImages.getInstance().loadImages();
         Greenfoot.setWorld(new Main());
     }
-
-    public static void main(String[] args) {
-
-    }
 }

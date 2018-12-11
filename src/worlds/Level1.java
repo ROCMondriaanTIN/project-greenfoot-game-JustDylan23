@@ -1,7 +1,6 @@
 package src.worlds;
 
 import src.AbstractWorld;
-import src.LevelStatistics;
 import src.entities.CharacterCoin.CharacterCoin1;
 import src.entities.CharacterCoin.CharacterCoin2;
 import src.entities.CharacterCoin.CharacterCoin3;
@@ -56,7 +55,7 @@ public class Level1 extends AbstractWorld {
                 {-1, 58, -1, 128, 86, 85, -1, -1, -1, -1, -1, 88, -1, -1, -1, -1, -1, -1, -1, -1, 62, 62, 63, 62, -1, -1, -1, -1, -1, 128, 88, -1, -1, 84, 87, -1, 65, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, 85, 87, -1, -1, -1, -1, -1, -1, -1, -1},
                 {82, 82, 82, 82, 82, 82, 82, 82, 17, 17, 17, 82, 82, 82, 82, -1, 81, 83, -1, 82, 82, 82, 82, 82, 82, -1, -1, 82, 82, 82, 82, 82, 82, 82, 82, -1, 65, 82, 82, 82, 82, -1, -1, -1, -1, -1, 82, 82, 82, 82, 82, 82, 82, 82, 82, -1, -1},
                 {65, 65, 65, 82, 82, 82, 82, 65, 95, 95, 95, 65, 65, 65, 65, 95, 95, 95, 95, 65, 82, 82, 82, 65, 65, 95, 95, 65, 65, 82, 82, 82, 82, 65, 65, 65, 65, 65, 65, 65, 65, 95, 95, 95, 95, 95, 65, 65, 65, 65, 65, 65, 65, 65, 65, 95, 95},
-                {82, 82, 65, 65, 65, 65, 65, 65, 93, 93, 93, 65, 65, 65, 65, 93, 93, 93, 93, 65, 65, 65, 65, 65, 65, 93, 93, 65, 65, 65, 65, 65, 65, 65, 65, 82, 82, 65, 65, 65, 65, 93, 93, 93, 93, 93, 65, 65, 65, 65, 65, 65, 65, 65, 65, 93, 93},
+                {82, 82, 65, 65, 65, 65, 65, 65, 93, 93, 93, 65, 65, 65, 65, 93, 93, 93, 93, 65, 65, 65, 65, 65, 65, 93, 93, 65, 65, 65, 65, 65, 65, 65, 65, 82, 82, 65, 65, 65, 65, 93, 93, 93, 93, 93, 65, 65, 65, 65, 65, 65, 65, 65, 65, 93, 93}
         };
     }
 
@@ -91,15 +90,9 @@ public class Level1 extends AbstractWorld {
         addEntity(new Fly(), 3150, 1530);
         addEntity(new MovingPlatform(), 2250, 990);
         addEntity(new Spikes(), 810, 1710);
-        addEntity(new MovingPlatform(), 210, 1770);
 
-        LevelStatistics instance = LevelStatistics.getInstance();
-
-        instance.ownedStars.putIfAbsent(1, false);
-        instance.ownedStars.putIfAbsent(2, false);
-
-        if (!instance.ownedStars.get(1)) addEntity(new Star(1), 2130, 1770);
-        if (!instance.ownedStars.get(2)) addEntity(new Star(2), 1230, 510);
+        addEntity(new Star(1), 2130, 1770);
+        addEntity(new Star(2), 1230, 510);
 
         super.loadWorld();
     }

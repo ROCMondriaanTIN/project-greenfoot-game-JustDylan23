@@ -31,71 +31,71 @@ public class EntityFactory {
         switch (entityType) {
             case KEY_BLUE:
                 entity = new KeyBlue();
-                entity.constructor = "new KeyBlue()";
+                entity.constructor = "new KeyBlue(";
                 break;
             case KEY_GREEN:
                 entity = new KeyGreen();
-                entity.constructor = "new KeyGreen()";
+                entity.constructor = "new KeyGreen(";
                 break;
             case KEY_RED:
                 entity = new KeyRed();
-                entity.constructor = "new KeyRed()";
+                entity.constructor = "new KeyRed(";
                 break;
             case KEY_YELLOW:
                 entity = new KeyYellow();
-                entity.constructor = "new KeyYellow()";
+                entity.constructor = "new KeyYellow(";
                 break;
             case COIN:
                 entity = new Coin();
-                entity.constructor = "new Coin()";
+                entity.constructor = "new Coin(";
                 break;
             case CHARACTER_COIN_1:
                 entity = new CharacterCoin1();
-                entity.constructor = "new CharacterCoin1()";
+                entity.constructor = "new CharacterCoin1(";
                 break;
             case CHARACTER_COIN_2:
                 entity = new CharacterCoin2();
-                entity.constructor = "new CharacterCoin2()";
+                entity.constructor = "new CharacterCoin2(";
                 break;
             case CHARACTER_COIN_3:
                 entity = new CharacterCoin3();
-                entity.constructor = "new CharacterCoin3()";
+                entity.constructor = "new CharacterCoin3(";
                 break;
             case STAR:
                 entity = new Star();
-                entity.constructor = "new Star()";
+                entity.constructor = "new Star(";
                 break;
             case GEM:
                 entity = new Gem();
-                entity.constructor = "new Gem()";
+                entity.constructor = "new Gem(";
                 break;
             case SPIKES:
                 entity = new Spikes();
-                entity.constructor = "new Spikes()";
+                entity.constructor = "new Spikes(";
                 break;
             case SPRINGBOARD:
                 entity = new SpringBoard();
-                entity.constructor = "new SpringBoard()";
+                entity.constructor = "new SpringBoard(";
                 break;
             case MOVING_PLATFORM:
                 entity = new MovingPlatform();
-                entity.constructor = "new MovingPlatform()";
+                entity.constructor = "new MovingPlatform(";
                 break;
             case FLY:
                 entity = new Fly();
-                entity.constructor = "new Fly()";
+                entity.constructor = "new Fly(";
                 break;
             case POKER:
                 entity = new Poker();
-                entity.constructor = "new Fly()";
+                entity.constructor = "new Fly(";
                 break;
             case SLIME:
                 entity = new Slime();
-                entity.constructor = "new Slime()";
+                entity.constructor = "new Slime(";
                 break;
             case FIREBALL:
                 entity = new FireBall();
-                entity.constructor = "new FireBall()";
+                entity.constructor = "new FireBall(";
                 break;
             default:
                 entity = new Entity();

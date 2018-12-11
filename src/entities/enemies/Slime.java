@@ -43,12 +43,12 @@ public class Slime extends Enemy {
 
     @Override
     public void act() {
-        super.act();
         if (!isAdded) {
             Main.cachedWorld.ce.addCollidingMover(this);
         }
         isAdded = true;
         if (PauseScreen.isActive) return;
+        super.act();
         velocityY = 2;
         applyVelocity();
         updateGroundStats();

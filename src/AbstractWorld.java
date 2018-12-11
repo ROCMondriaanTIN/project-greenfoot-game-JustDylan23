@@ -52,7 +52,7 @@ public class AbstractWorld extends World {
         entity.spawnX = x;
         entity.spawnY = y;
         int length = entity.getClass().getPackage().getName().length();
-        entity.constructor = "new " + entity.getClass().getName().substring(length + 1) + "()";
+        entity.constructor = "new " + entity.getClass().getName().substring(length + 1) + "(";
         entities.add(entity);
     }
 
@@ -103,7 +103,7 @@ public class AbstractWorld extends World {
 
             if (str.equalsIgnoreCase("generate")) {
                 for (Entity entity : entities) {
-                    System.out.println("addEntity(" + entity.constructor + ", " + entity.spawnX + ", " + entity.spawnY + ");");
+                    System.out.println("addEntity(" + entity.constructor + entity.constructorValue + "), " + entity.spawnX + ", " + entity.spawnY + ");");
                 }
             } else if (str.equalsIgnoreCase("debug")) {
                 System.out.println("debug toggled");
